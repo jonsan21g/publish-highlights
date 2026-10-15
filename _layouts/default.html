@@ -375,32 +375,34 @@
   <!-- Hero Header -->
   <header class="hero">
     <div class="container">
-      <span class="hero-badge">❄️ Winter Edition • Free & Open Travel Guide</span>
-      <h1>Central Europe Highlights & Dining Guide</h1>
-      <p>Curated, practical guide to cultural landmarks, thrilling alpine winter activities, iconic street treats, and authentic dining across the Czech Republic, Austria, Slovakia, and Germany.</p>
+      <span class="hero-badge">🌍 Travel Collection • Free & Open Holiday Guides</span>
+      <h1>{{ page.title | default: site.title }}</h1>
+      <p>{{ page.description | default: site.description }}</p>
     </div>
   </header>
 
   <!-- Sticky Quick Nav & Search -->
   <nav class="sticky-nav">
     <div class="container nav-wrapper">
-      <div class="nav-pills">
-        <a href="#-prague-czech-republic" class="nav-pill">🇨🇿 Prague</a>
-        <a href="#-south-bohemia-český-krumlov--lake-lipno" class="nav-pill">🇨🇿 Český Krumlov</a>
-        <a href="#-vienna-austria" class="nav-pill">🇦🇹 Vienna</a>
-        <a href="#-bratislava-slovakia" class="nav-pill">🇸🇰 Bratislava</a>
-        <a href="#-ramsau-am-dachstein-austrian-alps" class="nav-pill">🐎 Dachstein</a>
-        <a href="#-salzburg--berchtesgadener-land" class="nav-pill">🇦🇹 Salzburg</a>
-        <a href="#-wildkogel-arena--rosenheim" class="nav-pill">🛷 Wildkogel</a>
-        <a href="#-schloss-neuschwanstein--allgäu-bavaria" class="nav-pill">🏰 Neuschwanstein</a>
-        <a href="#-munich-bavaria" class="nav-pill">🇩🇪 Munich</a>
-        <a href="#-allianz-arena--ingolstadt-village" class="nav-pill">⚽ Allianz & Outlet</a>
+      <div class="nav-pills" id="navPills">
+        <a href="index.html" class="nav-pill" style="background: #0284c7; color: #ffffff;">🏠 All Trips</a>
+        <a href="#-prague-czech-republic" class="nav-pill trip-nav">🇨🇿 Prague</a>
+        <a href="#-south-bohemia-český-krumlov--lake-lipno" class="nav-pill trip-nav">🇨🇿 Český Krumlov</a>
+        <a href="#-vienna-austria" class="nav-pill trip-nav">🇦🇹 Vienna</a>
+        <a href="#-bratislava-slovakia" class="nav-pill trip-nav">🇸🇰 Bratislava</a>
+        <a href="#-ramsau-am-dachstein-austrian-alps" class="nav-pill trip-nav">🐎 Dachstein</a>
+        <a href="#-salzburg--berchtesgadener-land" class="nav-pill trip-nav">🇦🇹 Salzburg</a>
+        <a href="#-wildkogel-arena--rosenheim" class="nav-pill trip-nav">🛷 Wildkogel</a>
+        <a href="#-schloss-neuschwanstein--allgäu-bavaria" class="nav-pill trip-nav">🏰 Neuschwanstein</a>
+        <a href="#-munich-bavaria" class="nav-pill trip-nav">🇩🇪 Munich</a>
+        <a href="#-allianz-arena--ingolstadt-village" class="nav-pill trip-nav">⚽ Allianz & Outlet</a>
       </div>
       <div class="search-box">
         <input type="text" id="liveSearch" placeholder="Filter sights, dishes, towns..." onkeyup="filterContent()">
       </div>
     </div>
   </nav>
+
 
   <!-- Main Content Body -->
   <main class="container content-area">
@@ -428,7 +430,14 @@
         table.parentNode.insertBefore(wrapper, table);
         wrapper.appendChild(table);
       });
+
+      // Auto-hide destination-specific pills if not on the Central Europe trip page
+      const hasTripDestinations = document.querySelector("#-prague-czech-republic") !== null;
+      if (!hasTripDestinations) {
+        document.querySelectorAll(".trip-nav").forEach(el => el.style.display = "none");
+      }
     });
+
 
     // Back to top button visibility
     const backToTop = document.getElementById("backToTop");
@@ -461,3 +470,4 @@
   </script>
 </body>
 </html>
+

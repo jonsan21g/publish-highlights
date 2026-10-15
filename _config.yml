@@ -8,3 +8,4 @@ highlighter: rouge
 exclude:
   - README.md
   - LICENSE
+

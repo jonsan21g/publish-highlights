@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Central Europe Winter Highlights & Dining Guide</title>
-  <meta name="description" content="A curated, practical guide to cultural landmarks, alpine winter adventures, street treats, and authentic dining across Central Europe.">
+  <title>Curated Holiday & Travel Highlights Collection</title>
+  <meta name="description" content="A curated collection of practical, tabularized travel guides featuring cultural landmarks, alpine winter activities, street food, and authentic local dining.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -375,26 +375,27 @@
   <!-- Hero Header -->
   <header class="hero">
     <div class="container">
-      <span class="hero-badge">❄️ Winter Edition • Free & Open Travel Guide</span>
-      <h1>Central Europe Highlights & Dining Guide</h1>
-      <p>Curated, practical guide to cultural landmarks, thrilling alpine winter activities, iconic street treats, and authentic dining across the Czech Republic, Austria, Slovakia, and Germany.</p>
+      <span class="hero-badge">🌍 Travel Collection • Free & Open Holiday Guides</span>
+      <h1>Curated Holiday & Travel Highlights Collection</h1>
+      <p>A curated collection of practical, tabularized travel guides featuring cultural landmarks, alpine winter activities, street food, and authentic local dining.</p>
     </div>
   </header>
 
   <!-- Sticky Quick Nav & Search -->
   <nav class="sticky-nav">
     <div class="container nav-wrapper">
-      <div class="nav-pills">
-        <a href="#-prague-czech-republic" class="nav-pill">🇨🇿 Prague</a>
-        <a href="#-south-bohemia-český-krumlov--lake-lipno" class="nav-pill">🇨🇿 Český Krumlov</a>
-        <a href="#-vienna-austria" class="nav-pill">🇦🇹 Vienna</a>
-        <a href="#-bratislava-slovakia" class="nav-pill">🇸🇰 Bratislava</a>
-        <a href="#-ramsau-am-dachstein-austrian-alps" class="nav-pill">🐎 Dachstein</a>
-        <a href="#-salzburg--berchtesgadener-land" class="nav-pill">🇦🇹 Salzburg</a>
-        <a href="#-wildkogel-arena--rosenheim" class="nav-pill">🛷 Wildkogel</a>
-        <a href="#-schloss-neuschwanstein--allgäu-bavaria" class="nav-pill">🏰 Neuschwanstein</a>
-        <a href="#-munich-bavaria" class="nav-pill">🇩🇪 Munich</a>
-        <a href="#-allianz-arena--ingolstadt-village" class="nav-pill">⚽ Allianz & Outlet</a>
+      <div class="nav-pills" id="navPills">
+        <a href="index.html" class="nav-pill" style="background: #0284c7; color: #ffffff;">🏠 All Trips</a>
+        <a href="#-prague-czech-republic" class="nav-pill trip-nav">🇨🇿 Prague</a>
+        <a href="#-south-bohemia-český-krumlov--lake-lipno" class="nav-pill trip-nav">🇨🇿 Český Krumlov</a>
+        <a href="#-vienna-austria" class="nav-pill trip-nav">🇦🇹 Vienna</a>
+        <a href="#-bratislava-slovakia" class="nav-pill trip-nav">🇸🇰 Bratislava</a>
+        <a href="#-ramsau-am-dachstein-austrian-alps" class="nav-pill trip-nav">🐎 Dachstein</a>
+        <a href="#-salzburg--berchtesgadener-land" class="nav-pill trip-nav">🇦🇹 Salzburg</a>
+        <a href="#-wildkogel-arena--rosenheim" class="nav-pill trip-nav">🛷 Wildkogel</a>
+        <a href="#-schloss-neuschwanstein--allgäu-bavaria" class="nav-pill trip-nav">🏰 Neuschwanstein</a>
+        <a href="#-munich-bavaria" class="nav-pill trip-nav">🇩🇪 Munich</a>
+        <a href="#-allianz-arena--ingolstadt-village" class="nav-pill trip-nav">⚽ Allianz & Outlet</a>
       </div>
       <div class="search-box">
         <input type="text" id="liveSearch" placeholder="Filter sights, dishes, towns..." onkeyup="filterContent()">
@@ -402,1152 +403,91 @@
     </div>
   </nav>
 
+
   <!-- Main Content Body -->
   <main class="container content-area">
-    <h1>❄️ Central Europe Winter Highlights &amp; Dining Guide</h1>
+    <h1>🌍 Curated Holiday &amp; Travel Highlights Collection</h1>
 <blockquote>
-<p>A curated, practical guide to iconic cultural sights, thrilling alpine winter activities, traditional street treats, and authentic dining across the <strong>Czech Republic</strong>, <strong>Austria</strong>, <strong>Slovakia</strong>, and <strong>Germany</strong>.</p>
+<p>An open, public collection of practical, tabularized holiday itineraries, destination highlights, alpine adventures, and authentic dining guides across Europe and beyond.</p>
 </blockquote>
 <hr />
-<h2>📌 Quick Navigation</h2>
+<h2>🗺️ Featured Travel Guides</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin: 30px 0;">
+  <!-- Featured Active Trip Card -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;">
+    <div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">❄️ Winter Edition</span>
+        <span style="background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">10 Destinations</span>
+        <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">4 Countries</span>
+      </div>
+      <h2 style="font-size: 1.45rem; font-weight: 700; margin-top: 0; margin-bottom: 8px; border-bottom: none; padding-bottom: 0;">
+        <a href="czech-austria-slovakia-germany.html" style="color: #0f172a; text-decoration: none;">Central Europe Winter Highlights</a>
+      </h2>
+      <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px; font-weight: 600;">
+        🇨🇿 Czech Republic • 🇦🇹 Austria • 🇸🇰 Slovakia • 🇩🇪 Germany
+      </p>
+      <p style="font-size: 0.92rem; color: #475569; line-height: 1.55; margin-bottom: 18px;">
+        A comprehensive guide spanning Prague's medieval towers, Český Krumlov, Vienna's imperial palaces and grand coffeehouses, Bratislava's clifftop castle, Ramsau alpine sleigh rides, Salzburg's fortress, the 14 km Wildkogel toboggan run, fairytale Schloss Neuschwanstein, and Munich's hypercars and beer halls.
+      </p>
+      <ul style="font-size: 0.88rem; color: #334155; margin-left: 18px; margin-bottom: 20px; line-height: 1.6;">
+        <li><strong>🏛️ Sights</strong>: Klementinum, Schönbrunn Palace, Hohensalzburg, Neuschwanstein.</li>
+        <li><strong>🎯 Activities</strong>: Lipno bobsleigh, Wildkogel 14 km sled run, Red Bull Hangar-7, Allianz Arena.</li>
+        <li><strong>☕ Street Treats</strong>: Trdelník, Cornetto Cappuccino, Bosna, Germknödel, Schmalznudel.</li>
+        <li><strong>🍽️ Dining</strong>: Historic breweries, tavern roasts, plus popular Asian dining alternatives.</li>
+      </ul>
+    </div>
+    <div>
+      <a href="czech-austria-slovakia-germany.html" style="display: block; text-align: center; background: #0284c7; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s;">
+        Explore Trip Guide & Tables ➔
+      </a>
+    </div>
+  </div>
+  <!-- Future Guide Placeholder Card -->
+  <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 380px;">
+    <div style="font-size: 2.5rem; margin-bottom: 12px;">🗺️</div>
+    <span style="background: #e2e8f0; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 10px;">Coming Soon</span>
+    <h3 style="font-size: 1.25rem; font-weight: 700; color: #334155; margin-bottom: 8px;">More Holiday Plans in Progress</h3>
+    <p style="font-size: 0.9rem; color: #64748b; max-width: 320px; line-height: 1.5; margin-bottom: 16px;">
+      Future curated travel guides will be published right here, each featuring fully tabularized attractions, outdoor adventures, street food, and authentic local dining.
+    </p>
+    <span style="font-size: 0.85rem; color: #94a3b8; font-weight: 500;">Stay tuned for new itineraries</span>
+  </div>
+</div>
+<hr />
+<h2>📋 What Makes These Guides Unique?</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Region / Country</th>
-<th style="text-align:left">Destinations &amp; Highlights</th>
+<th style="text-align:left">Feature</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">🇨🇿 <strong>Czech Republic</strong></td>
-<td style="text-align:left"><a href="#-prague-czech-republic">Prague</a> • <a href="#-south-bohemia-%C4%8Desk%C3%BD-krumlov--lake-lipno">South Bohemia: Český Krumlov &amp; Lipno</a></td>
+<td style="text-align:left"><strong>🛡️ 100% PII-Free &amp; Date-Agnostic</strong></td>
+<td style="text-align:left">Every plan is stripped of personal names, ages, calendar dates, and private booking references so any independent traveler can use it anytime.</td>
 </tr>
 <tr>
-<td style="text-align:left">🇦🇹 <strong>Austria</strong></td>
-<td style="text-align:left"><a href="#-vienna-austria">Vienna</a> • <a href="#-ramsau-am-dachstein-austrian-alps">Ramsau am Dachstein</a> • <a href="#-salzburg--berchtesgadener-land">Salzburg &amp; Salzkammergut</a> • <a href="#-wildkogel-arena--rosenheim">Wildkogel-Arena</a></td>
+<td style="text-align:left"><strong>📊 Fully Tabularized Reference Tables</strong></td>
+<td style="text-align:left">Information is condensed into clean, side-by-side tables covering Highlights, What to Expect, and Practical Visitor Tips.</td>
 </tr>
 <tr>
-<td style="text-align:left">🇸🇰 <strong>Slovakia</strong></td>
-<td style="text-align:left"><a href="#-bratislava-slovakia">Bratislava</a></td>
+<td style="text-align:left"><strong>🔗 Verified Direct Web Links</strong></td>
+<td style="text-align:left">Every palace, mountain railway, museum, and tavern is linked directly to its official website for up-to-date hours and tickets.</td>
 </tr>
 <tr>
-<td style="text-align:left">🇩🇪 <strong>Germany</strong></td>
-<td style="text-align:left"><a href="#-schloss-neuschwanstein--allg%C3%A4u-bavaria">Schloss Neuschwanstein &amp; Allgäu</a> • <a href="#-munich-bavaria">Munich</a> • <a href="#-allianz-arena--ingolstadt-village">Allianz Arena &amp; Ingolstadt</a></td>
+<td style="text-align:left"><strong>🥢 Local Classics + Asian Alternatives</strong></td>
+<td style="text-align:left">In addition to traditional regional dishes (schnitzel, goulash, pork knuckle, dumplings), every dining section features popular nearby Asian options (pho, ramen, sushi, bibimbap).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>📱 Mobile-First Interactive View</strong></td>
+<td style="text-align:left">On mobile devices, tables scroll horizontally with ease, and real-time live search allows filtering destinations and dishes in seconds.</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2>🇨🇿 Prague, Czech Republic</h2>
-<p>Prague is one of Europe's best-preserved medieval and Baroque capitals, featuring cobblestone alleys, illuminated river vistas, and a rich cafe and brewery culture.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.klementinum.com/en/">Klementinum Baroque Library</a></strong></td>
-<td style="text-align:left">Baroque Architecture &amp; Astronomy</td>
-<td style="text-align:left">World-renowned Baroque Library Hall with gilded globes and ceiling frescoes by Jan Hiebl; Meridian Hall; 68m Astronomical Tower with 360° city panorama.</td>
-<td style="text-align:left">Book guided tour slots online in advance; dusk visits offer magnificent city illuminations.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://prague.eu/en/object/places/312/prague-astronomical-clock-staromestsky-orloj">Old Town Square &amp; Astronomical Clock</a></strong></td>
-<td style="text-align:left">Medieval Historic Center</td>
-<td style="text-align:left">Historic square anchored by the 600-year-old Astronomical Clock (<em>Pražský orloj</em>) with mechanical hourly chime, Gothic Týn Church, and seasonal festive markets.</td>
-<td style="text-align:left">Arrive 10 minutes before the top of the hour to catch the Apostles' procession; free public access.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hrad.cz/en/prague-castle-for-visitors">Prague Castle Complex (<em>Pražský hrad</em>)</a></strong></td>
-<td style="text-align:left">Royal Citadel &amp; Cathedral</td>
-<td style="text-align:left">Monumental royal fortress covering <strong><a href="https://www.katedralasvatehovita.cz/en">St. Vitus Cathedral</a></strong> (stained glass), Old Royal Palace (Vladislav Hall), St. George's Basilica, and fairy-tale <strong><a href="https://www.hrad.cz/en/prague-castle-for-visitors/objects-for-visitors/golden-lane-10332">Golden Lane (<em>Zlatá ulička</em>)</a></strong> with miniature 16th-century cottages.</td>
-<td style="text-align:left">Circuit ticket covers all key sites; morning visits offer the lightest crowds and best photography.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.prague.eu/en/object/places/93/charles-bridge-karluv-most">Charles Bridge (<em>Karlův most</em>)</a></strong></td>
-<td style="text-align:left">14th-Century Gothic Bridge</td>
-<td style="text-align:left">Iconic stone pedestrian bridge lined with 30 Baroque statues spanning the Vltava river, framed by Old Town and Lesser Town bridge towers.</td>
-<td style="text-align:left">Visit at early morning sunrise or twilight when the 19th-century gas streetlamps are lit.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://muzeumprahy.cz/en/petrin-lookout-tower">Petřín Lookout Tower</a></strong></td>
-<td style="text-align:left">Panoramic Observation Deck</td>
-<td style="text-align:left">63.5m miniature replica of the Eiffel Tower set high on Petřín Hill, offering panoramic views over Prague's hundred spires.</td>
-<td style="text-align:left">Accessible via a scenic ridge stroll from Strahov Monastery or via the Petřín Funicular.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.prague.eu/en/object/places/1208/lennon-wall">John Lennon Wall &amp; Kampa Island</a></strong></td>
-<td style="text-align:left">Urban Art &amp; Riverside Charm</td>
-<td style="text-align:left">Constantly evolving graffiti wall of peace messages and lyrics; adjacent to romantic historic watermills on Devil’s Stream (<em>Čertovka</em>).</td>
-<td style="text-align:left">Free 24/7 public access; easily combined with a riverside stroll on Kampa Island.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.trhypraha.cz/en/">Wenceslas Square</a></strong></td>
-<td style="text-align:left">Historic Boulevard &amp; Markets</td>
-<td style="text-align:left">Vast central boulevard flanked by historic buildings, shops, and festive chalets selling handmade wooden crafts, ornaments, and hot spiced drinks.</td>
-<td style="text-align:left">Flat, pedestrian-friendly walking avenue connecting New Town to Old Town.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.ntm.cz/en">National Technical Museum (<em>Národní technické muzeum</em>)</a></strong></td>
-<td style="text-align:left">Technology &amp; Transport</td>
-<td style="text-align:left">14 massive exhibition halls; monumental Transportation Hall filled with vintage steam locomotives, suspended pioneer biplanes, historic Tatra and Bugatti racers.</td>
-<td style="text-align:left">Check opening schedule online; closed on Mondays. Easy tram ride from city center.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://iamprague.eu/en/">Illusion Art Museum Prague (IAM)</a></strong></td>
-<td style="text-align:left">Interactive Art &amp; Photography</td>
-<td style="text-align:left">3 floors of interactive 3D trick-art, gravity-defying perspective rooms, and optical illusions directly opposite the Astronomical Clock.</td>
-<td style="text-align:left">Fun for all ages; camera/smartphone recommended for perspective illusions.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://muzeumprahy.cz/en/mirror-maze-on-petrin">Petřín Mirror Maze (<em>Zrcadlové bludiště</em>)</a></strong></td>
-<td style="text-align:left">Family Fun &amp; Amusements</td>
-<td style="text-align:left">Miniature castellated pavilion housing an entertaining maze of laughter-inducing distortion mirrors adjacent to Petřín Tower.</td>
-<td style="text-align:left">Combined admission tickets available with Petřín Tower.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.dpp.cz/en/travelling/transport-to-popular-destinations/petrin-funicular">Petřín Funicular</a></strong></td>
-<td style="text-align:left">Scenic Transport</td>
-<td style="text-align:left">Modern panoramic glass-roofed funicular connecting the Malá Strana district (Újezd) to the summit of Petřín Hill.</td>
-<td style="text-align:left">Integrated into Prague public transit ticketing; smooth ride up the wooded hillside.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Vltava River Winter Cruise</strong></td>
-<td style="text-align:left">Scenic Boating</td>
-<td style="text-align:left">Relaxing boat cruise along the Vltava river, gliding beneath Charles Bridge with heated indoor salons and panoramic roof decks.</td>
-<td style="text-align:left">Multiple operators depart from Dvořákovo nábřeží near Čech Bridge.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Chimney Cake (<em>Trdelník</em>)</strong></td>
-<td style="text-align:left">Sweet Street Pastry</td>
-<td style="text-align:left">Spit-roasted warm cinnamon-sugar pastry coil, served plain or filled with warm spiced apples, chocolate, or pistachio cream.</td>
-<td style="text-align:left"><strong><a href="https://www.goodfoodcoffee.cz/">Good Food Coffee &amp; Bakery</a></strong> (Karlova 8) or open-air market stalls.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Gourmet Open Sandwiches (<em>Chlebíčky</em>)</strong></td>
-<td style="text-align:left">Savory Traditional Snack</td>
-<td style="text-align:left">Delicate rye or white baguette slices topped with potato salad, roast beef, pickled eggs, ham, and fresh herbs.</td>
-<td style="text-align:left"><strong><a href="https://www.sistersbistro.cz/">Sisters Bistro</a></strong> (Dlouhá 39).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Prague Ham (<em>Pražská šunka</em>) &amp; Bramboráky</strong></td>
-<td style="text-align:left">Hot Market Fare</td>
-<td style="text-align:left">Hardwood-roasted salted ham carved straight from the spit; served with crispy garlic-marjoram potato pancakes.</td>
-<td style="text-align:left">Old Town Square and Náměstí Míru street food stalls.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://lokal-dlouha.ambi.cz/en/">Lokál Dlouhááá</a></strong></td>
-<td style="text-align:left">Classic Czech Beer Hall</td>
-<td style="text-align:left">Unpasteurized Pilsner Urquell poured fresh from temperature-controlled tanks; crispy fried cheese (<em>Smažený sýr</em>) with tartar sauce; beef sirloin in cream (<em>Svíčková na smetaně</em>).</td>
-<td style="text-align:left"><strong><a href="https://banhmimakers.cz/">Bánh Mì Makers</a></strong> (Dlouhá 39) or <strong><a href="https://yamisushi.cz/">Yami Sushi House</a></strong> (Masná 1051/3) for fresh pho, banh mi, or sushi.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="http://www.restaurace-mlejnice.cz/en/">Restaurace Mlejnice</a></strong></td>
-<td style="text-align:left">Vaulted Rustic Tavern</td>
-<td style="text-align:left">Atmospheric brick-cellar setting; rich beer beef goulash served in a crusty hollowed-out country bread loaf; crispy roasted pork knee (<em>vepřové koleno</em>).</td>
-<td style="text-align:left"><strong><a href="http://zebranoodlebar.cz/">Zebra Asian Noodle Bar</a></strong> (Melantrichova 5) for piping-hot ramen and wok noodles.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://vytopna.cz/en">Výtopna Railway Restaurant</a></strong></td>
-<td style="text-align:left">Interactive Model Train Restaurant</td>
-<td style="text-align:left">Digital model railway network spanning over 900 meters of track; miniature locomotives chug between tables to deliver craft beers and drinks directly to your seat.</td>
-<td style="text-align:left"><strong><a href="https://miskaramen.cz/">Miska Ramen Bar</a></strong> (Španělská 2) for authentic Japanese ramen bowls.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://kuchyn.ambi.cz/en/">Kuchyň</a></strong></td>
-<td style="text-align:left">Castle-View Traditional Kitchen</td>
-<td style="text-align:left">Located in the Salmovský Palace at Prague Castle gates; open-stove concept where guests lift copper pot lids to inspect slow-simmered traditional Czech recipes.</td>
-<td style="text-align:left"><strong><a href="https://www.facebook.com/Em81bistro/">Em81 Asian Bistro</a></strong> (Pohořelec 14) for Vietnamese noodle soups and summer rolls.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://nakvetnici.cz/">Restaurace Na Květnici</a></strong></td>
-<td style="text-align:left">Neighborhood Czech Gastropub</td>
-<td style="text-align:left">Unpretentious residential gastropub; hearty beef goulash with fluffy bread dumplings, roasted ribs, and cold draught lagers.</td>
-<td style="text-align:left"><strong><a href="https://hanfood.cz/">Han Food</a></strong> or <strong>Thai Bistro</strong> for quick, fragrant Asian street food.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🇨🇿 South Bohemia: Český Krumlov &amp; Lake Lipno</h2>
-<p>Nestled along the winding Vltava river, South Bohemia offers fairytale Renaissance architecture and winter outdoor recreation.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.zamek-ceskykrumlov.cz/en">Český Krumlov State Castle &amp; Cloak Bridge</a></strong></td>
-<td style="text-align:left">UNESCO World Heritage Fortress</td>
-<td style="text-align:left">Monumental castle complex; multi-tiered stone <strong><a href="https://www.zamek-ceskykrumlov.cz/en/explore/castle-interiors-and-exteriors/cloak-bridge">Cloak Bridge (<em>Plášťový most</em>)</a></strong> spanning a deep rock ravine with postcard views over the terracotta rooftops and river bend.</td>
-<td style="text-align:left">Castle courtyards and Cloak Bridge offer free 24/7 access; secure paid parking at Parkplatz P1 Chvalšinská.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.ckrumlov.info/en/advent/">Náměstí Svornosti Market Square</a></strong></td>
-<td style="text-align:left">Renaissance Town Center</td>
-<td style="text-align:left">Cobblestone square lined with pastel Gothic and Renaissance burgher houses; seasonal chalets serving warm honey wine (<em>medovina</em>) and roasted nuts.</td>
-<td style="text-align:left">Completely pedestrianized; easy 10-minute flat walk from castle gates.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.slideland.cz/">Bobová dráha Lipno (Slideland Lipno)</a></strong></td>
-<td style="text-align:left">Alpine Bobsleigh Coaster</td>
-<td style="text-align:left">All-weather twin coaster facility open year-round; features an elevated Mountain Alpine Coaster with two 360° spiral loops plus a 1 km stainless-steel trough track with 21 high-speed turns.</td>
-<td style="text-align:left">Located ~35 km south of Český Krumlov on Lake Lipno; hand-brake speed control suitable for solo or tandem riding.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="http://www.satlava.cz/en/">Krčma v Šatlavské ulici</a></strong></td>
-<td style="text-align:left">Historic 16th-Century Tavern</td>
-<td style="text-align:left">Housed in the town's former medieval prison; roaring open beechwood fire pit grilling thick steaks, skewers, and Bohemian sausages served on wooden boards.</td>
-<td style="text-align:left"><strong><a href="https://mysaigon.cz/">My Saigon</a></strong> (Panská 17) for family-run Vietnamese pho and crispy spring rolls.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🇦🇹 Vienna, Austria</h2>
-<p>Vienna blends imperial grandeur, grand coffeehouse traditions, and world-class classical arts with vibrant seasonal open-air celebrations.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.schoenbrunn.at/en/">Schönbrunn Palace Grand Tour</a></strong></td>
-<td style="text-align:left">Imperial Habsburg Palace</td>
-<td style="text-align:left">40 lavish state rooms of Emperor Franz Joseph and Empress Sisi, including the Great Gallery and Hall of Ceremonies; framed by vast baroque palace gardens.</td>
-<td style="text-align:left">Pre-book timed-entry tickets online to avoid ticket hall queues; reachable via U-Bahn U4 (Schönbrunn).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.stephanskirche.at/">St. Stephen's Cathedral (<em>Stephansdom</em>)</a></strong></td>
-<td style="text-align:left">Gothic Masterpiece</td>
-<td style="text-align:left">Vienna's spiritual landmark; soaring 136m South Tower, intricate stone pulpit by Anton Pilgram, and colorful glazed diamond-patterned roof tiles.</td>
-<td style="text-align:left">Central location at Stephansplatz (U1/U3); free access to rear nave, modest fee for tower or catacomb tours.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hofburg-wien.at/en/">Imperial Hofburg Palace Complex</a></strong></td>
-<td style="text-align:left">Imperial Residence &amp; Courts</td>
-<td style="text-align:left">St. Michael’s Wing, inner courtyards (<em>In der Burg</em>), vast Heldenplatz, and Renaissance courtyard of the <strong><a href="https://www.srs.at/en/">Spanish Riding School Stallburg</a></strong> to view the historic white Lipizzaner stallions.</td>
-<td style="text-align:left">Extensive pedestrian palace grounds; free to stroll courtyards 24/7.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://belvedere.at/en">Upper Belvedere Palace</a></strong></td>
-<td style="text-align:left">High Baroque Art Museum</td>
-<td style="text-align:left">Baroque palace complex set on a panoramic hill overlooking Vienna; home to Gustav Klimt's world-famous gold-leaf masterpieces <em><strong>The Kiss</strong></em> and <em>Judith</em>, plus works by Egon Schiele.</td>
-<td style="text-align:left">Pre-book timed admission tickets online; early morning slots offer the best viewing experience.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.karlskirche.at/">Karlskirche (St. Charles Church)</a></strong></td>
-<td style="text-align:left">High Baroque Cathedral</td>
-<td style="text-align:left">Monumental domed church flanked by colossal twin relief columns modeled after Trajan’s Column, with a large reflective pond glowing at dusk.</td>
-<td style="text-align:left">Located at Karlsplatz; beautiful illuminated photo vantage point from the plaza gardens.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hundertwasser-haus.info/en/">Hundertwasserhaus</a></strong></td>
-<td style="text-align:left">Expressionist Architecture</td>
-<td style="text-align:left">Whimsical, undulating apartment landmark designed by Friedensreich Hundertwasser; features patchwork facade colors, wavy floors, onion turrets, and over 200 trees growing on balconies.</td>
-<td style="text-align:left">Exterior viewing on Kegelgasse; visit adjacent Hundertwasser Village for souvenirs and cafes.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.wien.info/en/shopping-wining-dining/shopping/luxury-shopping-354960">The Imperial Promenade (Graben &amp; Kohlmarkt)</a></strong></td>
-<td style="text-align:left">Elegant Pedestrian Avenues</td>
-<td style="text-align:left">Grand pedestrian boulevards lined with historic palaces, court confectionery shops, luxury boutiques, and the Baroque <strong><a href="https://www.wien.info/en/sightseeing/sights/plague-column-341854">Plague Column (<em>Pestsäule</em>)</a></strong>.</td>
-<td style="text-align:left">Illuminated by oversized chandelier light installations in winter.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.christkindlmarkt.at/">Rathausplatz &amp; City Hall Plaza</a></strong></td>
-<td style="text-align:left">Neo-Gothic Landmark</td>
-<td style="text-align:left">Neo-Gothic City Hall plaza hosting grand seasonal markets, festive illuminations, and the glowing Tree of Hearts.</td>
-<td style="text-align:left">Free public access; served directly by tram lines 1, 2, and D.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.wienereistraum.com/en/">Wiener Eistraum (Vienna Ice Dream)</a></strong></td>
-<td style="text-align:left">Open-Air Ice Skating</td>
-<td style="text-align:left">Thousands of square meters of illuminated ice paths weaving between snow-dusted trees in City Hall Park with skate rentals and music.</td>
-<td style="text-align:left">Open throughout winter; lockers and skate sharpening available on-site.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hausdermusik.com/en/">Haus der Musik (Sound Museum)</a></strong></td>
-<td style="text-align:left">Interactive Museum</td>
-<td style="text-align:left">Innovative museum where visitors can virtually conduct the Vienna Philharmonic, step on a musical piano staircase, and experiment with acoustic sound tubes.</td>
-<td style="text-align:left">Open daily late into the evening; centrally located near the Vienna State Opera.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Cornetto Cappuccino</strong></td>
-<td style="text-align:left">Viral Coffee Specialty</td>
-<td style="text-align:left">Rich, velvety espresso or cappuccino served inside a dark-chocolate-lined crispy waffle ice cream cone.</td>
-<td style="text-align:left"><strong><a href="https://fenstercafe.com/">Fenster Café</a></strong> (Griechengasse 10).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Käsekrainer</strong></td>
-<td style="text-align:left">Iconic Viennese Sausage</td>
-<td style="text-align:left">Crispy grilled sausage studded with molten pockets of Emmental cheese; served with crusty roll and sweet mustard.</td>
-<td style="text-align:left"><strong><a href="https://www.bitzinger-wien.at/">Bitzinger Würstelstand Albertina</a></strong> (opposite Vienna State Opera).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Kaiserschmarrn</strong></td>
-<td style="text-align:left">Fluffy Shredded Pancake</td>
-<td style="text-align:left">Caramelized, torn pancake dusted with confectioner's sugar and served with warm spiced plum compote (<em>Zwetschkenröster</em>).</td>
-<td style="text-align:left"><strong><a href="https://www.demel.com/en/">Demel</a></strong> (Kohlmarkt / Schönbrunn Courtyard).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Imperial Torte &amp; Hot Chocolate</strong></td>
-<td style="text-align:left">Palace Salon Treat</td>
-<td style="text-align:left">Rich dark chocolate layered with almond pastry and cocoa cream; paired with thick hot chocolate topped with fresh whipped cream.</td>
-<td style="text-align:left"><strong><a href="https://www.cafe-imperial.at/en/">Café Imperial</a></strong> (Kärntner Ring 16).</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://figlmueller.at/en/">Figlmüller (Bäckerstraße)</a></strong></td>
-<td style="text-align:left">Classic Schnitzel Institution</td>
-<td style="text-align:left">World-famous home of the schnitzel since 1905; massive 30cm plate-overflowing paper-thin golden schnitzel served with marinated Austrian potato salad.</td>
-<td style="text-align:left"><strong><a href="https://reiskorn.at/">Reiskorn Wollzeile</a></strong> (Wollzeile 31) for fresh sushi, dim sum dumplings, and noodle bowls.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://cafecentral.wien/en/">Café Central</a></strong></td>
-<td style="text-align:left">Grand 19th-Century Coffeehouse</td>
-<td style="text-align:left">Monumental palace hall featuring vaulted marble pillars, classical piano music, traditional Viennese Melange, Sachertorte, and Apfelstrudel.</td>
-<td style="text-align:left"><strong><a href="https://www.misssaigon.at/">Miss Saigon</a></strong> (Herrengasse 27) for authentic Vietnamese pho and crispy duck.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://meisslundschadn.at/en/">Meissl &amp; Schadn</a></strong></td>
-<td style="text-align:left">Viennese Culinary Salon</td>
-<td style="text-align:left">Dedicated open <em>Schnitzel-Manufaktur</em>; traditional pan-fried veal schnitzel in clarified butter, classic boiled beef (<em>Tafelspitz</em>), and seasonal Austrian roasts.</td>
-<td style="text-align:left"><strong><a href="https://akakiko.at/schwarzenbergplatz/">Akakiko</a></strong> (Schwarzenbergplatz 16) for modern pan-Asian sushi, ramen, and gyoza.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.gasthaus-stern.at/">Gasthaus Stern</a></strong></td>
-<td style="text-align:left">Authentic Neighborhood Wirtshaus</td>
-<td style="text-align:left">Traditional suburban tavern; golden crispy Wiener Schnitzel with potato-lamb's lettuce salad, tender beef Tafelspitz, and local Austrian beers.</td>
-<td style="text-align:left"><strong><a href="https://miyama.at/">Miyama Asian</a></strong> (Simmeringer Hauptstraße 63) for sushi and wok noodle dishes.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🇸🇰 Bratislava, Slovakia</h2>
-<p>Just an hour down the Danube from Vienna, Bratislava charms with compact cobblestone streets, quirky public art, and clifftop castle views.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://bratislava-hrad.sk/en">Bratislava Castle (<em>Bratislavský hrad</em>)</a></strong></td>
-<td style="text-align:left">Historic Clifftop Castle</td>
-<td style="text-align:left">Imposing 4-turreted white fortress perched atop a rocky hill; panoramic ramparts looking out across the Danube into Austria and Hungary.</td>
-<td style="text-align:left">Castle grounds and courtyards are free to enter; easy walk or short trolleybus ride from Old Town.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://muzeumbratislava.sk/en/michaels-tower">Michael’s Gate (<em>Michalská brána</em>)</a></strong></td>
-<td style="text-align:left">Medieval Gate &amp; Statue Hunt</td>
-<td style="text-align:left">14th-century Gothic gate tower with the brass &quot;Kilometer Zero&quot; rosette; cobblestone streets featuring famous bronze statues: <strong><a href="https://visitbratislava.com/places/cumil/">Čumil the Sewer Man</a></strong>, <strong><a href="https://visitbratislava.com/places/schone-naci/">Schöne Náci</a></strong>, and the <strong><a href="https://visitbratislava.com/places/napoleons-soldier/">Napoleonic Soldier</a></strong>.</td>
-<td style="text-align:left">Compact and easily explored on foot in under 1 hour.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://visitbratislava.com/places/the-blue-church/">The Blue Church (<em>Modrý kostolík</em>)</a></strong></td>
-<td style="text-align:left">Art Nouveau Architecture</td>
-<td style="text-align:left">Fairytale pastel baby-blue church built in 1913, decorated with blue-glazed roof ceramics and gold mosaics resembling an iced confection.</td>
-<td style="text-align:left">Located on Bezručova street; peaceful 10-minute walk east of the main pedestrian core.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.u-f-o.sk/en/">UFO Observation Deck &amp; Bridge (<em>Most SNP</em>)</a></strong></td>
-<td style="text-align:left">High-Altitude Observation Deck</td>
-<td style="text-align:left">High-speed elevator whisks visitors 95 meters up to an iconic flying-saucer observation deck on the SNP Bridge for sunset river views.</td>
-<td style="text-align:left">Open late into the evening; ticket price offset against restaurant dining bills.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Bratislavské rožky</strong></td>
-<td style="text-align:left">Traditional Pastry</td>
-<td style="text-align:left">Centuries-old crescent rolls filled with sweetened ground walnut paste or fragrant poppy seed filling.</td>
-<td style="text-align:left">Available in traditional Old Town bakeries and pastry shops.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://mestianskypivovar.sk/">Bratislavský Meštiansky Pivovar</a></strong></td>
-<td style="text-align:left">Traditional Slovak Brewery</td>
-<td style="text-align:left">Convivial microbrewery tavern; roasted garlic soup served in a crusty bread loaf (<em>cesnačka v bochníku</em>), potato dumplings with sheep cheese and bacon (<em>bryndzové halušky</em>), and slow-roasted duck with potato flatbreads (<em>lokše</em>).</td>
-<td style="text-align:left"><strong><a href="https://jasmin.sk/">Jasmin Asian Restaurant</a></strong> (Židovská 7) right at castle steps for hot soups and dumplings.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://zylinder.sk/en/">Zylinder Cafe &amp; Restaurant</a></strong></td>
-<td style="text-align:left">Historic Austro-Hungarian Dining</td>
-<td style="text-align:left">Elegant historic dining room on Hviezdoslav Square; authentic Pressburg Tafelspitz, braised game meats, and delicate regional desserts.</td>
-<td style="text-align:left"><strong><a href="https://woksushi.sk/">Wok&amp;Sushi</a></strong> (Mostová 2) for fresh sushi and wok-fried noodles.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🐎 Ramsau am Dachstein, Austrian Alps</h2>
-<p>A winter wonderland nestled on an elevated plateau directly below the sheer 1,000m limestone south face of the Dachstein glacier.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Ramsau High Alpine Plateau (1,150m)</strong></td>
-<td style="text-align:left">Alpine Nature &amp; Glacier Vistas</td>
-<td style="text-align:left">Wide, sun-drenched plateau covered in deep natural snow, framed by the towering alpine walls of the Dachstein massif.</td>
-<td style="text-align:left">Panoramic scenic driving access via B320 / L711; winter tires required.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.schladming-dachstein.at/en">Horse-Drawn Sleigh Ride (<em>Pferdeschlittenfahrt</em>)</a></strong></td>
-<td style="text-align:left">Alpine Tradition</td>
-<td style="text-align:left">Ride across sparkling, silent snowfields wrapped in warm wool blankets as sturdy Noriker horses glide through winter forests.</td>
-<td style="text-align:left">Reserve slots in advance with local operators (<em>Fuhrwerker Knaus</em> or <em>Prugger</em>); routes depart from Ramsau center.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Alpine Huts</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.schladming-dachstein.at/en/service/infos-a-z/Walcheralm_az_284149">Walcheralm / Glösalm</a></strong></td>
-<td style="text-align:left">Rustic Wooden Alpine Hut</td>
-<td style="text-align:left">Authentic mountain lodge at 1,150m; hot skillet cheese spaetzle (<em>Kasnocken</em>), cured farmhouse speck, warm Kaiserschmarrn, and steaming berry punch.</td>
-<td style="text-align:left">Cozy log fire interiors; easily accessible near sleigh departure tracks.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🇦🇹 Salzburg &amp; Berchtesgadener Land</h2>
-<p>The Baroque city of Mozart and <em>The Sound of Music</em>, framed by emerald alpine lakes and dramatic Bavarian mountain peaks.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.salzburg-burgen.at/en/hohensalzburg-castle/">Hohensalzburg Fortress</a></strong></td>
-<td style="text-align:left">Medieval Clifftop Fortress</td>
-<td style="text-align:left">Europe’s largest fully preserved 11th-century castle; reached via funicular, featuring the Golden Hall, medieval torture tower, and panoramic sunset terraces.</td>
-<td style="text-align:left">Funicular departs from Festungsgasse; ticket includes museum access and observation viewpoints.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://mozarteum.at/en/museums/mozarts-birthplace">Mozart’s Birthplace (<em>Mozarts Geburtshaus</em>)</a></strong></td>
-<td style="text-align:left">Historic Composer Residence</td>
-<td style="text-align:left">Getreidegasse 9; the preserved house where Wolfgang Amadeus Mozart was born in 1756, displaying his childhood violin, clavichord, and family portraits.</td>
-<td style="text-align:left">Located in the heart of the pedestrian shopping street; combination tickets with Mozart Residence available.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.salzburg.info/en/sights/top-10/mirabell-palace-gardens">Mirabell Palace &amp; Gardens</a></strong></td>
-<td style="text-align:left">Baroque Palace Grounds</td>
-<td style="text-align:left">Renowned 17th-century palace gardens featuring the famous &quot;Do-Re-Mi&quot; steps from <em>The Sound of Music</em>, Pegasus fountain, and marble statues.</td>
-<td style="text-align:left">Free public park access; open daily year-round with clear views up to Hohensalzburg Fortress.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://christkindlmarkt.co.at/en/">Salzburg Christkindlmarkt</a></strong></td>
-<td style="text-align:left">Historic Seasonal Market</td>
-<td style="text-align:left">Historic market beneath the cathedral dome on Domplatz and Residenzplatz, featuring choir music, woodcraft chalets, and hot Austrian punch.</td>
-<td style="text-align:left">Open daily through the festive holiday season into the New Year.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.salzwelten.at/en/hallstatt">Hallstatt UNESCO Village &amp; Lake</a></strong></td>
-<td style="text-align:left">Alpine Lakeside Heritage</td>
-<td style="text-align:left">Postcard-perfect 16th-century wooden alpine village built between steep mountain cliffs and mirror-calm Lake Hallstatt.</td>
-<td style="text-align:left">Day-trip destination ~70 km east of Salzburg; park at designated outer village lots (P1/P2) and stroll the car-free lakeside promenade.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.seenschifffahrt.de/en/koenigssee/">St. Bartholomä Pilgrimage Church</a></strong></td>
-<td style="text-align:left">Bavarian Alpine Landmark</td>
-<td style="text-align:left">Iconic 17th-century twin red-domed church nestled at the foot of Mount Watzmann's eastern wall on the shores of Lake Königssee.</td>
-<td style="text-align:left">Accessible exclusively by quiet electric passenger boats departing from Schönau am Königssee.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hangar-7.com/en/">Red Bull Hangar-7</a></strong></td>
-<td style="text-align:left">Aviation &amp; Formula 1 Showcase</td>
-<td style="text-align:left">Futuristic titanium-and-glass dome at Salzburg Airport; houses Red Bull Racing championship F1 cars, aerobatic aircraft, and space-jump equipment.</td>
-<td style="text-align:left"><strong>100% Free Admission!</strong> Open daily 09:00–22:00; on-site dining and lounge bars available.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.salzwelten.at/en/hallstatt">Hallstatt Skywalk (<em>Welterbeblick</em>)</a></strong></td>
-<td style="text-align:left">Cantilevered Panoramic Deck</td>
-<td style="text-align:left">Dramatic steel platform cantilevered 350 meters above Lake Hallstatt, offering breathtaking views over the fjord and alpine peaks.</td>
-<td style="text-align:left">Reached via the Salzbergbahn funicular; scenic walking trail on the plateau.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.salzbergwerk.de/en">Berchtesgaden Salt Mine (<em>Salzbergwerk</em>)</a></strong></td>
-<td style="text-align:left">Underground Mine Tour</td>
-<td style="text-align:left">Don protective miner overalls, ride an electric train deep into the mountain, glide down two 40m wooden miner slides, and cross a subterranean salt lake by raft.</td>
-<td style="text-align:left">Pre-book timed tickets online; located just across the Bavarian border (25 mins from Salzburg).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.seenschifffahrt.de/en/koenigssee/">Königssee Electric Boat Cruise</a></strong></td>
-<td style="text-align:left">Electric Boat Excursion</td>
-<td style="text-align:left">Silent electric boat glides across emerald waters; the boatman plays a flugelhorn against the vertical Echo Wall, producing a crystal-clear mountain echo.</td>
-<td style="text-align:left">Year-round boat service to St. Bartholomä; dress warmly for open lake air.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>The Original Bosna</strong></td>
-<td style="text-align:left">Spicy Grilled Sausage</td>
-<td style="text-align:left">Two spiced grilled bratwurst sausages inside a toasted roll with chopped onions, fresh parsley, and a secret blend of curry spices.</td>
-<td style="text-align:left"><strong><a href="https://salzburg.info/en/dining-shopping/restaurants/balkan-grill-walter_az_7342">Balkan Grill Walter</a></strong> (Getreidegasse 33 passageway).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Original Salzburger Mozartkugeln</strong></td>
-<td style="text-align:left">Handmade Confectionery</td>
-<td style="text-align:left">Marzipan with green pistachio, layered with rich hazelnut nougat, and hand-dipped in dark chocolate; wrapped in authentic blue-and-silver foil.</td>
-<td style="text-align:left"><strong><a href="https://www.fuerst.cc/en/">Café Konditorei Fürst</a></strong> (Brodgasse 13 &amp; Mirabellplatz).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Salzburger Nockerl</strong></td>
-<td style="text-align:left">Baked Vanilla Soufflé</td>
-<td style="text-align:left">Delicate, airy sweet vanilla soufflé baked in three towering peaks to represent Salzburg's surrounding hills: Mönchsberg, Kapuzinerberg, and Gaisberg.</td>
-<td style="text-align:left">Traditional restaurants such as Bärenwirt or Stieglkeller.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.stpeter.at/en/">St. Peter Stiftskulinarium</a></strong></td>
-<td style="text-align:left">Historic Fine Dining</td>
-<td style="text-align:left">Europe’s oldest recorded restaurant (dating to 803 AD); ancient stone vaults carved into the cliff face; classic Austrian roasts and modern alpine fine dining.</td>
-<td style="text-align:left"><strong><a href="https://ichigoichie.at/">Ichi Go Ichi E Ramen Bar</a></strong> (Kajetanerplatz 1) for steaming Tonkotsu and Miso ramen.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.sternbrau.com/en/">Sternbräu</a></strong> &amp; <strong><a href="https://www.restaurant-stieglkeller.at/en/">Stieglkeller</a></strong></td>
-<td style="text-align:left">Historic Brewery Taverns</td>
-<td style="text-align:left">Vast arched beer halls and hillside terraces; crispy Wiener Schnitzel, roast pork knuckle with beer gravy (<em>Bierbraten</em>), and Pinzgauer cheese dumplings.</td>
-<td style="text-align:left"><strong><a href="https://www.kim168.at/">Kim 168</a></strong> (Alten Markt 7) for Korean bibimbap or <strong><a href="https://www.nagano-salzburg.at/">Nagano</a></strong> for fresh sushi.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.baerenwirt-salzburg.at/">Bärenwirt Salzburg</a></strong></td>
-<td style="text-align:left">Classic Riverside Tavern</td>
-<td style="text-align:left">Historic tavern famous since 1663 for Austria’s crispiest <em>Backhendl</em> (fried chicken), hearty dumplings, and freshly baked Salzburger Nockerl.</td>
-<td style="text-align:left"><strong><a href="https://yaoyao.at/">yaoyao</a></strong> (Europaplatz 1) for creative Asian fusion, sushi, and Thai curries.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.rudolfsturm.at/">Restaurant Rudolfsturm</a></strong></td>
-<td style="text-align:left">Mountain Defense Tower</td>
-<td style="text-align:left">Perched high above Lake Hallstatt with open-air terrace dining; fresh local lake fish, Austrian goulash, and dumplings.</td>
-<td style="text-align:left"><strong><a href="https://www.zauner-hallstatt.at/">Seewirt Zauner</a></strong> in Hallstatt market square for grilled lake trout.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://gasthof-neuhaus.de/">Gasthof Neuhaus</a></strong></td>
-<td style="text-align:left">Bavarian Market Tavern</td>
-<td style="text-align:left">Centrally located in Berchtesgaden; hearty Bavarian roast pork with crackling (<em>Krustenbraten</em>), potato dumplings, and local draft beers.</td>
-<td style="text-align:left">Cozy local cafes and bakeries in Berchtesgaden town center.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🛷 Wildkogel-Arena &amp; Rosenheim</h2>
-<p>Famous for the world's longest floodlit toboggan track and traditional Upper Bavarian market towns.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Smaragdbahn Gondola &amp; Alpine Panorama</strong></td>
-<td style="text-align:left">High Alpine Summit (2,100m)</td>
-<td style="text-align:left">Sweeping vistas across the glaciated 3,000m peaks of Hohe Tauern National Park, including the Großvenediger (3,657m).</td>
-<td style="text-align:left">Gondola ascends from Bramberg am Wildkogel; ski passes or single pedestrian/sledding tickets available.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Pass Thurn Alpine Crossing (1,274m)</strong></td>
-<td style="text-align:left">Scenic Mountain Highway</td>
-<td style="text-align:left">Panoramic high-altitude pass on highway B161 linking Salzburg’s Pinzgau with Tyrol and Bavaria.</td>
-<td style="text-align:left">Modern, well-maintained alpine roadway; scenic viewpoint pullouts along the route.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Max-Josefs-Platz (Rosenheim)</strong></td>
-<td style="text-align:left">Bavarian Market Square</td>
-<td style="text-align:left">Pedestrian historic square lined with 15th-century <em>Inn-Salzach-style</em> pastel merchant houses with curved battlements and covered arcades.</td>
-<td style="text-align:left">Great evening stop for strolling and tavern dining; central covered parking at Parkhaus Samerstraße.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.wildkogel-arena.at/en/">Wildkogel-Arena 14 km Toboggan Run</a></strong></td>
-<td style="text-align:left">World's Longest Sled Run</td>
-<td style="text-align:left">A 14 km continuous downhill groomed toboggan track descending 1,300 vertical meters from 2,100m summit to the Bramberg valley (~40–50 mins per descent).</td>
-<td style="text-align:left">Sturdy wooden toboggans available for rent at the gondola base (Sport 2000 Herzog / Intersport Harms); wear ski goggles and warm winter boots.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Germknödel</strong></td>
-<td style="text-align:left">Sweet Mountain Dumpling</td>
-<td style="text-align:left">Giant fluffy steamed yeast dumpling filled with spiced plum jam (<em>Powidl</em>), floating in warm vanilla cream sauce, dusted with crushed poppy seeds and sugar.</td>
-<td style="text-align:left"><strong><a href="https://www.wolkenstein.at/">Aussichtsrestaurant Wolkenstein</a></strong> at 2,100m summit.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.wolkenstein.at/">Aussichtsrestaurant Wolkenstein</a></strong></td>
-<td style="text-align:left">Mountain Lodge at 2,100m</td>
-<td style="text-align:left">Located 50m from the top gondola station; sizzling skillet <em>Tiroler Gröstl</em> (fried potatoes, beef, and fried egg), <em>Kaspressknödelsuppe</em>, and fresh Germknödel.</td>
-<td style="text-align:left">High-altitude alpine dining with panoramic sundeck.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.floetzinger-braeustueberl.de/">Flötzinger Bräustüberl</a></strong></td>
-<td style="text-align:left">Historic 1543 Brewery Tavern</td>
-<td style="text-align:left">Rosenheim’s oldest private brewery tavern (World Beer Cup Gold winner); crispy Bavarian pork knuckle (<em>Schweinshaxe</em>), <em>Allgäuer Käsespätzle</em>, and <em>Apfelkücherl</em>.</td>
-<td style="text-align:left"><strong><a href="https://asiaworld-rosenheim.de/">Asia World Restaurant</a></strong> (Münchener Straße 18) or <strong><a href="https://vietpho-rosenheim.de/">Viet Phở</a></strong> (Salinstraße 11).</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🏰 Schloss Neuschwanstein &amp; Allgäu, Bavaria</h2>
-<p>The ultimate fairytale palace setting perched high above dramatic alpine gorges in southwestern Bavaria.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hohenschwangau.de">Schloss Neuschwanstein</a></strong></td>
-<td style="text-align:left">19th-Century Royal Palace</td>
-<td style="text-align:left">King Ludwig II’s iconic fairytale fortress; guided interior tour covering the Throne Room, King's Bedroom, artificial grotto, and the grand Singers' Hall.</td>
-<td style="text-align:left">Timed tickets must be pre-booked online 6–8 weeks in advance via Hohenschwangau official ticket portal; entry strictly by tour.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hohenschwangau.de">Marienbrücke (Mary’s Bridge)</a></strong></td>
-<td style="text-align:left">High Suspension Footbridge</td>
-<td style="text-align:left">Steel bridge spanning 90 meters over the dramatic Pöllat Gorge waterfall, offering the classic panoramic postcard view of Neuschwanstein.</td>
-<td style="text-align:left">Accessible via the castle shuttle bus path; bridge may close temporarily during severe ice conditions.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Hohenschwangau &amp; Lake Alpsee</strong></td>
-<td style="text-align:left">Alpine Village &amp; Lake</td>
-<td style="text-align:left">Scenic lakeside village situated between Neuschwanstein and Hohenschwangau castles, framed by towering alpine peaks.</td>
-<td style="text-align:left">Flat walking paths around Lake Alpsee; horse-drawn carriage pickups in the village center.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Mountain Shuttle &amp; Carriage Ascent</strong></td>
-<td style="text-align:left">Scenic Mountain Transit</td>
-<td style="text-align:left">Electric shuttle bus departs near Schlosshotel Lisl up to the Marienbrücke ridge, or traditional horse-drawn carriage up to the castle gates.</td>
-<td style="text-align:left">Shuttle operates continuously throughout the day; small fare payable at boarding.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.schlosswirt-hohenschwangau.de/">Schlosswirt Hohenschwangau</a></strong></td>
-<td style="text-align:left">Bavarian Castle Inn</td>
-<td style="text-align:left">Cozy rustic inn located directly below the castle in Hohenschwangau village; hot cheese spaetzle (<em>Allgäuer Kässpatzen</em>), crispy schnitzel, and warm strudel.</td>
-<td style="text-align:left"><strong><a href="https://madamepluesch.de/">Madame Plüsch</a></strong> or Asia Restaurant in nearby historic Füssen (4 km drive).</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🇩🇪 Munich, Bavaria</h2>
-<p>Munich harmonizes centuries of Wittelsbach royal grandeur with futuristic technology and quintessential Bavarian beer hall culture.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.muenchen.de/en/sights/attractions/new-town-hall">Marienplatz &amp; New Town Hall (<em>Neues Rathaus</em>)</a></strong></td>
-<td style="text-align:left">Historic Central Square</td>
-<td style="text-align:left">Gothic Revival town hall featuring the world-famous Glockenspiel mechanical clock with 32 dancing figures and 43 chimes playing daily at 11:00 AM.</td>
-<td style="text-align:left">Central pedestrian hub; central transfer station for all S-Bahn and U-Bahn lines.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.muenchen.de/en/sights/attractions/viktualienmarkt">Viktualienmarkt</a></strong></td>
-<td style="text-align:left">Outdoor Gourmet Food Market</td>
-<td style="text-align:left">Historic open-air gourmet market spanning over 100 colorful stalls selling artisanal cheeses, wild game sausages, fresh pastries, and warm pretzels.</td>
-<td style="text-align:left">Steps from Marienplatz; stalls operate Monday through Saturday.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.muenchen.de/en/sights/attractions/eisbach-wave">Eisbachwelle (English Garden)</a></strong></td>
-<td style="text-align:left">Urban Cold-Water River Surfing</td>
-<td style="text-align:left">Spectators gather on Prinzregentenstraße bridge to watch daredevil river surfers carve turns on a permanent standing river wave in winter neoprene wetsuits.</td>
-<td style="text-align:left">Free public spectacle open 24/7 year-round; adjacent to scenic paths of the English Garden.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.schloss-nymphenburg.de/englisch/palace/">Schloss Nymphenburg</a></strong></td>
-<td style="text-align:left">Royal Wittelsbach Summer Palace</td>
-<td style="text-align:left">Vast 17th-century Baroque royal residence; snow-covered canals where locals play traditional Bavarian ice curling (<em>Eisstockschießen</em>), and expansive formal parklands.</td>
-<td style="text-align:left">Spacious free visitor parking in front of the palace crescent; tram 17 stops directly at palace grounds.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.olympiapark.de/en/">Olympiapark &amp; Olympiaberg</a></strong></td>
-<td style="text-align:left">Olympic Park &amp; Panoramic Hill</td>
-<td style="text-align:left">Paved, gentle walking trail up Olympiaberg hill offering 360° views across Munich’s skyline, iconic 1972 tent-roof stadium, and BMW headquarters.</td>
-<td style="text-align:left">Free public park access; illuminated evening walking paths.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.bmw-welt.com/en.html">BMW Welt</a></strong></td>
-<td style="text-align:left">Futuristic Automotive Showroom</td>
-<td style="text-align:left">Striking architectural glass landmark; get up close and sit inside high-performance BMW M-models, Rolls-Royce, MINI, and BMW Motorrad superbikes.</td>
-<td style="text-align:left"><strong>100% Free Admission!</strong> Open daily; connected directly to U-Bahn station Olympiazentrum (U3).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://motorworld.de/en/munich/">Motorworld Munich</a></strong></td>
-<td style="text-align:left">Hypercar &amp; Motorsport Hall</td>
-<td style="text-align:left">Restored historic locomotive repair hall housing glass showcase boxes filled with hypercars (Bugatti, Koenigsegg, Pagani, Ferrari, McLaren, vintage Porsche racers).</td>
-<td style="text-align:left"><strong>100% Free Admission!</strong> Open 365 days a year from 10:00–22:00; on-site dining and car boutiques.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.muenchner-eiszauber.de/">Münchner Eiszauber (Karlsplatz / Stachus)</a></strong></td>
-<td style="text-align:left">Seasonal Outdoor Ice Rink</td>
-<td style="text-align:left">Open-air outdoor ice skating rink set right before the medieval Karlstor gate, featuring music, skate rentals, and warm punch stands.</td>
-<td style="text-align:left">Central location at Karlsplatz (Stachus); skate hire and gear lockers on-site.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://zugspitze.de/en">Zugspitze (Top of Germany — 2,962m)</a></strong></td>
-<td style="text-align:left">Highest Peak &amp; Glacier</td>
-<td style="text-align:left">Panoramic cable car ascent from Lake Eibsee up to Germany's highest mountain summit at 2,962m, offering views of 400 peaks across 4 countries.</td>
-<td style="text-align:left">Located ~100 km south of Munich; tickets include glacier cable car rides; check summit webcam before traveling.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Leberkässemmel</strong></td>
-<td style="text-align:left">Hot Savory Meat Snack</td>
-<td style="text-align:left">Thick slice of warm, freshly baked Bavarian meatloaf served inside a crusty Kaiser roll with sweet Bavarian mustard (<em>Süßer Senf</em>).</td>
-<td style="text-align:left"><strong><a href="https://www.metzgerei-reichlmayr.de/">Metzgerei Reichlmayr</a></strong> (Viktualienmarkt).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Schmalznudel / Auszogne</strong></td>
-<td style="text-align:left">Fresh Deep-Fried Pastry</td>
-<td style="text-align:left">Traditional Bavarian yeast dough pastry, hand-stretched thin in the center and fried golden-brown in copper cauldrons; served piping hot.</td>
-<td style="text-align:left"><strong><a href="https://www.schmalznudel.cafe/">Café Frischhut</a></strong> (Prälat-Zistl-Straße 8, near Viktualienmarkt).</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://augustiner-braeu.de/">Augustiner Stammhaus</a></strong></td>
-<td style="text-align:left">Flagship Historic Brewery Hall</td>
-<td style="text-align:left">Landmark 1328 brewery restaurant on the central pedestrian avenue; crispy roast pork (<em>Schweinsbraten</em>) with crackling, potato dumplings, and Augustiner Edelstoff from wooden barrels.</td>
-<td style="text-align:left"><strong><a href="https://takumi-ramen.de/">Takumi Munich</a></strong> for Japanese ramen or <strong><a href="https://cowei.de/">Co Wei</a></strong> for Vietnamese pho.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.hofbraeukeller.de/en/">Hofbräukeller am Wiener Platz</a></strong></td>
-<td style="text-align:left">Neo-Renaissance Tavern</td>
-<td style="text-align:left">Welcoming Haidhausen brewery tavern with vaulted brick ceilings, tiled stoves, crispy pork knuckle, and homemade Käsespätzle.</td>
-<td style="text-align:left"><strong><a href="https://kokumi-restaurant.de/">Kokumi Sushi &amp; Grill</a></strong> or <strong><a href="https://banyan-restaurant.de/">Banyan Vietnamese</a></strong> (Wiener Platz).</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://paulaner-nockherberg.com/">Paulaner am Nockherberg</a></strong></td>
-<td style="text-align:left">Historic Brewery Hall &amp; Vaults</td>
-<td style="text-align:left">Monumental historic tavern, birthplace of Salvator strong beer; colossal copper brewing kettles, slow-roasted duck, and warm Kaiserschmarrn.</td>
-<td style="text-align:left"><strong><a href="https://wokone-muenchen.de/">Wok One</a></strong> (Rosenheimer Straße 139) for Asian stir-fry and noodles.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.schneider-brauhaus.de/">Schneider Bräuhaus</a></strong></td>
-<td style="text-align:left">Traditional Weisse Tavern</td>
-<td style="text-align:left">Historic tavern near Marienplatz specializing in traditional Bavarian Schneider Weisse wheat beers and classic Bavarian tavern dishes.</td>
-<td style="text-align:left"><strong><a href="https://kuffler.de/en/spatenhaus/">Spatenhaus an der Oper</a></strong> for refined Bavarian classics.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>⚽ Allianz Arena &amp; Ingolstadt Village</h2>
-<p>World-class football history and designer open-air shopping along the northern highway corridor from Munich.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://allianz-arena.com/en">Allianz Arena</a></strong></td>
-<td style="text-align:left">World-Class Football Stadium</td>
-<td style="text-align:left">Modern 75,000-seat home of FC Bayern Munich; facade constructed from 2,760 inflatable diamond-shaped ETFE cushions that glow brightly at night.</td>
-<td style="text-align:left">Located at A9 Exit 73 (Fröttmaning-Süd); multi-story visitor parking at Parkhaus P1–P3.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://allianz-arena.com/en/arena-tour-museum/fc-bayern-store">FC Bayern Megastore</a></strong></td>
-<td style="text-align:left">Official Flagship Store</td>
-<td style="text-align:left">Two-story official club store featuring full match jerseys, winter gear, scarves, training collections, and souvenirs.</td>
-<td style="text-align:left">Located on Level 3 inside the Arena Entrance North; open on non-matchdays.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://allianz-arena.com/en">Allianz Arena Guided Tour &amp; FC Bayern Museum</a></strong></td>
-<td style="text-align:left">Guided Stadium &amp; Club Tour</td>
-<td style="text-align:left">Guided tour takes visitors into the team dressing room, player tunnel, press conference hall, and pitchside team dugouts; museum showcases 6 Champions League trophies and 33 Bundesliga <em>Meisterschalen</em>.</td>
-<td style="text-align:left">Pre-book tickets online via the official website; combination tickets cover both the guided tour and museum access.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.thebicestercollection.com/ingolstadt-village/en">Ingolstadt Village Designer Outlet</a></strong></td>
-<td style="text-align:left">Open-Air Designer Shopping</td>
-<td style="text-align:left">Picturesque open-air Bavarian-style shopping village featuring 110+ designer boutiques (Nike, Ralph Lauren, Tommy Hilfiger, Lindt) with year-round discounts of 30%–60%.</td>
-<td style="text-align:left">Located off A9 Exit 61 (Ingolstadt-Nord); over 2,000 free parking spaces; luggage storage on-site.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Highway &amp; Village Dining</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Location &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.thebicestercollection.com/ingolstadt-village/en/food-and-drink">Ingolstadt Village Dining</a></strong></td>
-<td style="text-align:left">International Village Cafes</td>
-<td style="text-align:left">Vietnamese pho noodle bowls at <em>Indochine</em>, freshly baked pizza and pasta at <em>Piccola Cucina</em>, gourmet Bavarian sausages at <em>Käfer Bistro</em>, and artisan hot chocolate at <em>Lindt</em>.</td>
-<td style="text-align:left">Located directly along the pedestrian shopping promenade.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><em>Compiled as an open, public travel resource for independent travelers exploring Central Europe in winter.</em></p>
+<p><em>Curated as a public travel resource for independent travelers.</em></p>
 
   </main>
 
@@ -1572,7 +512,14 @@
         table.parentNode.insertBefore(wrapper, table);
         wrapper.appendChild(table);
       });
+
+      // Auto-hide destination-specific pills if not on the Central Europe trip page
+      const hasTripDestinations = document.querySelector("#-prague-czech-republic") !== null;
+      if (!hasTripDestinations) {
+        document.querySelectorAll(".trip-nav").forEach(el => el.style.display = "none");
+      }
     });
+
 
     // Back to top button visibility
     const backToTop = document.getElementById("backToTop");
@@ -1605,3 +552,4 @@
   </script>
 </body>
 </html>
+
