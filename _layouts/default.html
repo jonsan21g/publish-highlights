@@ -726,40 +726,81 @@
           }
         });
 
-        // 5. Dynamic ScrollSpy: Highlight active country/section in sticky nav
-        const countryAnchors = [
-          { id: "country-czech", key: "czech" },
-          { id: "country-austria", key: "austria" },
-          { id: "country-slovakia", key: "slovakia" },
-          { id: "country-germany", key: "germany" }
-        ];
+        // 5. Universal Dynamic ScrollSpy: Automatically detects nav sections on any guide
+        const navDropdowns = document.querySelectorAll(".nav-dropdown");
+        const scrollItems = [];
 
-        window.addEventListener("scroll", () => {
-          const scrollPos = window.scrollY + 130;
-          let currentCountry = null;
-
-          for (const item of countryAnchors) {
-            const el = document.getElementById(item.id);
-            if (el) {
-              const top = el.offsetTop;
-              if (scrollPos >= top) {
-                currentCountry = item.key;
+        navDropdowns.forEach(dropdown => {
+          const mainLink = dropdown.querySelector(".nav-country-link");
+          if (mainLink) {
+            const href = mainLink.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              const targetId = href.substring(1);
+              const targetEl = document.getElementById(targetId);
+              if (targetEl) {
+                scrollItems.push({
+                  targetEl: targetEl,
+                  btnGroup: dropdown.querySelector(".nav-btn-group"),
+                  dropdown: dropdown
+                });
               }
             }
           }
+        });
 
-          document.querySelectorAll(".nav-dropdown").forEach(dropdown => {
-            const countryKey = dropdown.getAttribute("data-country");
-            const btnGroup = dropdown.querySelector(".nav-btn-group");
-            if (btnGroup) {
-              if (countryKey === currentCountry) {
-                btnGroup.classList.add("active");
-              } else {
-                btnGroup.classList.remove("active");
+        // Also capture standalone nav button groups (for simple or dynamic navbars)
+        document.querySelectorAll(".nav-countries > .nav-btn-group").forEach(group => {
+          const mainLink = group.querySelector(".nav-country-link");
+          if (mainLink) {
+            const href = mainLink.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              const targetEl = document.getElementById(href.substring(1));
+              if (targetEl) {
+                scrollItems.push({
+                  targetEl: targetEl,
+                  btnGroup: group,
+                  dropdown: null
+                });
               }
             }
-          });
+          }
         });
+
+        function updateScrollSpy() {
+          if (!scrollItems.length) return;
+          const threshold = 130; // offset below sticky nav
+          let currentItem = null;
+
+          // Find the active section based on bounding client rect
+          for (let i = 0; i < scrollItems.length; i++) {
+            const rect = scrollItems[i].targetEl.getBoundingClientRect();
+            if (rect.top <= threshold) {
+              currentItem = scrollItems[i];
+            }
+          }
+
+          // If scrolled near the bottom of the page, activate the last section
+          if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
+            currentItem = scrollItems[scrollItems.length - 1];
+          }
+
+          // If scrolled above the first section (e.g. in the hero header), highlight the first section
+          if (!currentItem && scrollItems.length > 0) {
+            currentItem = scrollItems[0];
+          }
+
+          scrollItems.forEach(item => {
+            if (item === currentItem) {
+              if (item.btnGroup) item.btnGroup.classList.add("active");
+            } else {
+              if (item.btnGroup) item.btnGroup.classList.remove("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", updateScrollSpy, { passive: true });
+        window.addEventListener("resize", updateScrollSpy, { passive: true });
+        updateScrollSpy();
       }
     });
 

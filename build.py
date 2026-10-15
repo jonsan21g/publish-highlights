@@ -58,6 +58,11 @@ def inject_heading_ids(html_str):
         ("neuschwanstein", ["neuschwanstein"]),
         ("munich", ["munich", "münchen"]),
         ("allianz", ["allianz", "ingolstadt"]),
+        ("tokyo-west", ["tokyo — modern", "shinjuku", "shibuya"]),
+        ("disneysea", ["disney", "disneysea"]),
+        ("osaka", ["osaka"]),
+        ("kyoto-nara", ["kyoto", "nara", "uji"]),
+        ("tokyo-east", ["historic asakusa", "asakusa", "ginza", "skytree"]),
     ]
 
     country_starts = {
@@ -65,6 +70,11 @@ def inject_heading_ids(html_str):
         "vienna": "country-austria",
         "bratislava": "country-slovakia",
         "neuschwanstein": "country-germany",
+        "tokyo-west": "region-tokyo-west",
+        "disneysea": "region-disneysea",
+        "osaka": "region-osaka",
+        "kyoto-nara": "region-kyoto-nara",
+        "tokyo-east": "region-tokyo-east",
     }
 
     current_dest = None
@@ -99,11 +109,11 @@ def inject_heading_ids(html_str):
             sub_type = None
             if any(w in inner_clean for w in ["attraction", "sight"]):
                 sub_type = "sights"
-            elif any(w in inner_clean for w in ["activit", "experience"]):
+            elif any(w in inner_clean for w in ["activit", "experience", "ride"]):
                 sub_type = "activities"
             elif any(w in inner_clean for w in ["snack", "street food", "treat"]):
                 sub_type = "snacks"
-            elif any(w in inner_clean for w in ["dining", "tavern", "hut"]):
+            elif any(w in inner_clean for w in ["dining", "tavern", "hut", "restaurant"]):
                 sub_type = "dining"
             else:
                 sub_type = slugify(inner)
@@ -381,11 +391,216 @@ def build_dynamic_nav_from_headings(body_md):
 """
 
 
+def get_japan_sticky_nav():
+    """Generates the tailored, clickable 5-region navigation bar for Japan."""
+    return """
+  <!-- Sticky Dynamic Navigation Bar (Persists on Scroll) -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="container nav-wrapper">
+      
+      <!-- Home Link -->
+      <div class="nav-left">
+        <a href="index.html" class="nav-home-btn" id="navHome">
+          <span>🏠</span> <span>All Trips</span>
+        </a>
+      </div>
+
+      <!-- 5 Region Clickable Navigators & Drill-Downs -->
+      <div class="nav-countries" id="navCountries">
+        
+        <!-- 1. Tokyo West & Modern -->
+        <div class="nav-dropdown" data-country="tokyo-west">
+          <div class="nav-btn-group">
+            <a href="#tokyo-west" class="nav-country-link" title="Jump to Tokyo Modern section">
+              <span>🏙️</span> <span>Tokyo Modern</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Tokyo Modern sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🏙️ Tokyo (Shinjuku & Shibuya)</span>
+              <a href="#tokyo-west" class="dropdown-header-link">Region Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#tokyo-west-sights" class="dropdown-dest-title">🏛️ Top Sights & Vistas</a>
+                <ul class="dropdown-links">
+                  <li><a href="#tokyo-west-sights">TMG Observatories & Fuji</a></li>
+                  <li><a href="#tokyo-west-sights">Shinjuku Kabukicho & Godzilla</a></li>
+                  <li><a href="#tokyo-west-sights">Shibuya Crossing & Hachiko</a></li>
+                  <li><a href="#tokyo-west-sights">Omoide & Nonbei Yokocho</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#tokyo-west-activities" class="dropdown-dest-title">🎯 Pop Culture & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#tokyo-west-activities">Nintendo & Pokémon Shibuya</a></li>
+                  <li><a href="#tokyo-west-activities">Mega Don Quijote & Miyashita</a></li>
+                  <li><a href="#tokyo-west-snacks">The Matcha Tokyo & Muroya</a></li>
+                  <li><a href="#tokyo-west-dining">Kumachan Onsen & Blackhole</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Tokyo DisneySea -->
+        <div class="nav-dropdown" data-country="disneysea">
+          <div class="nav-btn-group">
+            <a href="#disneysea" class="nav-country-link" title="Jump to Tokyo DisneySea section">
+              <span>🌊</span> <span>Tokyo DisneySea</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle DisneySea sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🌊 Tokyo Disney Resort (Maihama)</span>
+              <a href="#disneysea" class="dropdown-header-link">Park Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#disneysea-sights" class="dropdown-dest-title">🏰 Ports & Thrill Rides</a>
+                <ul class="dropdown-links">
+                  <li><a href="#disneysea-sights">Mediterranean Harbor & Caldera</a></li>
+                  <li><a href="#disneysea-activities">Journey to Center of the Earth</a></li>
+                  <li><a href="#disneysea-activities">Soaring: Fantastic Flight</a></li>
+                  <li><a href="#disneysea-activities">Tower of Terror & Indiana Jones</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#disneysea-snacks" class="dropdown-dest-title">🎪 Shows & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#disneysea-activities">Believe! Sea of Dreams Night Show</a></li>
+                  <li><a href="#disneysea-snacks">Little Green Mochi & Popcorn</a></li>
+                  <li><a href="#disneysea-dining">Zambini Brothers Ristorante</a></li>
+                  <li><a href="#disneysea-dining">Horizon Bay & Vulcania</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Osaka -->
+        <div class="nav-dropdown" data-country="osaka">
+          <div class="nav-btn-group">
+            <a href="#osaka" class="nav-country-link" title="Jump to Osaka section">
+              <span>🏯</span> <span>Osaka & USJ</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Osaka sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🏯 Osaka City & Universal Studios</span>
+              <a href="#osaka" class="dropdown-header-link">City Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#osaka-sights" class="dropdown-dest-title">🎡 Sights & Universal Studios</a>
+                <ul class="dropdown-links">
+                  <li><a href="#osaka-sights">Osaka Castle & Dotonbori Glico</a></li>
+                  <li><a href="#osaka-sights">Umeda Sky & Namba Yasaka</a></li>
+                  <li><a href="#osaka-activities">Super Nintendo World & Mario Kart</a></li>
+                  <li><a href="#osaka-activities">Donkey Kong Country & Flying Dino</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#osaka-dining" class="dropdown-dest-title">🥢 Soul Food & Street Treats</a>
+                <ul class="dropdown-links">
+                  <li><a href="#osaka-activities">Tsutenkaku Tower Slider & Cruise</a></li>
+                  <li><a href="#osaka-snacks">Wanaka Takoyaki & Naruto Taiyaki</a></li>
+                  <li><a href="#osaka-dining">Yakiniku Sakon Wagyu Buffet</a></li>
+                  <li><a href="#osaka-dining">Mizuno Okonomiyaki & Daruma</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Kyoto, Uji & Nara -->
+        <div class="nav-dropdown" data-country="kyoto-nara">
+          <div class="nav-btn-group">
+            <a href="#kyoto-nara" class="nav-country-link" title="Jump to Kyoto, Uji & Nara section">
+              <span>⛩️</span> <span>Kyoto & Nara</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Kyoto & Nara sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">⛩️ Kyoto, Uji & Nara Traditions</span>
+              <a href="#kyoto-nara" class="dropdown-header-link">Region Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#kyoto-nara-sights" class="dropdown-dest-title">🎋 Temples, Shrines & Deer</a>
+                <ul class="dropdown-links">
+                  <li><a href="#kyoto-nara-sights">Fushimi Inari 10,000 Torii</a></li>
+                  <li><a href="#kyoto-nara-sights">Kinkaku-ji Golden Pavilion</a></li>
+                  <li><a href="#kyoto-nara-sights">Arashiyama Bamboo & Kiyomizu</a></li>
+                  <li><a href="#kyoto-nara-sights">Todai-ji Great Buddha & Deer</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#kyoto-nara-activities" class="dropdown-dest-title">🍵 Tea Ceremonies & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#kyoto-nara-activities">Maikoya Kimono Tea Ceremony</a></li>
+                  <li><a href="#kyoto-nara-activities">Samurai & Ninja Museum & Nintendo</a></li>
+                  <li><a href="#kyoto-nara-snacks">Uji Matcha & Ochanokosaisai</a></li>
+                  <li><a href="#kyoto-nara-dining">HIRO Wagyu & Katsukura Tonkatsu</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Tokyo Historic & Digital -->
+        <div class="nav-dropdown" data-country="tokyo-east">
+          <div class="nav-btn-group">
+            <a href="#tokyo-east" class="nav-country-link" title="Jump to Tokyo Historic & Digital section">
+              <span>🏮</span> <span>Tokyo Historic</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Tokyo Historic sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🏮 Asakusa, Skytree & Ginza</span>
+              <a href="#tokyo-east" class="dropdown-header-link">District Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#tokyo-east-sights" class="dropdown-dest-title">🗼 Heritage & Observation</a>
+                <ul class="dropdown-links">
+                  <li><a href="#tokyo-east-sights">Senso-ji Temple & Kaminarimon</a></li>
+                  <li><a href="#tokyo-east-sights">Tokyo Skytree 450m Panorama</a></li>
+                  <li><a href="#tokyo-east-sights">Meiji Jingu & Takeshita Street</a></li>
+                  <li><a href="#tokyo-east-sights">Ginza Chuo-dori & Wako Clock</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#tokyo-east-activities" class="dropdown-dest-title">✨ Digital Art & Cuisine</a>
+                <ul class="dropdown-links">
+                  <li><a href="#tokyo-east-activities">teamLab Borderless & Shibuya SKY</a></li>
+                  <li><a href="#tokyo-east-activities">Uniqlo & Itoya Flagships</a></li>
+                  <li><a href="#tokyo-east-snacks">Suzukien No. 7 Matcha & Crepes</a></li>
+                  <li><a href="#tokyo-east-dining">Gyukatsu Motomura & Midori Sushi</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+"""
+
+
 def generate_sticky_nav(fname, meta, body_md):
     """
     Determines whether a page should have a sticky nav and dynamically builds it.
     - index.md: NEVER has sticky nav (returns empty string).
     - czech-austria-slovakia-germany.md: Returns curated 4-country drill-down nav.
+    - japan.md: Returns curated 5-region drill-down nav.
     - Future trip guides: Returns dynamically generated nav based on markdown headings.
     """
     sticky_nav_setting = str(meta.get("sticky_nav", "")).lower().strip()
@@ -396,6 +611,9 @@ def generate_sticky_nav(fname, meta, body_md):
 
     if fname == "czech-austria-slovakia-germany.md" or sticky_nav_setting == "central-europe":
         return get_central_europe_sticky_nav()
+
+    if fname == "japan.md" or sticky_nav_setting in ["japan", "japan-winter"]:
+        return get_japan_sticky_nav()
 
     # Dynamic auto-generation for any future trip guide with sticky_nav enabled
     if sticky_nav_setting in ["true", "yes", "auto", "dynamic"]:
