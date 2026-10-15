@@ -27,7 +27,6 @@
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
       --shadow-dropdown: 0 16px 36px -4px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.08);
       --radius: 12px;
-      --nav-height: 58px;
     }
 
     * {
@@ -106,7 +105,7 @@
       line-height: 1.5;
     }
 
-    /* Sticky Country Navigation Bar - PERSISTS ON SCROLL */
+    /* Sticky Navigation Bar - Scoped to Trip Pages & PERSISTS ON SCROLL */
     .sticky-nav {
       position: sticky;
       top: 0;
@@ -158,7 +157,7 @@
       transform: translateY(-1px);
     }
 
-    /* Country Dropdown Group */
+    /* Country Navigation Items */
     .nav-countries {
       display: flex;
       align-items: center;
@@ -176,52 +175,79 @@
       position: relative;
     }
 
-    .nav-country-btn {
+    /* Clickable Country Button Group */
+    .nav-btn-group {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 13px;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #334155;
       background: #f1f5f9;
+      border-radius: 9999px;
+      padding: 2px 6px 2px 12px;
       border: 1px solid transparent;
-      cursor: pointer;
       transition: all 0.2s ease;
-      white-space: nowrap;
-      user-select: none;
-      font-family: inherit;
+      cursor: pointer;
     }
 
-    .nav-country-btn:hover {
+    .nav-btn-group:hover {
       background: var(--primary-light);
-      color: var(--primary-dark);
       border-color: #bae6fd;
     }
 
-    .nav-country-btn .caret {
-      font-size: 0.72rem;
-      transition: transform 0.2s ease;
-      display: inline-block;
-      color: #64748b;
-    }
-
-    .nav-country-btn:hover .caret,
-    .nav-dropdown.open .nav-country-btn .caret {
-      transform: rotate(180deg);
-      color: var(--primary);
-    }
-
     /* Active Highlight (ScrollSpy) */
-    .nav-country-btn.active {
+    .nav-btn-group.active {
       background: #0284c7;
-      color: #ffffff;
       border-color: #0284c7;
       box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
     }
 
-    .nav-country-btn.active .caret {
+    .nav-country-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      padding: 5px 2px;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-country-link:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-btn-group.active .nav-country-link {
+      color: #ffffff;
+    }
+
+    .nav-caret-btn {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      font-size: 0.72rem;
+      padding: 6px 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: transform 0.2s ease, color 0.2s ease;
+      line-height: 1;
+    }
+
+    .nav-btn-group.active .nav-caret-btn {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .nav-dropdown:hover .nav-caret-btn,
+    .nav-dropdown.open .nav-caret-btn {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .nav-btn-group.active:hover .nav-caret-btn,
+    .nav-dropdown.open .nav-btn-group.active .nav-caret-btn {
       color: #ffffff;
     }
 
@@ -647,175 +673,8 @@
     </div>
   </header>
 
-  <!-- Sticky Dynamic Navigation Bar (Persists on Scroll) -->
-  <nav class="sticky-nav" id="stickyNav">
-    <div class="container nav-wrapper">
-      
-      <!-- Home Link -->
-      <div class="nav-left">
-        <a href="index.html" class="nav-home-btn" id="navHome">
-          <span>🏠</span> <span>All Trips</span>
-        </a>
-      </div>
-
-      <!-- 4 Country Dropdown Navigators -->
-      <div class="nav-countries" id="navCountries">
-        
-        <!-- 1. Czech Republic -->
-        <div class="nav-dropdown" data-country="czech">
-          <button class="nav-country-btn" type="button" aria-expanded="false">
-            <span>🇨🇿</span> <span>Czech Republic</span> <span class="caret">▾</span>
-          </button>
-          <div class="dropdown-menu">
-            <div class="dropdown-header">
-              <span class="dropdown-header-title">🇨🇿 Czech Republic Highlights</span>
-              <a href="#country-czech" class="dropdown-header-link">Country Overview ➔</a>
-            </div>
-            <div class="dropdown-grid cols-2">
-              <div class="dropdown-col">
-                <a href="#prague" class="dropdown-dest-title">🏰 Prague</a>
-                <ul class="dropdown-links">
-                  <li><a href="#prague-sights">🏛️ Top Sights & Baroque Library</a></li>
-                  <li><a href="#prague-activities">🎯 Tech Museum & River Cruise</a></li>
-                  <li><a href="#prague-snacks">☕ Trdelník & Chlebíčky Sandwiches</a></li>
-                  <li><a href="#prague-dining">🍽️ Lokál, Mlejnice & Train Tavern</a></li>
-                </ul>
-              </div>
-              <div class="dropdown-col">
-                <a href="#south-bohemia" class="dropdown-dest-title">🌲 South Bohemia (Český Krumlov)</a>
-                <ul class="dropdown-links">
-                  <li><a href="#south-bohemia-sights">🏛️ UNESCO Castle & Cloak Bridge</a></li>
-                  <li><a href="#south-bohemia-activities">🎯 Lipno Alpine Coaster</a></li>
-                  <li><a href="#south-bohemia-dining">🍽️ Medieval Prison Tavern</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Austria -->
-        <div class="nav-dropdown" data-country="austria">
-          <button class="nav-country-btn" type="button" aria-expanded="false">
-            <span>🇦🇹</span> <span>Austria</span> <span class="caret">▾</span>
-          </button>
-          <div class="dropdown-menu">
-            <div class="dropdown-header">
-              <span class="dropdown-header-title">🇦🇹 Austria Highlights</span>
-              <a href="#country-austria" class="dropdown-header-link">Country Overview ➔</a>
-            </div>
-            <div class="dropdown-grid cols-4">
-              <div class="dropdown-col">
-                <a href="#vienna" class="dropdown-dest-title">👑 Vienna</a>
-                <ul class="dropdown-links">
-                  <li><a href="#vienna-sights">🏛️ Schönbrunn & St. Stephen's</a></li>
-                  <li><a href="#vienna-activities">🎯 Vienna Ice Dream & Sound Museum</a></li>
-                  <li><a href="#vienna-snacks">☕ Cornetto Coffee & Käsekrainer</a></li>
-                  <li><a href="#vienna-dining">🍽️ Figlmüller & Café Central</a></li>
-                </ul>
-              </div>
-              <div class="dropdown-col">
-                <a href="#ramsau" class="dropdown-dest-title">🐎 Ramsau Dachstein</a>
-                <ul class="dropdown-links">
-                  <li><a href="#ramsau-sights">🏛️ High Alpine Glacier Plateau</a></li>
-                  <li><a href="#ramsau-activities">🎯 Horse-Drawn Sleigh Ride</a></li>
-                  <li><a href="#ramsau-dining">🍽️ Walcheralm Wooden Hut</a></li>
-                </ul>
-              </div>
-              <div class="dropdown-col">
-                <a href="#salzburg" class="dropdown-dest-title">🎼 Salzburg & Lakes</a>
-                <ul class="dropdown-links">
-                  <li><a href="#salzburg-sights">🏛️ Hohensalzburg & Hallstatt</a></li>
-                  <li><a href="#salzburg-activities">🎯 Red Bull Hangar-7 & Salt Mine</a></li>
-                  <li><a href="#salzburg-snacks">☕ Original Bosna & Mozartkugel</a></li>
-                  <li><a href="#salzburg-dining">🍽️ St. Peter 803 AD & Stieglkeller</a></li>
-                </ul>
-              </div>
-              <div class="dropdown-col">
-                <a href="#wildkogel" class="dropdown-dest-title">🛷 Wildkogel & Rosenheim</a>
-                <ul class="dropdown-links">
-                  <li><a href="#wildkogel-sights">🏛️ Summit Panorama & Pass Thurn</a></li>
-                  <li><a href="#wildkogel-activities">🎯 14 km Toboggan Run</a></li>
-                  <li><a href="#wildkogel-snacks">☕ Giant Germknödel Dumpling</a></li>
-                  <li><a href="#wildkogel-dining">🍽️ Wolkenstein & 1543 Brewery</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Slovakia -->
-        <div class="nav-dropdown" data-country="slovakia">
-          <button class="nav-country-btn" type="button" aria-expanded="false">
-            <span>🇸🇰</span> <span>Slovakia</span> <span class="caret">▾</span>
-          </button>
-          <div class="dropdown-menu">
-            <div class="dropdown-header">
-              <span class="dropdown-header-title">🇸🇰 Slovakia Highlights</span>
-              <a href="#country-slovakia" class="dropdown-header-link">Country Overview ➔</a>
-            </div>
-            <div class="dropdown-grid cols-1">
-              <div class="dropdown-col">
-                <a href="#bratislava" class="dropdown-dest-title">🏰 Bratislava</a>
-                <ul class="dropdown-links">
-                  <li><a href="#bratislava-sights">🏛️ Bratislava Castle, Blue Church & Quirky Statues</a></li>
-                  <li><a href="#bratislava-activities">🎯 UFO Deck & Most SNP Views</a></li>
-                  <li><a href="#bratislava-snacks">☕ Bratislavské Rožky Pastries</a></li>
-                  <li><a href="#bratislava-dining">🍽️ Meštiansky Pivovar & Zylinder</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Germany -->
-        <div class="nav-dropdown align-right" data-country="germany">
-          <button class="nav-country-btn" type="button" aria-expanded="false">
-            <span>🇩🇪</span> <span>Germany</span> <span class="caret">▾</span>
-          </button>
-          <div class="dropdown-menu">
-            <div class="dropdown-header">
-              <span class="dropdown-header-title">🇩🇪 Germany Highlights</span>
-              <a href="#country-germany" class="dropdown-header-link">Country Overview ➔</a>
-            </div>
-            <div class="dropdown-grid cols-3">
-              <div class="dropdown-col">
-                <a href="#neuschwanstein" class="dropdown-dest-title">🏰 Neuschwanstein & Allgäu</a>
-                <ul class="dropdown-links">
-                  <li><a href="#neuschwanstein-sights">🏛️ Fairytale Palace & Marienbrücke</a></li>
-                  <li><a href="#neuschwanstein-activities">🎯 Mountain Shuttle & Lake Alpsee</a></li>
-                  <li><a href="#neuschwanstein-dining">🍽️ Schlosswirt Castle Inn</a></li>
-                </ul>
-              </div>
-              <div class="dropdown-col">
-                <a href="#munich" class="dropdown-dest-title">🍺 Munich, Bavaria</a>
-                <ul class="dropdown-links">
-                  <li><a href="#munich-sights">🏛️ Marienplatz, Eisbach Surfers & Parks</a></li>
-                  <li><a href="#munich-activities">🎯 BMW Welt & Hypercars</a></li>
-                  <li><a href="#munich-snacks">☕ Leberkässemmel & Schmalznudel</a></li>
-                  <li><a href="#munich-dining">🍽️ Augustiner (1328) & Hofbräukeller</a></li>
-                </ul>
-              </div>
-              <div class="dropdown-col">
-                <a href="#allianz" class="dropdown-dest-title">⚽ Allianz Arena & Outlet</a>
-                <ul class="dropdown-links">
-                  <li><a href="#allianz-sights">🏛️ Stadium Architecture & Megastore</a></li>
-                  <li><a href="#allianz-activities">🎯 Guided Tour, Museum & Outlet</a></li>
-                  <li><a href="#allianz-dining">🍽️ Designer Village Dining & Cafes</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Real-time Filter -->
-      <div class="search-box">
-        <input type="text" id="liveSearch" placeholder="Filter sights, dishes, towns..." onkeyup="filterContent()">
-      </div>
-
-    </div>
-  </nav>
+  <!-- Dynamic Sticky Navigation (Scoped to Trip Pages, omitted on Index) -->
+  {{ sticky_nav }}
 
   <!-- Main Content Body -->
   <main class="container content-area">
@@ -844,64 +703,81 @@
         wrapper.appendChild(table);
       });
 
-      // If not on the Central Europe trip page, point hash links to czech-austria-slovakia-germany.html#...
-      const onTripPage = document.getElementById("country-czech") !== null;
-      if (!onTripPage) {
-        document.querySelectorAll(".dropdown-menu a").forEach(link => {
-          const href = link.getAttribute("href");
-          if (href && href.startsWith("#")) {
-            link.setAttribute("href", "czech-austria-slovakia-germany.html" + href);
+      // Sticky Navigation Interactions (Only on pages with a stickyNav element)
+      const stickyNav = document.getElementById("stickyNav");
+      if (stickyNav) {
+        
+        // 1. Caret button toggles dropdown on click/tap
+        document.querySelectorAll(".nav-caret-btn").forEach(caret => {
+          caret.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentDropdown = this.closest(".nav-dropdown");
+            const isOpen = parentDropdown.classList.contains("open");
+
+            // Close all dropdowns
+            document.querySelectorAll(".nav-dropdown").forEach(d => d.classList.remove("open"));
+
+            if (!isOpen) {
+              parentDropdown.classList.add("open");
+            }
+          });
+        });
+
+        // 2. Click on country link or drill-down link closes dropdown menu
+        document.querySelectorAll(".dropdown-menu a, .nav-country-link").forEach(link => {
+          link.addEventListener("click", function () {
+            document.querySelectorAll(".nav-dropdown").forEach(d => d.classList.remove("open"));
+          });
+        });
+
+        // 3. Close dropdowns when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".nav-dropdown")) {
+            document.querySelectorAll(".nav-dropdown").forEach(d => d.classList.remove("open"));
           }
         });
-      }
-    });
 
-    // Toggle dropdowns on click / tap
-    document.querySelectorAll(".nav-country-btn").forEach(btn => {
-      btn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        const currentDropdown = this.closest(".nav-dropdown");
-        const isOpen = currentDropdown.classList.contains("open");
-
-        // Close all dropdowns
-        document.querySelectorAll(".nav-dropdown").forEach(d => {
-          d.classList.remove("open");
-          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
+        // 4. Close dropdowns on Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            document.querySelectorAll(".nav-dropdown").forEach(d => d.classList.remove("open"));
+          }
         });
 
-        if (!isOpen) {
-          currentDropdown.classList.add("open");
-          this.setAttribute("aria-expanded", "true");
-        }
-      });
-    });
+        // 5. Dynamic ScrollSpy: Highlight active country/section in sticky nav
+        const countryAnchors = [
+          { id: "country-czech", key: "czech" },
+          { id: "country-austria", key: "austria" },
+          { id: "country-slovakia", key: "slovakia" },
+          { id: "country-germany", key: "germany" }
+        ];
 
-    // Close dropdown menu when clicking any drill-down link
-    document.querySelectorAll(".dropdown-menu a").forEach(link => {
-      link.addEventListener("click", function () {
-        document.querySelectorAll(".nav-dropdown").forEach(d => {
-          d.classList.remove("open");
-          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
-        });
-      });
-    });
+        window.addEventListener("scroll", () => {
+          const scrollPos = window.scrollY + 130;
+          let currentCountry = null;
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".nav-dropdown")) {
-        document.querySelectorAll(".nav-dropdown").forEach(d => {
-          d.classList.remove("open");
-          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
-        });
-      }
-    });
+          for (const item of countryAnchors) {
+            const el = document.getElementById(item.id);
+            if (el) {
+              const top = el.offsetTop;
+              if (scrollPos >= top) {
+                currentCountry = item.key;
+              }
+            }
+          }
 
-    // Close dropdowns on Escape key
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        document.querySelectorAll(".nav-dropdown").forEach(d => {
-          d.classList.remove("open");
-          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
+          document.querySelectorAll(".nav-dropdown").forEach(dropdown => {
+            const countryKey = dropdown.getAttribute("data-country");
+            const btnGroup = dropdown.querySelector(".nav-btn-group");
+            if (btnGroup) {
+              if (countryKey === currentCountry) {
+                btnGroup.classList.add("active");
+              } else {
+                btnGroup.classList.remove("active");
+              }
+            }
+          });
         });
       }
     });
@@ -916,44 +792,10 @@
       }
     });
 
-    // Dynamic Country ScrollSpy
-    const countryAnchors = [
-      { id: "country-czech", key: "czech" },
-      { id: "country-austria", key: "austria" },
-      { id: "country-slovakia", key: "slovakia" },
-      { id: "country-germany", key: "germany" }
-    ];
-
-    window.addEventListener("scroll", () => {
-      const scrollPos = window.scrollY + 130;
-      let currentCountry = null;
-
-      for (const item of countryAnchors) {
-        const el = document.getElementById(item.id);
-        if (el) {
-          const top = el.offsetTop;
-          if (scrollPos >= top) {
-            currentCountry = item.key;
-          }
-        }
-      }
-
-      document.querySelectorAll(".nav-dropdown").forEach(dropdown => {
-        const countryKey = dropdown.getAttribute("data-country");
-        const btn = dropdown.querySelector(".nav-country-btn");
-        if (btn) {
-          if (countryKey === currentCountry) {
-            btn.classList.add("active");
-          } else {
-            btn.classList.remove("active");
-          }
-        }
-      });
-    });
-
     // Real-time table filter
     function filterContent() {
       const input = document.getElementById("liveSearch");
+      if (!input) return;
       const filter = input.value.toLowerCase().trim();
       const tables = document.querySelectorAll(".content-area table");
 

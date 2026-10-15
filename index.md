@@ -2,6 +2,7 @@
 layout: default
 title: "Curated Holiday & Travel Highlights Collection"
 description: "A curated collection of practical, tabularized travel guides featuring cultural landmarks, alpine winter activities, street food, and authentic local dining."
+sticky_nav: false
 ---
 
 # 🌍 Curated Holiday & Travel Highlights Collection

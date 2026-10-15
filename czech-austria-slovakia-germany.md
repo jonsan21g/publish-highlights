@@ -2,6 +2,7 @@
 layout: default
 title: "Central Europe Winter Highlights & Dining Guide"
 description: "A curated, practical guide to iconic cultural sights, thrilling alpine winter activities, traditional street treats, and authentic dining across the Czech Republic, Austria, Slovakia, and Germany."
+sticky_nav: "central-europe"
 ---
 
 # ❄️ Central Europe Winter Highlights & Dining Guide
