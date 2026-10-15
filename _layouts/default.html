@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #0ea5e9;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --border-hover: #cbd5e1;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
+      color: #ffffff;
+      padding: 60px 0 45px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+
+    /* Sticky Quick Nav */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 12px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .nav-pill {
+      white-space: nowrap;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .nav-pill:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: #bae6fd;
+    }
+
+    /* Live Search Input */
+    .search-box {
+      flex-shrink: 0;
+      min-width: 220px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 7px 14px 7px 32px;
+      font-size: 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 10px center / 16px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* Main Content Area */
+    .content-area {
+      padding: 40px 0 80px;
+    }
+
+    /* Markdown Typography */
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 48px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #475569;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 40px 0;
+    }
+
+    blockquote {
+      background: #f0f9ff;
+      border-left: 4px solid var(--primary);
+      padding: 14px 20px;
+      border-radius: 0 8px 8px 0;
+      color: #0369a1;
+      margin: 20px 0;
+      font-size: 1.05rem;
+    }
+
+    /* Responsive Tables */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 18px 0 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+      min-width: 650px;
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: #334155;
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 2px solid #cbd5e1;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fbfcfe;
+    }
+
+    tr:hover td {
+      background-color: #f0f7ff;
+    }
+
+    /* Links */
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .badge-free {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .badge-unesco {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      font-size: 1.2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer a {
+      color: #38bdf8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 40px 0 30px;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container">
+      <span class="hero-badge">❄️ Winter Edition • Free & Open Travel Guide</span>
+      <h1>Central Europe Highlights & Dining Guide</h1>
+      <p>Curated, practical guide to cultural landmarks, thrilling alpine winter activities, iconic street treats, and authentic dining across the Czech Republic, Austria, Slovakia, and Germany.</p>
+    </div>
+  </header>
+
+  <!-- Sticky Quick Nav & Search -->
+  <nav class="sticky-nav">
+    <div class="container nav-wrapper">
+      <div class="nav-pills">
+        <a href="#-prague-czech-republic" class="nav-pill">🇨🇿 Prague</a>
+        <a href="#-south-bohemia-český-krumlov--lake-lipno" class="nav-pill">🇨🇿 Český Krumlov</a>
+        <a href="#-vienna-austria" class="nav-pill">🇦🇹 Vienna</a>
+        <a href="#-bratislava-slovakia" class="nav-pill">🇸🇰 Bratislava</a>
+        <a href="#-ramsau-am-dachstein-austrian-alps" class="nav-pill">🐎 Dachstein</a>
+        <a href="#-salzburg--berchtesgadener-land" class="nav-pill">🇦🇹 Salzburg</a>
+        <a href="#-wildkogel-arena--rosenheim" class="nav-pill">🛷 Wildkogel</a>
+        <a href="#-schloss-neuschwanstein--allgäu-bavaria" class="nav-pill">🏰 Neuschwanstein</a>
+        <a href="#-munich-bavaria" class="nav-pill">🇩🇪 Munich</a>
+        <a href="#-allianz-arena--ingolstadt-village" class="nav-pill">⚽ Allianz & Outlet</a>
+      </div>
+      <div class="search-box">
+        <input type="text" id="liveSearch" placeholder="Filter sights, dishes, towns..." onkeyup="filterContent()">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Body -->
+  <main class="container content-area">
+    {{ content }}
+  </main>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop" title="Back to top">↑</a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Curated as an open, public travel resource for independent travelers in Central Europe.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem; color: #64748b;">Free to share, adapt, and explore • Zero commercial ads or tracking.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Automatically wrap all Markdown tables in responsive scrolling containers
+    document.addEventListener("DOMContentLoaded", function () {
+      const tables = document.querySelectorAll(".content-area table");
+      tables.forEach(table => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "table-container";
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      });
+    });
+
+    // Back to top button visibility
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    // Real-time table filter
+    function filterContent() {
+      const input = document.getElementById("liveSearch");
+      const filter = input.value.toLowerCase().trim();
+      const tables = document.querySelectorAll(".content-area table");
+
+      tables.forEach(table => {
+        const rows = table.querySelectorAll("tbody tr");
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          if (text.includes(filter)) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

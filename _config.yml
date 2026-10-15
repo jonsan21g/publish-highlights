@@ -1,0 +1,10 @@
+title: Central Europe Winter Highlights & Dining Guide
+description: A curated, practical guide to iconic cultural sights, thrilling alpine winter activities, traditional street treats, and authentic dining across the Czech Republic, Austria, Slovakia, and Germany.
+author: Travel Community
+url: ""
+baseurl: ""
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - README.md
+  - LICENSE
