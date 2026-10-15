@@ -8,6 +8,7 @@ Key capabilities:
 2. Index page has NO sticky nav.
 3. Sticky navigation is dynamic based on the Markdown file being rendered.
 4. All country buttons and dropdown items are clickable and navigate directly to page sections.
+5. All external links for items (attractions, dining, activities) default to open in a new tab.
 """
 
 import os
@@ -119,6 +120,25 @@ def inject_heading_ids(html_str):
         return match.group(0)
 
     return re.sub(r'<(h[23])([^>]*)>(.*?)</\1>', repl_heading, html_str, flags=re.DOTALL)
+
+
+def make_external_links_open_in_new_tab(html_str):
+    """
+    Ensures every external link (http:// or https://) defaults to opening in a new tab
+    with target="_blank" rel="noopener noreferrer".
+    In-page anchor jumps (#...) remain in the same tab.
+    """
+    def repl_link(match):
+        attrs = match.group(1)
+        if re.search(r'href=[\'"]https?://', attrs):
+            if 'target=' not in attrs:
+                attrs += ' target="_blank"'
+            if 'rel=' not in attrs:
+                attrs += ' rel="noopener noreferrer"'
+            return f'<a{attrs}>'
+        return match.group(0)
+
+    return re.sub(r'<a([^>]+)>', repl_link, html_str)
 
 
 def get_central_europe_sticky_nav():
@@ -298,11 +318,6 @@ def get_central_europe_sticky_nav():
 
       </div>
 
-      <!-- Real-time Filter -->
-      <div class="search-box">
-        <input type="text" id="liveSearch" placeholder="Filter sights, dishes, towns..." onkeyup="filterContent()">
-      </div>
-
     </div>
   </nav>
 """
@@ -361,9 +376,6 @@ def build_dynamic_nav_from_headings(body_md):
       <div class="nav-countries" id="navCountries">
 {items_joined}
       </div>
-      <div class="search-box">
-        <input type="text" id="liveSearch" placeholder="Filter on page..." onkeyup="filterContent()">
-      </div>
     </div>
   </nav>
 """
@@ -417,6 +429,9 @@ def build_all():
 
         # Inject semantic IDs for headings (so anchor links jump with precision)
         content_html = inject_heading_ids(content_html)
+
+        # Ensure all external item links default to open in a new tab
+        content_html = make_external_links_open_in_new_tab(content_html)
 
         # Dynamically generate or omit sticky nav based on markdown source and page
         sticky_nav_html = generate_sticky_nav(fname, meta, body_md)
