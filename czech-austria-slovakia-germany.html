@@ -25,13 +25,19 @@
       --border-hover: #cbd5e1;
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-dropdown: 0 16px 36px -4px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.08);
       --radius: 12px;
+      --nav-height: 58px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -49,11 +55,11 @@
       padding: 0 20px;
     }
 
-    /* Hero Header */
+    /* Hero Header - Scrolls naturally (DOES NOT persist on scroll) */
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
       color: #ffffff;
-      padding: 60px 0 45px;
+      padding: 56px 0 40px;
       position: relative;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -76,84 +82,301 @@
       backdrop-filter: blur(8px);
       padding: 6px 14px;
       border-radius: 9999px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .hero h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.75rem;
+      font-size: 2.6rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       line-height: 1.15;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #cbd5e1;
-      max-width: 800px;
+      max-width: 820px;
       line-height: 1.5;
     }
 
-    /* Sticky Quick Nav */
+    /* Sticky Country Navigation Bar - PERSISTS ON SCROLL */
     .sticky-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      padding: 12px 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      padding: 8px 0;
+      transition: background 0.2s, box-shadow 0.2s;
     }
 
     .nav-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
+      position: relative;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* All Trips Button */
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: #0284c7;
+      color: #ffffff;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      border: 1px solid #0284c7;
+    }
+
+    .nav-home-btn:hover {
+      background: #0369a1;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Country Dropdown Group */
+    .nav-countries {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
       overflow-x: auto;
       scrollbar-width: none;
     }
 
-    .nav-wrapper::-webkit-scrollbar {
+    .nav-countries::-webkit-scrollbar {
       display: none;
     }
 
-    .nav-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: nowrap;
+    .nav-dropdown {
+      position: relative;
     }
 
-    .nav-pill {
-      white-space: nowrap;
-      text-decoration: none;
+    .nav-country-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 9999px;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #475569;
+      color: #334155;
       background: #f1f5f9;
-      padding: 6px 14px;
-      border-radius: 20px;
-      transition: all 0.2s ease;
       border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      user-select: none;
+      font-family: inherit;
     }
 
-    .nav-pill:hover {
+    .nav-country-btn:hover {
       background: var(--primary-light);
       color: var(--primary-dark);
       border-color: #bae6fd;
     }
 
-    /* Live Search Input */
+    .nav-country-btn .caret {
+      font-size: 0.72rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+      color: #64748b;
+    }
+
+    .nav-country-btn:hover .caret,
+    .nav-dropdown.open .nav-country-btn .caret {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    /* Active Highlight (ScrollSpy) */
+    .nav-country-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+    }
+
+    .nav-country-btn.active .caret {
+      color: #ffffff;
+    }
+
+    /* Dropdown Mega Menu */
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      box-shadow: var(--shadow-dropdown);
+      padding: 16px 20px;
+      z-index: 1001;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      pointer-events: none;
+    }
+
+    /* Right-aligned for wider dropdowns */
+    .nav-dropdown.align-right .dropdown-menu {
+      left: auto;
+      right: 0;
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Dropdown Header */
+    .dropdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .dropdown-header-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-header-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .dropdown-header-link:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Dropdown Grid */
+    .dropdown-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .dropdown-grid.cols-1 {
+      grid-template-columns: 1fr;
+      min-width: 320px;
+      max-width: min(360px, 92vw);
+    }
+
+    .dropdown-grid.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+      min-width: 540px;
+      max-width: min(580px, 92vw);
+    }
+
+    .dropdown-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+      min-width: 760px;
+      max-width: min(800px, 92vw);
+    }
+
+    .dropdown-grid.cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+      min-width: 940px;
+      max-width: min(980px, 92vw);
+    }
+
+    /* Destination Column */
+    .dropdown-col {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1px solid #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .dropdown-dest-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-decoration: none;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      display: block;
+      transition: color 0.15s;
+    }
+
+    .dropdown-dest-title:hover {
+      color: var(--primary);
+    }
+
+    .dropdown-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .dropdown-links a {
+      font-size: 0.8rem;
+      color: #475569;
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 6px;
+      display: block;
+      transition: all 0.15s ease;
+      line-height: 1.35;
+    }
+
+    .dropdown-links a:hover {
+      background: #ffffff;
+      color: var(--primary);
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      transform: translateX(2px);
+    }
+
+    /* Search Box */
     .search-box {
       flex-shrink: 0;
-      min-width: 220px;
+      min-width: 200px;
     }
 
     .search-box input {
@@ -164,7 +387,7 @@
       border-radius: 20px;
       background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 10px center / 16px 16px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .search-box input:focus {
@@ -172,9 +395,21 @@
       box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
     }
 
+    /* Scroll Offset Anchor Fix */
+    [id], h2, h3, .country-marker {
+      scroll-margin-top: 75px;
+    }
+
+    .country-marker {
+      display: block;
+      height: 1px;
+      visibility: hidden;
+      margin-top: -1px;
+    }
+
     /* Main Content Area */
     .content-area {
-      padding: 40px 0 80px;
+      padding: 36px 0 80px;
     }
 
     /* Markdown Typography */
@@ -194,7 +429,7 @@
 
     h3 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: #1e293b;
       margin-top: 28px;
@@ -326,7 +561,7 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-      z-index: 99;
+      z-index: 999;
     }
 
     .back-to-top.visible {
@@ -353,26 +588,57 @@
       color: #38bdf8;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
+      .dropdown-grid.cols-4,
+      .dropdown-grid.cols-3,
+      .dropdown-grid.cols-2 {
+        grid-template-columns: 1fr;
+        min-width: 280px;
+        max-width: 90vw;
+      }
+      .dropdown-menu {
+        max-height: 75vh;
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
       .hero {
         padding: 40px 0 30px;
+      }
+      .hero h1 {
+        font-size: 1.85rem;
       }
       .nav-wrapper {
         flex-direction: column;
         align-items: stretch;
+        gap: 8px;
+      }
+      .nav-countries {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
       }
       .search-box {
         width: 100%;
+      }
+      .dropdown-menu {
+        position: fixed;
+        top: 110px;
+        left: 5vw;
+        right: 5vw;
+        width: 90vw;
+        max-width: 90vw;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Header -->
+  <!-- Hero Header (Scrolls naturally out of view) -->
   <header class="hero">
     <div class="container">
       <span class="hero-badge">🌍 Travel Collection • Free & Open Holiday Guides</span>
@@ -381,28 +647,175 @@
     </div>
   </header>
 
-  <!-- Sticky Quick Nav & Search -->
-  <nav class="sticky-nav">
+  <!-- Sticky Dynamic Navigation Bar (Persists on Scroll) -->
+  <nav class="sticky-nav" id="stickyNav">
     <div class="container nav-wrapper">
-      <div class="nav-pills" id="navPills">
-        <a href="index.html" class="nav-pill" style="background: #0284c7; color: #ffffff;">🏠 All Trips</a>
-        <a href="#-prague-czech-republic" class="nav-pill trip-nav">🇨🇿 Prague</a>
-        <a href="#-south-bohemia-český-krumlov--lake-lipno" class="nav-pill trip-nav">🇨🇿 Český Krumlov</a>
-        <a href="#-vienna-austria" class="nav-pill trip-nav">🇦🇹 Vienna</a>
-        <a href="#-bratislava-slovakia" class="nav-pill trip-nav">🇸🇰 Bratislava</a>
-        <a href="#-ramsau-am-dachstein-austrian-alps" class="nav-pill trip-nav">🐎 Dachstein</a>
-        <a href="#-salzburg--berchtesgadener-land" class="nav-pill trip-nav">🇦🇹 Salzburg</a>
-        <a href="#-wildkogel-arena--rosenheim" class="nav-pill trip-nav">🛷 Wildkogel</a>
-        <a href="#-schloss-neuschwanstein--allgäu-bavaria" class="nav-pill trip-nav">🏰 Neuschwanstein</a>
-        <a href="#-munich-bavaria" class="nav-pill trip-nav">🇩🇪 Munich</a>
-        <a href="#-allianz-arena--ingolstadt-village" class="nav-pill trip-nav">⚽ Allianz & Outlet</a>
+      
+      <!-- Home Link -->
+      <div class="nav-left">
+        <a href="index.html" class="nav-home-btn" id="navHome">
+          <span>🏠</span> <span>All Trips</span>
+        </a>
       </div>
+
+      <!-- 4 Country Dropdown Navigators -->
+      <div class="nav-countries" id="navCountries">
+        
+        <!-- 1. Czech Republic -->
+        <div class="nav-dropdown" data-country="czech">
+          <button class="nav-country-btn" type="button" aria-expanded="false">
+            <span>🇨🇿</span> <span>Czech Republic</span> <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇨🇿 Czech Republic Highlights</span>
+              <a href="#country-czech" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#prague" class="dropdown-dest-title">🏰 Prague</a>
+                <ul class="dropdown-links">
+                  <li><a href="#prague-sights">🏛️ Top Sights & Baroque Library</a></li>
+                  <li><a href="#prague-activities">🎯 Tech Museum & River Cruise</a></li>
+                  <li><a href="#prague-snacks">☕ Trdelník & Chlebíčky Sandwiches</a></li>
+                  <li><a href="#prague-dining">🍽️ Lokál, Mlejnice & Train Tavern</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#south-bohemia" class="dropdown-dest-title">🌲 South Bohemia (Český Krumlov)</a>
+                <ul class="dropdown-links">
+                  <li><a href="#south-bohemia-sights">🏛️ UNESCO Castle & Cloak Bridge</a></li>
+                  <li><a href="#south-bohemia-activities">🎯 Lipno Alpine Coaster</a></li>
+                  <li><a href="#south-bohemia-dining">🍽️ Medieval Prison Tavern</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Austria -->
+        <div class="nav-dropdown" data-country="austria">
+          <button class="nav-country-btn" type="button" aria-expanded="false">
+            <span>🇦🇹</span> <span>Austria</span> <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇦🇹 Austria Highlights</span>
+              <a href="#country-austria" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-4">
+              <div class="dropdown-col">
+                <a href="#vienna" class="dropdown-dest-title">👑 Vienna</a>
+                <ul class="dropdown-links">
+                  <li><a href="#vienna-sights">🏛️ Schönbrunn & St. Stephen's</a></li>
+                  <li><a href="#vienna-activities">🎯 Vienna Ice Dream & Sound Museum</a></li>
+                  <li><a href="#vienna-snacks">☕ Cornetto Coffee & Käsekrainer</a></li>
+                  <li><a href="#vienna-dining">🍽️ Figlmüller & Café Central</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#ramsau" class="dropdown-dest-title">🐎 Ramsau Dachstein</a>
+                <ul class="dropdown-links">
+                  <li><a href="#ramsau-sights">🏛️ High Alpine Glacier Plateau</a></li>
+                  <li><a href="#ramsau-activities">🎯 Horse-Drawn Sleigh Ride</a></li>
+                  <li><a href="#ramsau-dining">🍽️ Walcheralm Wooden Hut</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#salzburg" class="dropdown-dest-title">🎼 Salzburg & Lakes</a>
+                <ul class="dropdown-links">
+                  <li><a href="#salzburg-sights">🏛️ Hohensalzburg & Hallstatt</a></li>
+                  <li><a href="#salzburg-activities">🎯 Red Bull Hangar-7 & Salt Mine</a></li>
+                  <li><a href="#salzburg-snacks">☕ Original Bosna & Mozartkugel</a></li>
+                  <li><a href="#salzburg-dining">🍽️ St. Peter 803 AD & Stieglkeller</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#wildkogel" class="dropdown-dest-title">🛷 Wildkogel & Rosenheim</a>
+                <ul class="dropdown-links">
+                  <li><a href="#wildkogel-sights">🏛️ Summit Panorama & Pass Thurn</a></li>
+                  <li><a href="#wildkogel-activities">🎯 14 km Toboggan Run</a></li>
+                  <li><a href="#wildkogel-snacks">☕ Giant Germknödel Dumpling</a></li>
+                  <li><a href="#wildkogel-dining">🍽️ Wolkenstein & 1543 Brewery</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Slovakia -->
+        <div class="nav-dropdown" data-country="slovakia">
+          <button class="nav-country-btn" type="button" aria-expanded="false">
+            <span>🇸🇰</span> <span>Slovakia</span> <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇸🇰 Slovakia Highlights</span>
+              <a href="#country-slovakia" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-1">
+              <div class="dropdown-col">
+                <a href="#bratislava" class="dropdown-dest-title">🏰 Bratislava</a>
+                <ul class="dropdown-links">
+                  <li><a href="#bratislava-sights">🏛️ Bratislava Castle, Blue Church & Quirky Statues</a></li>
+                  <li><a href="#bratislava-activities">🎯 UFO Deck & Most SNP Views</a></li>
+                  <li><a href="#bratislava-snacks">☕ Bratislavské Rožky Pastries</a></li>
+                  <li><a href="#bratislava-dining">🍽️ Meštiansky Pivovar & Zylinder</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Germany -->
+        <div class="nav-dropdown align-right" data-country="germany">
+          <button class="nav-country-btn" type="button" aria-expanded="false">
+            <span>🇩🇪</span> <span>Germany</span> <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇩🇪 Germany Highlights</span>
+              <a href="#country-germany" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-3">
+              <div class="dropdown-col">
+                <a href="#neuschwanstein" class="dropdown-dest-title">🏰 Neuschwanstein & Allgäu</a>
+                <ul class="dropdown-links">
+                  <li><a href="#neuschwanstein-sights">🏛️ Fairytale Palace & Marienbrücke</a></li>
+                  <li><a href="#neuschwanstein-activities">🎯 Mountain Shuttle & Lake Alpsee</a></li>
+                  <li><a href="#neuschwanstein-dining">🍽️ Schlosswirt Castle Inn</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#munich" class="dropdown-dest-title">🍺 Munich, Bavaria</a>
+                <ul class="dropdown-links">
+                  <li><a href="#munich-sights">🏛️ Marienplatz, Eisbach Surfers & Parks</a></li>
+                  <li><a href="#munich-activities">🎯 BMW Welt & Hypercars</a></li>
+                  <li><a href="#munich-snacks">☕ Leberkässemmel & Schmalznudel</a></li>
+                  <li><a href="#munich-dining">🍽️ Augustiner (1328) & Hofbräukeller</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#allianz" class="dropdown-dest-title">⚽ Allianz Arena & Outlet</a>
+                <ul class="dropdown-links">
+                  <li><a href="#allianz-sights">🏛️ Stadium Architecture & Megastore</a></li>
+                  <li><a href="#allianz-activities">🎯 Guided Tour, Museum & Outlet</a></li>
+                  <li><a href="#allianz-dining">🍽️ Designer Village Dining & Cafes</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Real-time Filter -->
       <div class="search-box">
         <input type="text" id="liveSearch" placeholder="Filter sights, dishes, towns..." onkeyup="filterContent()">
       </div>
+
     </div>
   </nav>
-
 
   <!-- Main Content Body -->
   <main class="container content-area">
@@ -412,37 +825,10 @@
 A curated, practical guide to iconic cultural sights, thrilling alpine winter activities, traditional street treats, and authentic dining across Central Europe.</p>
 </blockquote>
 <hr />
-<h2>📌 Quick Navigation</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Region / Country</th>
-<th style="text-align:left">Destinations &amp; Highlights</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">🇨🇿 <strong>Czech Republic</strong></td>
-<td style="text-align:left"><a href="#-prague-czech-republic">Prague</a> • <a href="#-south-bohemia-%C4%8Desk%C3%BD-krumlov--lake-lipno">South Bohemia: Český Krumlov &amp; Lipno</a></td>
-</tr>
-<tr>
-<td style="text-align:left">🇦🇹 <strong>Austria</strong></td>
-<td style="text-align:left"><a href="#-vienna-austria">Vienna</a> • <a href="#-ramsau-am-dachstein-austrian-alps">Ramsau am Dachstein</a> • <a href="#-salzburg--berchtesgadener-land">Salzburg &amp; Salzkammergut</a> • <a href="#-wildkogel-arena--rosenheim">Wildkogel-Arena</a></td>
-</tr>
-<tr>
-<td style="text-align:left">🇸🇰 <strong>Slovakia</strong></td>
-<td style="text-align:left"><a href="#-bratislava-slovakia">Bratislava</a></td>
-</tr>
-<tr>
-<td style="text-align:left">🇩🇪 <strong>Germany</strong></td>
-<td style="text-align:left"><a href="#-schloss-neuschwanstein--allg%C3%A4u-bavaria">Schloss Neuschwanstein &amp; Allgäu</a> • <a href="#-munich-bavaria">Munich</a> • <a href="#-allianz-arena--ingolstadt-village">Allianz Arena &amp; Ingolstadt</a></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>🇨🇿 Prague, Czech Republic</h2>
+<div id="country-czech" class="country-marker"></div>
+<h2 id="prague">🇨🇿 Prague, Czech Republic</h2>
 <p>Prague is one of Europe's best-preserved medieval and Baroque capitals, featuring cobblestone alleys, illuminated river vistas, and a rich cafe and brewery culture.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="prague-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -497,7 +883,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="prague-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -540,7 +926,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
+<h3 id="prague-snacks">☕ Trending Snacks &amp; Street Food</h3>
 <table>
 <thead>
 <tr>
@@ -571,7 +957,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="prague-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -615,9 +1001,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🇨🇿 South Bohemia: Český Krumlov &amp; Lake Lipno</h2>
+<h2 id="south-bohemia">🇨🇿 South Bohemia: Český Krumlov &amp; Lake Lipno</h2>
 <p>Nestled along the winding Vltava river, South Bohemia offers fairytale Renaissance architecture and winter outdoor recreation.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="south-bohemia-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -642,7 +1028,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="south-bohemia-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -661,7 +1047,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="south-bohemia-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -681,9 +1067,10 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🇦🇹 Vienna, Austria</h2>
+<div id="country-austria" class="country-marker"></div>
+<h2 id="vienna">🇦🇹 Vienna, Austria</h2>
 <p>Vienna blends imperial grandeur, grand coffeehouse traditions, and world-class classical arts with vibrant seasonal open-air celebrations.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="vienna-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -744,7 +1131,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="vienna-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -769,7 +1156,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
+<h3 id="vienna-snacks">☕ Trending Snacks &amp; Street Food</h3>
 <table>
 <thead>
 <tr>
@@ -806,7 +1193,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="vienna-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -844,106 +1231,10 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🇸🇰 Bratislava, Slovakia</h2>
-<p>Just an hour down the Danube from Vienna, Bratislava charms with compact cobblestone streets, quirky public art, and clifftop castle views.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Attraction / Landmark</th>
-<th style="text-align:left">Type &amp; Focus</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Visitor Tips</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://bratislava-hrad.sk/en">Bratislava Castle (<em>Bratislavský hrad</em>)</a></strong></td>
-<td style="text-align:left">Historic Clifftop Castle</td>
-<td style="text-align:left">Imposing 4-turreted white fortress perched atop a rocky hill; panoramic ramparts looking out across the Danube into Austria and Hungary.</td>
-<td style="text-align:left">Castle grounds and courtyards are free to enter; easy walk or short trolleybus ride from Old Town.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://muzeumbratislava.sk/en/michaels-tower">Michael’s Gate (<em>Michalská brána</em>)</a></strong></td>
-<td style="text-align:left">Medieval Gate &amp; Statue Hunt</td>
-<td style="text-align:left">14th-century Gothic gate tower with the brass &quot;Kilometer Zero&quot; rosette; cobblestone streets featuring famous bronze statues: <strong><a href="https://visitbratislava.com/places/cumil/">Čumil the Sewer Man</a></strong>, <strong><a href="https://visitbratislava.com/places/schone-naci/">Schöne Náci</a></strong>, and the <strong><a href="https://visitbratislava.com/places/napoleons-soldier/">Napoleonic Soldier</a></strong>.</td>
-<td style="text-align:left">Compact and easily explored on foot in under 1 hour.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://visitbratislava.com/places/the-blue-church/">The Blue Church (<em>Modrý kostolík</em>)</a></strong></td>
-<td style="text-align:left">Art Nouveau Architecture</td>
-<td style="text-align:left">Fairytale pastel baby-blue church built in 1913, decorated with blue-glazed roof ceramics and gold mosaics resembling an iced confection.</td>
-<td style="text-align:left">Located on Bezručova street; peaceful 10-minute walk east of the main pedestrian core.</td>
-</tr>
-</tbody>
-</table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Activity / Experience</th>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Highlights &amp; What to Expect</th>
-<th style="text-align:left">Practical Tips &amp; Admission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://www.u-f-o.sk/en/">UFO Observation Deck &amp; Bridge (<em>Most SNP</em>)</a></strong></td>
-<td style="text-align:left">High-Altitude Observation Deck</td>
-<td style="text-align:left">High-speed elevator whisks visitors 95 meters up to an iconic flying-saucer observation deck on the SNP Bridge for sunset river views.</td>
-<td style="text-align:left">Open late into the evening; ticket price offset against restaurant dining bills.</td>
-</tr>
-</tbody>
-</table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Treat / Specialty</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description &amp; Flavor Profile</th>
-<th style="text-align:left">Where to Try &amp; Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>Bratislavské rožky</strong></td>
-<td style="text-align:left">Traditional Pastry</td>
-<td style="text-align:left">Centuries-old crescent rolls filled with sweetened ground walnut paste or fragrant poppy seed filling.</td>
-<td style="text-align:left">Available in traditional Old Town bakeries and pastry shops.</td>
-</tr>
-</tbody>
-</table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Restaurant / Tavern</th>
-<th style="text-align:left">Style &amp; Atmosphere</th>
-<th style="text-align:left">Signature Dishes &amp; Specialties</th>
-<th style="text-align:left">Popular Asian Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><a href="https://mestianskypivovar.sk/">Bratislavský Meštiansky Pivovar</a></strong></td>
-<td style="text-align:left">Traditional Slovak Brewery</td>
-<td style="text-align:left">Convivial microbrewery tavern; roasted garlic soup served in a crusty bread loaf (<em>cesnačka v bochníku</em>), potato dumplings with sheep cheese and bacon (<em>bryndzové halušky</em>), and slow-roasted duck with potato flatbreads (<em>lokše</em>).</td>
-<td style="text-align:left"><strong><a href="https://jasmin.sk/">Jasmin Asian Restaurant</a></strong> (Židovská 7) right at castle steps for hot soups and dumplings.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><a href="https://zylinder.sk/en/">Zylinder Cafe &amp; Restaurant</a></strong></td>
-<td style="text-align:left">Historic Austro-Hungarian Dining</td>
-<td style="text-align:left">Elegant historic dining room on Hviezdoslav Square; authentic Pressburg Tafelspitz, braised game meats, and delicate regional desserts.</td>
-<td style="text-align:left"><strong><a href="https://woksushi.sk/">Wok&amp;Sushi</a></strong> (Mostová 2) for fresh sushi and wok-fried noodles.</td>
-</tr>
-</tbody>
-</table>
 <hr />
-<h2>🐎 Ramsau am Dachstein, Austrian Alps</h2>
+<h2 id="ramsau">🐎 Ramsau am Dachstein, Austrian Alps</h2>
 <p>A winter wonderland nestled on an elevated plateau directly below the sheer 1,000m limestone south face of the Dachstein glacier.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="ramsau-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -962,7 +1253,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="ramsau-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -981,7 +1272,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Alpine Huts</h3>
+<h3 id="ramsau-dining">🍽️ Recommended Dining &amp; Alpine Huts</h3>
 <table>
 <thead>
 <tr>
@@ -1001,9 +1292,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🇦🇹 Salzburg &amp; Berchtesgadener Land</h2>
+<h2 id="salzburg">🇦🇹 Salzburg &amp; Berchtesgadener Land</h2>
 <p>The Baroque city of Mozart and <em>The Sound of Music</em>, framed by emerald alpine lakes and dramatic Bavarian mountain peaks.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="salzburg-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -1052,7 +1343,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="salzburg-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -1089,7 +1380,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
+<h3 id="salzburg-snacks">☕ Trending Snacks &amp; Street Food</h3>
 <table>
 <thead>
 <tr>
@@ -1120,7 +1411,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="salzburg-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -1164,9 +1455,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🛷 Wildkogel-Arena &amp; Rosenheim</h2>
+<h2 id="wildkogel">🛷 Wildkogel-Arena &amp; Rosenheim</h2>
 <p>Famous for the world's longest floodlit toboggan track and traditional Upper Bavarian market towns.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="wildkogel-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -1197,7 +1488,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="wildkogel-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -1216,7 +1507,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
+<h3 id="wildkogel-snacks">☕ Trending Snacks &amp; Street Food</h3>
 <table>
 <thead>
 <tr>
@@ -1235,7 +1526,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="wildkogel-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -1261,9 +1552,108 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🏰 Schloss Neuschwanstein &amp; Allgäu, Bavaria</h2>
+<div id="country-slovakia" class="country-marker"></div>
+<h2 id="bratislava">🇸🇰 Bratislava, Slovakia</h2>
+<p>Just an hour down the Danube from Vienna, Bratislava charms with compact cobblestone streets, quirky public art, and clifftop castle views.</p>
+<h3 id="bratislava-sights">🏛️ Top Attractions &amp; Sights</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Attraction / Landmark</th>
+<th style="text-align:left">Type &amp; Focus</th>
+<th style="text-align:left">Highlights &amp; What to Expect</th>
+<th style="text-align:left">Practical Visitor Tips</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><a href="https://bratislava-hrad.sk/en">Bratislava Castle (<em>Bratislavský hrad</em>)</a></strong></td>
+<td style="text-align:left">Historic Clifftop Castle</td>
+<td style="text-align:left">Imposing 4-turreted white fortress perched atop a rocky hill; panoramic ramparts looking out across the Danube into Austria and Hungary.</td>
+<td style="text-align:left">Castle grounds and courtyards are free to enter; easy walk or short trolleybus ride from Old Town.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><a href="https://muzeumbratislava.sk/en/michaels-tower">Michael’s Gate (<em>Michalská brána</em>)</a></strong></td>
+<td style="text-align:left">Medieval Gate &amp; Statue Hunt</td>
+<td style="text-align:left">14th-century Gothic gate tower with the brass &quot;Kilometer Zero&quot; rosette; cobblestone streets featuring famous bronze statues: <strong><a href="https://visitbratislava.com/places/cumil/">Čumil the Sewer Man</a></strong>, <strong><a href="https://visitbratislava.com/places/schone-naci/">Schöne Náci</a></strong>, and the <strong><a href="https://visitbratislava.com/places/napoleons-soldier/">Napoleonic Soldier</a></strong>.</td>
+<td style="text-align:left">Compact and easily explored on foot in under 1 hour.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><a href="https://visitbratislava.com/places/the-blue-church/">The Blue Church (<em>Modrý kostolík</em>)</a></strong></td>
+<td style="text-align:left">Art Nouveau Architecture</td>
+<td style="text-align:left">Fairytale pastel baby-blue church built in 1913, decorated with blue-glazed roof ceramics and gold mosaics resembling an iced confection.</td>
+<td style="text-align:left">Located on Bezručova street; peaceful 10-minute walk east of the main pedestrian core.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bratislava-activities">🎯 Activities &amp; Unique Experiences</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Activity / Experience</th>
+<th style="text-align:left">Category</th>
+<th style="text-align:left">Highlights &amp; What to Expect</th>
+<th style="text-align:left">Practical Tips &amp; Admission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><a href="https://www.u-f-o.sk/en/">UFO Observation Deck &amp; Bridge (<em>Most SNP</em>)</a></strong></td>
+<td style="text-align:left">High-Altitude Observation Deck</td>
+<td style="text-align:left">High-speed elevator whisks visitors 95 meters up to an iconic flying-saucer observation deck on the SNP Bridge for sunset river views.</td>
+<td style="text-align:left">Open late into the evening; ticket price offset against restaurant dining bills.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bratislava-snacks">☕ Trending Snacks &amp; Street Food</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Treat / Specialty</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description &amp; Flavor Profile</th>
+<th style="text-align:left">Where to Try &amp; Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Bratislavské rožky</strong></td>
+<td style="text-align:left">Traditional Pastry</td>
+<td style="text-align:left">Centuries-old crescent rolls filled with sweetened ground walnut paste or fragrant poppy seed filling.</td>
+<td style="text-align:left">Available in traditional Old Town bakeries and pastry shops.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bratislava-dining">🍽️ Recommended Dining &amp; Taverns</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Restaurant / Tavern</th>
+<th style="text-align:left">Style &amp; Atmosphere</th>
+<th style="text-align:left">Signature Dishes &amp; Specialties</th>
+<th style="text-align:left">Popular Asian Alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><a href="https://mestianskypivovar.sk/">Bratislavský Meštiansky Pivovar</a></strong></td>
+<td style="text-align:left">Traditional Slovak Brewery</td>
+<td style="text-align:left">Convivial microbrewery tavern; roasted garlic soup served in a crusty bread loaf (<em>cesnačka v bochníku</em>), potato dumplings with sheep cheese and bacon (<em>bryndzové halušky</em>), and slow-roasted duck with potato flatbreads (<em>lokše</em>).</td>
+<td style="text-align:left"><strong><a href="https://jasmin.sk/">Jasmin Asian Restaurant</a></strong> (Židovská 7) right at castle steps for hot soups and dumplings.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><a href="https://zylinder.sk/en/">Zylinder Cafe &amp; Restaurant</a></strong></td>
+<td style="text-align:left">Historic Austro-Hungarian Dining</td>
+<td style="text-align:left">Elegant historic dining room on Hviezdoslav Square; authentic Pressburg Tafelspitz, braised game meats, and delicate regional desserts.</td>
+<td style="text-align:left"><strong><a href="https://woksushi.sk/">Wok&amp;Sushi</a></strong> (Mostová 2) for fresh sushi and wok-fried noodles.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div id="country-germany" class="country-marker"></div>
+<h2 id="neuschwanstein">🏰 Schloss Neuschwanstein &amp; Allgäu, Bavaria</h2>
 <p>The ultimate fairytale palace setting perched high above dramatic alpine gorges in southwestern Bavaria.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="neuschwanstein-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -1294,7 +1684,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="neuschwanstein-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -1313,7 +1703,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="neuschwanstein-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -1333,9 +1723,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>🇩🇪 Munich, Bavaria</h2>
+<h2 id="munich">🇩🇪 Munich, Bavaria</h2>
 <p>Munich harmonizes centuries of Wittelsbach royal grandeur with futuristic technology and quintessential Bavarian beer hall culture.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="munich-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -1378,7 +1768,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="munich-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -1415,7 +1805,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>☕ Trending Snacks &amp; Street Food</h3>
+<h3 id="munich-snacks">☕ Trending Snacks &amp; Street Food</h3>
 <table>
 <thead>
 <tr>
@@ -1440,7 +1830,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Dining &amp; Taverns</h3>
+<h3 id="munich-dining">🍽️ Recommended Dining &amp; Taverns</h3>
 <table>
 <thead>
 <tr>
@@ -1478,9 +1868,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tbody>
 </table>
 <hr />
-<h2>⚽ Allianz Arena &amp; Ingolstadt Village</h2>
+<h2 id="allianz">⚽ Allianz Arena &amp; Ingolstadt Village</h2>
 <p>World-class football history and designer open-air shopping along the northern highway corridor from Munich.</p>
-<h3>🏛️ Top Attractions &amp; Sights</h3>
+<h3 id="allianz-sights">🏛️ Top Attractions &amp; Sights</h3>
 <table>
 <thead>
 <tr>
@@ -1505,7 +1895,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🎯 Activities &amp; Unique Experiences</h3>
+<h3 id="allianz-activities">🎯 Activities &amp; Unique Experiences</h3>
 <table>
 <thead>
 <tr>
@@ -1530,7 +1920,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 </tr>
 </tbody>
 </table>
-<h3>🍽️ Recommended Highway &amp; Village Dining</h3>
+<h3 id="allianz-dining">🍽️ Recommended Highway &amp; Village Dining</h3>
 <table>
 <thead>
 <tr>
@@ -1576,13 +1966,67 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
         wrapper.appendChild(table);
       });
 
-      // Auto-hide destination-specific pills if not on the Central Europe trip page
-      const hasTripDestinations = document.querySelector("#-prague-czech-republic") !== null;
-      if (!hasTripDestinations) {
-        document.querySelectorAll(".trip-nav").forEach(el => el.style.display = "none");
+      // If not on the Central Europe trip page, point hash links to czech-austria-slovakia-germany.html#...
+      const onTripPage = document.getElementById("country-czech") !== null;
+      if (!onTripPage) {
+        document.querySelectorAll(".dropdown-menu a").forEach(link => {
+          const href = link.getAttribute("href");
+          if (href && href.startsWith("#")) {
+            link.setAttribute("href", "czech-austria-slovakia-germany.html" + href);
+          }
+        });
       }
     });
 
+    // Toggle dropdowns on click / tap
+    document.querySelectorAll(".nav-country-btn").forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const currentDropdown = this.closest(".nav-dropdown");
+        const isOpen = currentDropdown.classList.contains("open");
+
+        // Close all dropdowns
+        document.querySelectorAll(".nav-dropdown").forEach(d => {
+          d.classList.remove("open");
+          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
+        });
+
+        if (!isOpen) {
+          currentDropdown.classList.add("open");
+          this.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    // Close dropdown menu when clicking any drill-down link
+    document.querySelectorAll(".dropdown-menu a").forEach(link => {
+      link.addEventListener("click", function () {
+        document.querySelectorAll(".nav-dropdown").forEach(d => {
+          d.classList.remove("open");
+          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".nav-dropdown")) {
+        document.querySelectorAll(".nav-dropdown").forEach(d => {
+          d.classList.remove("open");
+          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    // Close dropdowns on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        document.querySelectorAll(".nav-dropdown").forEach(d => {
+          d.classList.remove("open");
+          d.querySelector(".nav-country-btn")?.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
 
     // Back to top button visibility
     const backToTop = document.getElementById("backToTop");
@@ -1592,6 +2036,41 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
       } else {
         backToTop.classList.remove("visible");
       }
+    });
+
+    // Dynamic Country ScrollSpy
+    const countryAnchors = [
+      { id: "country-czech", key: "czech" },
+      { id: "country-austria", key: "austria" },
+      { id: "country-slovakia", key: "slovakia" },
+      { id: "country-germany", key: "germany" }
+    ];
+
+    window.addEventListener("scroll", () => {
+      const scrollPos = window.scrollY + 130;
+      let currentCountry = null;
+
+      for (const item of countryAnchors) {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPos >= top) {
+            currentCountry = item.key;
+          }
+        }
+      }
+
+      document.querySelectorAll(".nav-dropdown").forEach(dropdown => {
+        const countryKey = dropdown.getAttribute("data-country");
+        const btn = dropdown.querySelector(".nav-country-btn");
+        if (btn) {
+          if (countryKey === currentCountry) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        }
+      });
     });
 
     // Real-time table filter
@@ -1615,4 +2094,3 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
   </script>
 </body>
 </html>
-

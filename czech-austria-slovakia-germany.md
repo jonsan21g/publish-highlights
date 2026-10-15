@@ -13,16 +13,6 @@ description: "A curated, practical guide to iconic cultural sights, thrilling al
 
 ---
 
-## 📌 Quick Navigation
-
-| Region / Country | Destinations & Highlights |
-| :--- | :--- |
-| 🇨🇿 **Czech Republic** | [Prague](#-prague-czech-republic) • [South Bohemia: Český Krumlov & Lipno](#-south-bohemia-český-krumlov--lake-lipno) |
-| 🇦🇹 **Austria** | [Vienna](#-vienna-austria) • [Ramsau am Dachstein](#-ramsau-am-dachstein-austrian-alps) • [Salzburg & Salzkammergut](#-salzburg--berchtesgadener-land) • [Wildkogel-Arena](#-wildkogel-arena--rosenheim) |
-| 🇸🇰 **Slovakia** | [Bratislava](#-bratislava-slovakia) |
-| 🇩🇪 **Germany** | [Schloss Neuschwanstein & Allgäu](#-schloss-neuschwanstein--allgäu-bavaria) • [Munich](#-munich-bavaria) • [Allianz Arena & Ingolstadt](#-allianz-arena--ingolstadt-village) |
-
----
 
 ## 🇨🇿 Prague, Czech Republic
 
@@ -139,37 +129,6 @@ Vienna blends imperial grandeur, grand coffeehouse traditions, and world-class c
 
 ---
 
-## 🇸🇰 Bratislava, Slovakia
-
-Just an hour down the Danube from Vienna, Bratislava charms with compact cobblestone streets, quirky public art, and clifftop castle views.
-
-### 🏛️ Top Attractions & Sights
-
-| Attraction / Landmark | Type & Focus | Highlights & What to Expect | Practical Visitor Tips |
-| :--- | :--- | :--- | :--- |
-| **[Bratislava Castle (*Bratislavský hrad*)](https://bratislava-hrad.sk/en)** | Historic Clifftop Castle | Imposing 4-turreted white fortress perched atop a rocky hill; panoramic ramparts looking out across the Danube into Austria and Hungary. | Castle grounds and courtyards are free to enter; easy walk or short trolleybus ride from Old Town. |
-| **[Michael’s Gate (*Michalská brána*)](https://muzeumbratislava.sk/en/michaels-tower)** | Medieval Gate & Statue Hunt | 14th-century Gothic gate tower with the brass "Kilometer Zero" rosette; cobblestone streets featuring famous bronze statues: **[Čumil the Sewer Man](https://visitbratislava.com/places/cumil/)**, **[Schöne Náci](https://visitbratislava.com/places/schone-naci/)**, and the **[Napoleonic Soldier](https://visitbratislava.com/places/napoleons-soldier/)**. | Compact and easily explored on foot in under 1 hour. |
-| **[The Blue Church (*Modrý kostolík*)](https://visitbratislava.com/places/the-blue-church/)** | Art Nouveau Architecture | Fairytale pastel baby-blue church built in 1913, decorated with blue-glazed roof ceramics and gold mosaics resembling an iced confection. | Located on Bezručova street; peaceful 10-minute walk east of the main pedestrian core. |
-
-### 🎯 Activities & Unique Experiences
-
-| Activity / Experience | Category | Highlights & What to Expect | Practical Tips & Admission |
-| :--- | :--- | :--- | :--- |
-| **[UFO Observation Deck & Bridge (*Most SNP*)](https://www.u-f-o.sk/en/)** | High-Altitude Observation Deck | High-speed elevator whisks visitors 95 meters up to an iconic flying-saucer observation deck on the SNP Bridge for sunset river views. | Open late into the evening; ticket price offset against restaurant dining bills. |
-
-### ☕ Trending Snacks & Street Food
-
-| Treat / Specialty | Type | Description & Flavor Profile | Where to Try & Notes |
-| :--- | :--- | :--- | :--- |
-| **Bratislavské rožky** | Traditional Pastry | Centuries-old crescent rolls filled with sweetened ground walnut paste or fragrant poppy seed filling. | Available in traditional Old Town bakeries and pastry shops. |
-
-### 🍽️ Recommended Dining & Taverns
-
-| Restaurant / Tavern | Style & Atmosphere | Signature Dishes & Specialties | Popular Asian Alternative |
-| :--- | :--- | :--- | :--- |
-| **[Bratislavský Meštiansky Pivovar](https://mestianskypivovar.sk/)** | Traditional Slovak Brewery | Convivial microbrewery tavern; roasted garlic soup served in a crusty bread loaf (*cesnačka v bochníku*), potato dumplings with sheep cheese and bacon (*bryndzové halušky*), and slow-roasted duck with potato flatbreads (*lokše*). | **[Jasmin Asian Restaurant](https://jasmin.sk/)** (Židovská 7) right at castle steps for hot soups and dumplings. |
-| **[Zylinder Cafe & Restaurant](https://zylinder.sk/en/)** | Historic Austro-Hungarian Dining | Elegant historic dining room on Hviezdoslav Square; authentic Pressburg Tafelspitz, braised game meats, and delicate regional desserts. | **[Wok&Sushi](https://woksushi.sk/)** (Mostová 2) for fresh sushi and wok-fried noodles. |
-
 ---
 
 ## 🐎 Ramsau am Dachstein, Austrian Alps
@@ -270,6 +229,39 @@ Famous for the world's longest floodlit toboggan track and traditional Upper Bav
 | :--- | :--- | :--- | :--- |
 | **[Aussichtsrestaurant Wolkenstein](https://www.wolkenstein.at/)** | Mountain Lodge at 2,100m | Located 50m from the top gondola station; sizzling skillet *Tiroler Gröstl* (fried potatoes, beef, and fried egg), *Kaspressknödelsuppe*, and fresh Germknödel. | High-altitude alpine dining with panoramic sundeck. |
 | **[Flötzinger Bräustüberl](https://www.floetzinger-braeustueberl.de/)** | Historic 1543 Brewery Tavern | Rosenheim’s oldest private brewery tavern (World Beer Cup Gold winner); crispy Bavarian pork knuckle (*Schweinshaxe*), *Allgäuer Käsespätzle*, and *Apfelkücherl*. | **[Asia World Restaurant](https://asiaworld-rosenheim.de/)** (Münchener Straße 18) or **[Viet Phở](https://vietpho-rosenheim.de/)** (Salinstraße 11). |
+
+---
+
+## 🇸🇰 Bratislava, Slovakia
+
+Just an hour down the Danube from Vienna, Bratislava charms with compact cobblestone streets, quirky public art, and clifftop castle views.
+
+### 🏛️ Top Attractions & Sights
+
+| Attraction / Landmark | Type & Focus | Highlights & What to Expect | Practical Visitor Tips |
+| :--- | :--- | :--- | :--- |
+| **[Bratislava Castle (*Bratislavský hrad*)](https://bratislava-hrad.sk/en)** | Historic Clifftop Castle | Imposing 4-turreted white fortress perched atop a rocky hill; panoramic ramparts looking out across the Danube into Austria and Hungary. | Castle grounds and courtyards are free to enter; easy walk or short trolleybus ride from Old Town. |
+| **[Michael’s Gate (*Michalská brána*)](https://muzeumbratislava.sk/en/michaels-tower)** | Medieval Gate & Statue Hunt | 14th-century Gothic gate tower with the brass "Kilometer Zero" rosette; cobblestone streets featuring famous bronze statues: **[Čumil the Sewer Man](https://visitbratislava.com/places/cumil/)**, **[Schöne Náci](https://visitbratislava.com/places/schone-naci/)**, and the **[Napoleonic Soldier](https://visitbratislava.com/places/napoleons-soldier/)**. | Compact and easily explored on foot in under 1 hour. |
+| **[The Blue Church (*Modrý kostolík*)](https://visitbratislava.com/places/the-blue-church/)** | Art Nouveau Architecture | Fairytale pastel baby-blue church built in 1913, decorated with blue-glazed roof ceramics and gold mosaics resembling an iced confection. | Located on Bezručova street; peaceful 10-minute walk east of the main pedestrian core. |
+
+### 🎯 Activities & Unique Experiences
+
+| Activity / Experience | Category | Highlights & What to Expect | Practical Tips & Admission |
+| :--- | :--- | :--- | :--- |
+| **[UFO Observation Deck & Bridge (*Most SNP*)](https://www.u-f-o.sk/en/)** | High-Altitude Observation Deck | High-speed elevator whisks visitors 95 meters up to an iconic flying-saucer observation deck on the SNP Bridge for sunset river views. | Open late into the evening; ticket price offset against restaurant dining bills. |
+
+### ☕ Trending Snacks & Street Food
+
+| Treat / Specialty | Type | Description & Flavor Profile | Where to Try & Notes |
+| :--- | :--- | :--- | :--- |
+| **Bratislavské rožky** | Traditional Pastry | Centuries-old crescent rolls filled with sweetened ground walnut paste or fragrant poppy seed filling. | Available in traditional Old Town bakeries and pastry shops. |
+
+### 🍽️ Recommended Dining & Taverns
+
+| Restaurant / Tavern | Style & Atmosphere | Signature Dishes & Specialties | Popular Asian Alternative |
+| :--- | :--- | :--- | :--- |
+| **[Bratislavský Meštiansky Pivovar](https://mestianskypivovar.sk/)** | Traditional Slovak Brewery | Convivial microbrewery tavern; roasted garlic soup served in a crusty bread loaf (*cesnačka v bochníku*), potato dumplings with sheep cheese and bacon (*bryndzové halušky*), and slow-roasted duck with potato flatbreads (*lokše*). | **[Jasmin Asian Restaurant](https://jasmin.sk/)** (Židovská 7) right at castle steps for hot soups and dumplings. |
+| **[Zylinder Cafe & Restaurant](https://zylinder.sk/en/)** | Historic Austro-Hungarian Dining | Elegant historic dining room on Hviezdoslav Square; authentic Pressburg Tafelspitz, braised game meats, and delicate regional desserts. | **[Wok&Sushi](https://woksushi.sk/)** (Mostová 2) for fresh sushi and wok-fried noodles. |
 
 ---
 
