@@ -42,6 +42,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     body {
@@ -50,6 +52,8 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     /* Container */
@@ -420,6 +424,8 @@
     /* Main Content Area */
     .content-area {
       padding: 36px 0 80px;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Markdown Typography */
@@ -473,7 +479,11 @@
     /* Responsive Tables */
     .table-container {
       width: 100%;
+      max-width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
       margin: 18px 0 28px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
@@ -666,7 +676,7 @@
 <hr />
 <h2 id="featured-travel-guides">🗺️ Featured Travel Guides</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin: 30px 0;">
-  <!-- Featured Active Trip Card -->
+  <!-- 1. Central Europe Winter Card -->
   <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;">
     <div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
@@ -699,7 +709,7 @@
       </a>
     </div>
   </div>
-  <!-- Japan Featured Trip Card -->
+  <!-- 2. Japan Card -->
   <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;">
     <div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
@@ -732,10 +742,109 @@
       </a>
     </div>
   </div>
+  <!-- 3. Bornholm Card -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;">
+    <div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">🍂 Autumn Edition</span>
+        <span style="background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">5 Island Regions</span>
+        <span style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">Coastal Fortress & Smokehouse</span>
+      </div>
+      <h2 id="bornholm-autumn-highlights-dining-guide" style="font-size: 1.45rem; font-weight: 700; margin-top: 0; margin-bottom: 8px; border-bottom: none; padding-bottom: 0;">
+        <a href="bornholm.html" style="color: #0f172a; text-decoration: none;">Bornholm Autumn Highlights & Dining Guide</a>
+      </h2>
+      <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px; font-weight: 600;">
+        🇩🇰 Bornholm, Denmark • Allinge • Almindingen • Gudhjem • Svaneke • Dueodde • Rønne
+      </p>
+      <p style="font-size: 0.92rem; color: #475569; line-height: 1.55; margin-bottom: 18px;">
+        A comprehensive island guide spanning Northern Europe's largest medieval castle ruin (Hammershus), dramatic Baltic sea cliffs, Denmark's longest rift valley (Ekkodalen), 12th-century fortified round churches, living artisan smokehouses, historic glass ateliers, and the ultra-fine quartz sands of Dueodde.
+      </p>
+      <ul style="font-size: 0.88rem; color: #334155; margin-left: 18px; margin-bottom: 20px; line-height: 1.6;">
+        <li><strong>🏛️ Sights</strong>: Hammershus Fortress, Hammerknuden, Ekkodalen Echo Valley, Østerlars Round Church, Dueodde Dunes.</li>
+        <li><strong>🎯 Activities</strong>: Brohuset Visitor Centre, Joboland amusement park, Melstedgård farm, Rovfugleshow birds of prey.</li>
+        <li><strong>☕ Local Treats</strong>: Café Ekkodalshuset giant tartlets, Karamel Kompagniet fudge, Svaneke Is, Kjærstrup gourmet flødebolle.</li>
+        <li><strong>🍽️ Dining</strong>: Allinge Røgeri (warm smoked salmon & Sol over Gudhjem), Svaneke Bryghus, Det Røde Pakhus, plus Asian alternatives.</li>
+      </ul>
+    </div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <a href="bornholm.html" style="flex: 1; min-width: 130px; text-align: center; background: #d97706; color: #ffffff; padding: 12px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+        Explore Guide ➔
+      </a>
+      <a href="bornholm-with-video.html" style="flex: 1; min-width: 130px; text-align: center; background: #fffbeb; color: #d97706; border: 1px solid #fde68a; padding: 12px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+        🎬 Video Edition ➔
+      </a>
+    </div>
+  </div>
+  <!-- 4. Baltic Route Card -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;">
+    <div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span style="background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">🗺️ Winter Grand Tour</span>
+        <span style="background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">5 Baltic Nations</span>
+        <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">Ferry Crossings & Markets</span>
+      </div>
+      <h2 id="baltic-winter-route-highlights-dining-guide" style="font-size: 1.45rem; font-weight: 700; margin-top: 0; margin-bottom: 8px; border-bottom: none; padding-bottom: 0;">
+        <a href="baltic-route.html" style="color: #0f172a; text-decoration: none;">Baltic Winter Route Highlights & Dining Guide</a>
+      </h2>
+      <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px; font-weight: 600;">
+        🇵🇱 Poland • 🇱🇹 Lithuania • 🇱🇻 Latvia • 🇪🇪 Estonia • 🇸🇪 Sweden
+      </p>
+      <p style="font-size: 0.92rem; color: #475569; line-height: 1.55; margin-bottom: 18px;">
+        An epic trans-Baltic journey connecting the historic Hanseatic shipyards of Gdańsk, the world's largest brick castle (Malbork), Vilnius' Baroque Old Town and the Bohemian Republic of Užupis, Riga's Art Nouveau boulevards and Olympic ice bobsleigh, Tallinn's fairy-tale medieval walled citadel, and Stockholm's maritime 1628 Vasa warship.
+      </p>
+      <ul style="font-size: 0.88rem; color: #334155; margin-left: 18px; margin-bottom: 20px; line-height: 1.6;">
+        <li><strong>🏛️ Sights</strong>: Malbork Castle, Trakai Island Castle, Hill of Crosses, House of the Black Heads, Tallinn Toompea, Vasa Museum.</li>
+        <li><strong>🎯 Activities</strong>: Stena Line & Tallink Silja cruise ferries, Sigulda 80 km/h Olympic bobsleigh, Lennusadam submarine.</li>
+        <li><strong>☕ Street Treats</strong>: Dobra Pączkarnia hot brioche doughnuts, Senoji Kibininė pastries, Black Magic Balsam truffles, Gränna peppermint canes.</li>
+        <li><strong>🍽️ Dining</strong>: Mandu artisan pierogi, Restoranas Lokys wild game cellar, Folkklubs ALA, Rataskaevu 16, Swedish meatballs.</li>
+      </ul>
+    </div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <a href="baltic-route.html" style="flex: 1; min-width: 130px; text-align: center; background: #4338ca; color: #ffffff; padding: 12px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+        Explore Guide ➔
+      </a>
+      <a href="baltic-route-with-video.html" style="flex: 1; min-width: 130px; text-align: center; background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; padding: 12px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+        🎬 Video Edition ➔
+      </a>
+    </div>
+  </div>
+  <!-- 5. Iceland Card -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;">
+    <div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span style="background: #cffafe; color: #0891b2; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">🇮🇸 Arctic Adventure</span>
+        <span style="background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">5 Base Regions</span>
+        <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">Glaciers & Geothermal Spas</span>
+      </div>
+      <h2 id="iceland-ring-route-highlights-dining-guide" style="font-size: 1.45rem; font-weight: 700; margin-top: 0; margin-bottom: 8px; border-bottom: none; padding-bottom: 0;">
+        <a href="iceland.html" style="color: #0f172a; text-decoration: none;">Iceland Ring Route Highlights & Dining Guide</a>
+      </h2>
+      <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px; font-weight: 600;">
+        🇮🇸 Iceland • Reykjanes • Snæfellsnes • Golden Circle • Deep South & Glaciers • Reykjavík
+      </p>
+      <p style="font-size: 0.92rem; color: #475569; line-height: 1.55; margin-bottom: 18px;">
+        A world-class geological expedition exploring tectonic rifts, active geysers, the iconic Kirkjufell arrowhead peak, roaring double waterfalls, the Recessed Cavern of Seljalandsfoss, Reynisfjara's basalt columns, iceberg-filled Jökulsárlón lagoon, diamond ice beaches, subterranean geothermal bakeries, and the world-renowned Blue Lagoon & Sky Lagoon spas.
+      </p>
+      <ul style="font-size: 0.88rem; color: #334155; margin-left: 18px; margin-bottom: 20px; line-height: 1.6;">
+        <li><strong>🏛️ Sights</strong>: Bridge Between Continents, Kirkjufell, Þingvellir, Strokkur Geysir, Gullfoss, Reynisfjara, Diamond Beach.</li>
+        <li><strong>🎯 Activities</strong>: Blue Lagoon, Vatnshellir 8,000y lava tube, Fontana geothermal rye bread tour, Live Molten Lava Show, Blue Ice Cave, Sky Lagoon 7-step ritual.</li>
+        <li><strong>☕ Street Treats</strong>: Kökulist cinnamon swirls, Efstidalur dairy farm gelato, Skool Beans converted bus cafe, Bæjarins Beztu lamb hot dogs.</li>
+        <li><strong>🍽️ Dining</strong>: Friðheimar greenhouse tomato soup buffet, The Soup Company sourdough bowls, Messinn pan-sautéed arctic char, Kaffi Duus chowder.</li>
+      </ul>
+    </div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <a href="iceland.html" style="flex: 1; min-width: 130px; text-align: center; background: #0891b2; color: #ffffff; padding: 12px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+        Explore Guide ➔
+      </a>
+      <a href="iceland-with-video.html" style="flex: 1; min-width: 130px; text-align: center; background: #ecfeff; color: #0891b2; border: 1px solid #a5f3fc; padding: 12px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+        🎬 Video Edition ➔
+      </a>
+    </div>
+  </div>
 </div>
 <hr />
 <h2 id="what-makes-these-guides-unique">📋 What Makes These Guides Unique?</h2>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Feature</th>
@@ -760,11 +869,15 @@
 <td style="text-align:left">In addition to traditional regional dishes (schnitzel, goulash, pork knuckle, dumplings), every dining section features popular nearby Asian options (pho, ramen, sushi, bibimbap).</td>
 </tr>
 <tr>
+<td style="text-align:left"><strong>🎬 Interactive Video Editions</strong></td>
+<td style="text-align:left">Every destination offers a sister edition with embedded high-definition video previews and YouTube watch links for every single sight and restaurant.</td>
+</tr>
+<tr>
 <td style="text-align:left"><strong>📱 Mobile-First Interactive View</strong></td>
 <td style="text-align:left">On mobile devices, tables scroll horizontally with ease, and real-time live search allows filtering destinations and dishes in seconds.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <p><em>Curated as a public travel resource for independent travelers.</em></p>
 
@@ -782,14 +895,16 @@
   </footer>
 
   <script>
-    // Automatically wrap all Markdown tables in responsive scrolling containers
+    // Automatically wrap all Markdown tables in responsive scrolling containers if not already wrapped
     document.addEventListener("DOMContentLoaded", function () {
-      const tables = document.querySelectorAll(".content-area table");
+      const tables = document.querySelectorAll("table");
       tables.forEach(table => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "table-container";
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
+        if (!table.parentElement.classList.contains("table-container")) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "table-container";
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        }
       });
 
       // Sticky Navigation Interactions (Only on pages with a stickyNav element)

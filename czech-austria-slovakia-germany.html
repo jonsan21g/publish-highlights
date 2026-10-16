@@ -42,6 +42,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     body {
@@ -50,6 +52,8 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     /* Container */
@@ -420,6 +424,8 @@
     /* Main Content Area */
     .content-area {
       padding: 36px 0 80px;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Markdown Typography */
@@ -473,7 +479,11 @@
     /* Responsive Tables */
     .table-container {
       width: 100%;
+      max-width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
       margin: 18px 0 28px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
@@ -846,7 +856,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <h2 id="prague">🇨🇿 Prague, Czech Republic</h2>
 <p>Prague is one of Europe's best-preserved medieval and Baroque capitals, featuring cobblestone alleys, illuminated river vistas, and a rich cafe and brewery culture.</p>
 <h3 id="prague-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -899,9 +909,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Flat, pedestrian-friendly walking avenue connecting New Town to Old Town.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="prague-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -942,9 +952,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Multiple operators depart from Dvořákovo nábřeží near Čech Bridge.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="prague-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -973,9 +983,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Old Town Square and Náměstí Míru street food stalls.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="prague-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1016,12 +1026,12 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://hanfood.cz/" target="_blank" rel="noopener noreferrer">Han Food</a></strong> or <strong>Thai Bistro</strong> for quick, fragrant Asian street food.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="south-bohemia">🇨🇿 South Bohemia: Český Krumlov &amp; Lake Lipno</h2>
 <p>Nestled along the winding Vltava river, South Bohemia offers fairytale Renaissance architecture and winter outdoor recreation.</p>
 <h3 id="south-bohemia-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1044,9 +1054,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Completely pedestrianized; easy 10-minute flat walk from castle gates.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="south-bohemia-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1063,9 +1073,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Located ~35 km south of Český Krumlov on Lake Lipno; hand-brake speed control suitable for solo or tandem riding.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="south-bohemia-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1082,13 +1092,13 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://mysaigon.cz/" target="_blank" rel="noopener noreferrer">My Saigon</a></strong> (Panská 17) for family-run Vietnamese pho and crispy spring rolls.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <div id="country-austria" class="country-marker"></div>
 <h2 id="vienna">🇦🇹 Vienna, Austria</h2>
 <p>Vienna blends imperial grandeur, grand coffeehouse traditions, and world-class classical arts with vibrant seasonal open-air celebrations.</p>
 <h3 id="vienna-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1147,9 +1157,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Free public access; served directly by tram lines 1, 2, and D.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="vienna-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1172,9 +1182,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Open daily late into the evening; centrally located near the Vienna State Opera.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="vienna-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1209,9 +1219,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://www.cafe-imperial.at/en/" target="_blank" rel="noopener noreferrer">Café Imperial</a></strong> (Kärntner Ring 16).</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="vienna-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1246,13 +1256,13 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://www.miyamawien.at/" target="_blank" rel="noopener noreferrer">Miyama Asian</a></strong> (Simmeringer Hauptstraße 63) for sushi and wok noodle dishes.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <hr />
 <h2 id="ramsau">🐎 Ramsau am Dachstein, Austrian Alps</h2>
 <p>A winter wonderland nestled on an elevated plateau directly below the sheer 1,000m limestone south face of the Dachstein glacier.</p>
 <h3 id="ramsau-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1269,9 +1279,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Panoramic scenic driving access via B320 / L711; winter tires required.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="ramsau-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1288,9 +1298,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Reserve slots in advance with local operators (<em>Fuhrwerker Knaus</em> or <em>Prugger</em>); routes depart from Ramsau center.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="ramsau-dining">🍽️ Recommended Dining &amp; Alpine Huts</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1307,12 +1317,12 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Cozy log fire interiors; easily accessible near sleigh departure tracks.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="salzburg">🇦🇹 Salzburg &amp; Berchtesgadener Land</h2>
 <p>The Baroque city of Mozart and <em>The Sound of Music</em>, framed by emerald alpine lakes and dramatic Bavarian mountain peaks.</p>
 <h3 id="salzburg-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1359,9 +1369,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Accessible exclusively by quiet electric passenger boats departing from Schönau am Königssee.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="salzburg-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1396,9 +1406,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Year-round boat service to St. Bartholomä; dress warmly for open lake air.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="salzburg-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1427,9 +1437,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Traditional restaurants such as Bärenwirt or Stieglkeller.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="salzburg-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1470,12 +1480,12 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Cozy local cafes and bakeries in Berchtesgaden town center.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="wildkogel">🛷 Wildkogel-Arena &amp; Rosenheim</h2>
 <p>Famous for the world's longest floodlit toboggan track and traditional Upper Bavarian market towns.</p>
 <h3 id="wildkogel-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1504,9 +1514,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Great evening stop for strolling and tavern dining; central covered parking at Parkhaus Samerstraße.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="wildkogel-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1523,9 +1533,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Sturdy wooden toboggans available for rent at the gondola base (Sport 2000 Herzog / Intersport Harms); wear ski goggles and warm winter boots.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="wildkogel-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1542,9 +1552,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://www.wolkenstein.at/" target="_blank" rel="noopener noreferrer">Aussichtsrestaurant Wolkenstein</a></strong> at 2,100m summit.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="wildkogel-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1567,13 +1577,13 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="http://www.cooking-asia.de/" target="_blank" rel="noopener noreferrer">Cooking Asia</a></strong> (Münchener Straße 18) or <strong><a href="https://vietpho.de/" target="_blank" rel="noopener noreferrer">Viet Phở</a></strong> (Salinstraße 11).</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <div id="country-slovakia" class="country-marker"></div>
 <h2 id="bratislava">🇸🇰 Bratislava, Slovakia</h2>
 <p>Just an hour down the Danube from Vienna, Bratislava charms with compact cobblestone streets, quirky public art, and clifftop castle views.</p>
 <h3 id="bratislava-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1602,9 +1612,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Located on Bezručova street; peaceful 10-minute walk east of the main pedestrian core.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="bratislava-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1621,9 +1631,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Open late into the evening; ticket price offset against restaurant dining bills.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="bratislava-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1640,9 +1650,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Available in traditional Old Town bakeries and pastry shops.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="bratislava-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1665,13 +1675,13 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://www.iasai.sk/" target="_blank" rel="noopener noreferrer">Iasai Food Bar</a></strong> (Mostová 2) for fresh sushi and wok-fried noodles.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <div id="country-germany" class="country-marker"></div>
 <h2 id="neuschwanstein">🏰 Schloss Neuschwanstein &amp; Allgäu, Bavaria</h2>
 <p>The ultimate fairytale palace setting perched high above dramatic alpine gorges in southwestern Bavaria.</p>
 <h3 id="neuschwanstein-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1700,9 +1710,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Flat walking paths around Lake Alpsee; horse-drawn carriage pickups in the village center.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="neuschwanstein-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1719,9 +1729,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Shuttle operates continuously throughout the day; small fare payable at boarding.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="neuschwanstein-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1738,12 +1748,12 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://www.madame-pluesch.de/" target="_blank" rel="noopener noreferrer">Madame Plüsch</a></strong> or Asia Restaurant in nearby historic Füssen (4 km drive).</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="munich">🇩🇪 Munich, Bavaria</h2>
 <p>Munich harmonizes centuries of Wittelsbach royal grandeur with futuristic technology and quintessential Bavarian beer hall culture.</p>
 <h3 id="munich-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1784,9 +1794,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Free public park access; illuminated evening walking paths.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="munich-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1821,9 +1831,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Located ~100 km south of Munich; tickets include glacier cable car rides; check summit webcam before traveling.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="munich-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1846,9 +1856,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://www.munich.travel/en/pois/eat-drink/cafe-frischhut-schmalznudel" target="_blank" rel="noopener noreferrer">Café Frischhut</a></strong> (Prälat-Zistl-Straße 8, near Viktualienmarkt).</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="munich-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1883,12 +1893,12 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left"><strong><a href="https://kuffler.de/en/spatenhaus/" target="_blank" rel="noopener noreferrer">Spatenhaus an der Oper</a></strong> for refined Bavarian classics.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="allianz">⚽ Allianz Arena &amp; Ingolstadt Village</h2>
 <p>World-class football history and designer open-air shopping along the northern highway corridor from Munich.</p>
 <h3 id="allianz-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1911,9 +1921,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Located on Level 3 inside the Arena Entrance North; open on non-matchdays.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="allianz-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1936,9 +1946,9 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Located off A9 Exit 61 (Ingolstadt-Nord); over 2,000 free parking spaces; luggage storage on-site.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="allianz-dining">🍽️ Recommended Highway &amp; Village Dining</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Tavern</th>
@@ -1955,7 +1965,7 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
 <td style="text-align:left">Located directly along the pedestrian shopping promenade.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <p><em>Compiled as an open, public travel resource for independent travelers exploring Central Europe in winter.</em></p>
 
@@ -1973,14 +1983,16 @@ A curated, practical guide to iconic cultural sights, thrilling alpine winter ac
   </footer>
 
   <script>
-    // Automatically wrap all Markdown tables in responsive scrolling containers
+    // Automatically wrap all Markdown tables in responsive scrolling containers if not already wrapped
     document.addEventListener("DOMContentLoaded", function () {
-      const tables = document.querySelectorAll(".content-area table");
+      const tables = document.querySelectorAll("table");
       tables.forEach(table => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "table-container";
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
+        if (!table.parentElement.classList.contains("table-container")) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "table-container";
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        }
       });
 
       // Sticky Navigation Interactions (Only on pages with a stickyNav element)

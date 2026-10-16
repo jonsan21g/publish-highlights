@@ -42,6 +42,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     body {
@@ -50,6 +52,8 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     /* Container */
@@ -420,6 +424,8 @@
     /* Main Content Area */
     .content-area {
       padding: 36px 0 80px;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Markdown Typography */
@@ -473,7 +479,11 @@
     /* Responsive Tables */
     .table-container {
       width: 100%;
+      max-width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
       margin: 18px 0 28px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
@@ -674,14 +684,16 @@
   </footer>
 
   <script>
-    // Automatically wrap all Markdown tables in responsive scrolling containers
+    // Automatically wrap all Markdown tables in responsive scrolling containers if not already wrapped
     document.addEventListener("DOMContentLoaded", function () {
-      const tables = document.querySelectorAll(".content-area table");
+      const tables = document.querySelectorAll("table");
       tables.forEach(table => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "table-container";
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
+        if (!table.parentElement.classList.contains("table-container")) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "table-container";
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        }
       });
 
       // Sticky Navigation Interactions (Only on pages with a stickyNav element)

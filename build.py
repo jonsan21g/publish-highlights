@@ -63,6 +63,24 @@ def inject_heading_ids(html_str):
         ("osaka", ["osaka"]),
         ("kyoto-nara", ["kyoto", "nara", "uji"]),
         ("tokyo-east", ["historic asakusa", "asakusa", "ginza", "skytree"]),
+        # Bornholm
+        ("north-bornholm", ["north bornholm", "hammershus", "allinge", "hammeren"]),
+        ("central-bornholm", ["central bornholm", "almindingen", "østerlars", "osterlars", "ekkodalen"]),
+        ("east-coast", ["east coast", "gudhjem", "svaneke"]),
+        ("south-bornholm", ["south bornholm", "dueodde", "aakirkeby"]),
+        ("transit-hub", ["transit hub", "copenhagen", "ystad", "rønne", "ronne"]),
+        # Baltic Route
+        ("poland", ["poland", "gdynia", "gdańsk", "gdansk", "malbork"]),
+        ("lithuania", ["lithuania", "vilnius", "trakai"]),
+        ("latvia", ["latvia", "riga", "sigulda"]),
+        ("estonia", ["estonia", "tallinn", "pärnu", "parnu"]),
+        ("sweden", ["sweden", "stockholm", "lake vättern", "lake vattern"]),
+        # Iceland
+        ("reykjanes", ["reykjanes", "arrival", "keflavík", "keflavik"]),
+        ("snaefellsnes", ["snæfellsnes", "snaefellsnes", "west iceland", "grundarfjörður", "stykkishólmur"]),
+        ("golden-circle", ["golden circle", "south-central uplands", "thingvellir", "geysir"]),
+        ("deep-south", ["deep south", "vatnajökull", "vatnajokull", "vík", "vik"]),
+        ("reykjavik", ["greater reykjavík", "greater reykjavik", "capital region"]),
     ]
 
     country_starts = {
@@ -75,6 +93,21 @@ def inject_heading_ids(html_str):
         "osaka": "region-osaka",
         "kyoto-nara": "region-kyoto-nara",
         "tokyo-east": "region-tokyo-east",
+        "north-bornholm": "region-north-bornholm",
+        "central-bornholm": "region-central-bornholm",
+        "east-coast": "region-east-coast",
+        "south-bornholm": "region-south-bornholm",
+        "transit-hub": "region-transit-hub",
+        "poland": "country-poland",
+        "lithuania": "country-lithuania",
+        "latvia": "country-latvia",
+        "estonia": "country-estonia",
+        "sweden": "country-sweden",
+        "reykjanes": "region-reykjanes",
+        "snaefellsnes": "region-snaefellsnes",
+        "golden-circle": "region-golden-circle",
+        "deep-south": "region-deep-south",
+        "reykjavik": "region-reykjavik",
     }
 
     current_dest = None
@@ -517,7 +550,7 @@ def get_japan_sticky_nav():
         </div>
 
         <!-- 4. Kyoto, Uji & Nara -->
-        <div class="nav-dropdown" data-country="kyoto-nara">
+        <div class="nav-dropdown align-right" data-country="kyoto-nara">
           <div class="nav-btn-group">
             <a href="#kyoto-nara" class="nav-country-link" title="Jump to Kyoto, Uji & Nara section">
               <span>⛩️</span> <span>Kyoto & Nara</span>
@@ -553,7 +586,7 @@ def get_japan_sticky_nav():
         </div>
 
         <!-- 5. Tokyo Historic & Digital -->
-        <div class="nav-dropdown" data-country="tokyo-east">
+        <div class="nav-dropdown align-right" data-country="tokyo-east">
           <div class="nav-btn-group">
             <a href="#tokyo-east" class="nav-country-link" title="Jump to Tokyo Historic & Digital section">
               <span>🏮</span> <span>Tokyo Historic</span>
@@ -595,6 +628,619 @@ def get_japan_sticky_nav():
 """
 
 
+
+
+def get_bornholm_sticky_nav():
+    """Generates the tailored, clickable 5-region navigation bar for Bornholm."""
+    return """
+  <!-- Sticky Dynamic Navigation Bar (Persists on Scroll) -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="container nav-wrapper">
+      
+      <!-- Home Link -->
+      <div class="nav-left">
+        <a href="index.html" class="nav-home-btn" id="navHome">
+          <span>🏠</span> <span>All Trips</span>
+        </a>
+      </div>
+
+      <!-- 5 Region Clickable Navigators & Drill-Downs -->
+      <div class="nav-countries" id="navCountries">
+        
+        <!-- 1. North Bornholm -->
+        <div class="nav-dropdown" data-country="north-bornholm">
+          <div class="nav-btn-group">
+            <a href="#north-bornholm" class="nav-country-link" title="Jump to North Bornholm section">
+              <span>🏰</span> <span>North Bornholm</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle North Bornholm sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🏰 Allinge-Sandvig & Hammershus</span>
+              <a href="#north-bornholm" class="dropdown-header-link">Region Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#north-bornholm-sights" class="dropdown-dest-title">🏛️ Fortress & Cliffs</a>
+                <ul class="dropdown-links">
+                  <li><a href="#north-bornholm-sights">Hammershus Castle Ruins</a></li>
+                  <li><a href="#north-bornholm-sights">Hammeren & Hammerknuden</a></li>
+                  <li><a href="#north-bornholm-sights">Opalsøen Quarry Lake</a></li>
+                  <li><a href="#north-bornholm-sights">Helligdomsklipperne Rocks</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#north-bornholm-activities" class="dropdown-dest-title">🎯 Experiences & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#north-bornholm-activities">Brohuset Visitor Centre</a></li>
+                  <li><a href="#north-bornholm-activities">Bornholms Kunstmuseum</a></li>
+                  <li><a href="#north-bornholm-snacks">Kæmpestranden Kaffebar</a></li>
+                  <li><a href="#north-bornholm-dining">Allinge Røgeri & Nordlandet</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Central Bornholm -->
+        <div class="nav-dropdown" data-country="central-bornholm">
+          <div class="nav-btn-group">
+            <a href="#central-bornholm" class="nav-country-link" title="Jump to Central Bornholm section">
+              <span>🌲</span> <span>Central Bornholm</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Central Bornholm sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🌲 Almindingen & Østerlars</span>
+              <a href="#central-bornholm" class="dropdown-header-link">Forest Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#central-bornholm-sights" class="dropdown-dest-title">🏛️ Valleys & Heritage</a>
+                <ul class="dropdown-links">
+                  <li><a href="#central-bornholm-sights">Ekkodalen Echo Valley</a></li>
+                  <li><a href="#central-bornholm-sights">Rytterknægten Tower</a></li>
+                  <li><a href="#central-bornholm-sights">Bisonskoven Wild Bison</a></li>
+                  <li><a href="#central-bornholm-sights">Østerlars Fortified Church</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#central-bornholm-activities" class="dropdown-dest-title">🎯 Living History & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#central-bornholm-activities">Bornholms Middelaldercenter</a></li>
+                  <li><a href="#central-bornholm-activities">Bornholms Rovfugleshow</a></li>
+                  <li><a href="#central-bornholm-snacks">Café Ekkodalshuset Giant Tartlet</a></li>
+                  <li><a href="#central-bornholm-dining">Christianshøjkroen Inn</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. East Coast -->
+        <div class="nav-dropdown" data-country="east-coast">
+          <div class="nav-btn-group">
+            <a href="#east-coast" class="nav-country-link" title="Jump to East Coast section">
+              <span>⛵</span> <span>East Coast</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle East Coast sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">⛵ Gudhjem, Melsted & Svaneke</span>
+              <a href="#east-coast" class="dropdown-header-link">Coastline Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#east-coast-sights" class="dropdown-dest-title">🏛️ Towns & Scenic Harbors</a>
+                <ul class="dropdown-links">
+                  <li><a href="#east-coast-sights">Gudhjem Mountain Town & Bokul</a></li>
+                  <li><a href="#east-coast-sights">Svaneke Historic Market Town</a></li>
+                  <li><a href="#east-coast-sights">Hullehavn Rocky Beach</a></li>
+                  <li><a href="#east-coast-activities">Joboland Brændesgårdshaven</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#east-coast-activities" class="dropdown-dest-title">🎯 Workshops & Breweries</a>
+                <ul class="dropdown-links">
+                  <li><a href="#east-coast-activities">Melstedgård Living Farm</a></li>
+                  <li><a href="#east-coast-activities">Pernille Bülow Glassblowing</a></li>
+                  <li><a href="#east-coast-snacks">Karamel Kompagniet & Svaneke Is</a></li>
+                  <li><a href="#east-coast-dining">Svaneke Bryghus & Gudhjem Røgeri</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. South Bornholm -->
+        <div class="nav-dropdown align-right" data-country="south-bornholm">
+          <div class="nav-btn-group">
+            <a href="#south-bornholm" class="nav-country-link" title="Jump to South Bornholm section">
+              <span>🏖️</span> <span>South Bornholm</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle South Bornholm sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🏖️ Dueodde & Snogebæk</span>
+              <a href="#south-bornholm" class="dropdown-header-link">Dunes Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#south-bornholm-sights" class="dropdown-dest-title">🏛️ Dunes & Geology</a>
+                <ul class="dropdown-links">
+                  <li><a href="#south-bornholm-sights">Dueodde Quartz White Sand</a></li>
+                  <li><a href="#south-bornholm-sights">Dueodde 47m Lighthouse</a></li>
+                  <li><a href="#south-bornholm-sights">Snogebæk Island Harbor</a></li>
+                  <li><a href="#south-bornholm-activities">NaturBornholm Dino Centre</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#south-bornholm-activities" class="dropdown-dest-title">🎯 Chocolatiers & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#south-bornholm-activities">Kjærstrup Chokolade Atelier</a></li>
+                  <li><a href="#south-bornholm-snacks">Gourmet Flødebolle & Soft Ice</a></li>
+                  <li><a href="#south-bornholm-dining">Restaurant Bakken Dueodde</a></li>
+                  <li><a href="#south-bornholm-dining">Nexø Gamle Røgeri</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Transit Hub & Rønne -->
+        <div class="nav-dropdown align-right" data-country="transit-hub">
+          <div class="nav-btn-group">
+            <a href="#transit-hub" class="nav-country-link" title="Jump to Transit Hub section">
+              <span>🚢</span> <span>Rønne & Transit</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Transit Hub sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🚢 Gateway, Ferries & Rønne Old Town</span>
+              <a href="#transit-hub" class="dropdown-header-link">Gateway Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#transit-hub-sights" class="dropdown-dest-title">🏛️ Gateway Sights</a>
+                <ul class="dropdown-links">
+                  <li><a href="#transit-hub-sights">Øresund Bridge Crossing</a></li>
+                  <li><a href="#transit-hub-sights">Rønne Old Town & Laksegade</a></li>
+                  <li><a href="#transit-hub-activities">Bornholmslinjen Express Ferry</a></li>
+                  <li><a href="#transit-hub-activities">Hjorths Ceramic Factory</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#transit-hub-snacks" class="dropdown-dest-title">🎯 Market & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#transit-hub-snacks">Torve-Hallen Local Food Market</a></li>
+                  <li><a href="#transit-hub-dining">Rådhuskroen Cozy Basement</a></li>
+                  <li><a href="#transit-hub-dining">Det Røde Pakhus Harbor Bistro</a></li>
+                  <li><a href="#transit-hub-dining">Mr. Long Asian Bistro</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+"""
+
+
+def get_baltic_sticky_nav():
+    """Generates the tailored, clickable 5-country navigation bar for Baltic Route."""
+    return """
+  <!-- Sticky Dynamic Navigation Bar (Persists on Scroll) -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="container nav-wrapper">
+      
+      <!-- Home Link -->
+      <div class="nav-left">
+        <a href="index.html" class="nav-home-btn" id="navHome">
+          <span>🏠</span> <span>All Trips</span>
+        </a>
+      </div>
+
+      <!-- 5 Country Clickable Navigators & Drill-Downs -->
+      <div class="nav-countries" id="navCountries">
+        
+        <!-- 1. Poland -->
+        <div class="nav-dropdown" data-country="poland">
+          <div class="nav-btn-group">
+            <a href="#poland" class="nav-country-link" title="Jump to Poland section">
+              <span>🇵🇱</span> <span>Poland</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Poland sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇵🇱 Gdańsk, Gdynia & Malbork</span>
+              <a href="#poland" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#poland-sights" class="dropdown-dest-title">🏛️ Hanseatic & Teutonic Heritage</a>
+                <ul class="dropdown-links">
+                  <li><a href="#poland-sights">WWII Museum Underground</a></li>
+                  <li><a href="#poland-sights">Długi Targ & Neptune Fountain</a></li>
+                  <li><a href="#poland-sights">Gdańsk Medieval Port Crane</a></li>
+                  <li><a href="#poland-sights">Malbork Teutonic Castle</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#poland-activities" class="dropdown-dest-title">🎯 Markets & Pierogi</a>
+                <ul class="dropdown-links">
+                  <li><a href="#poland-activities">Stena Line Baltic Crossing</a></li>
+                  <li><a href="#poland-activities">Gdańsk Christmas Market</a></li>
+                  <li><a href="#poland-snacks">Dobra Pączkarnia Brioche Doughnuts</a></li>
+                  <li><a href="#poland-dining">Mandu Handmade Pierogi</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Lithuania -->
+        <div class="nav-dropdown" data-country="lithuania">
+          <div class="nav-btn-group">
+            <a href="#lithuania" class="nav-country-link" title="Jump to Lithuania section">
+              <span>🇱🇹</span> <span>Lithuania</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Lithuania sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇱🇹 Vilnius & Trakai Island Castle</span>
+              <a href="#lithuania" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#lithuania-sights" class="dropdown-dest-title">🏛️ Baroque & Castles</a>
+                <ul class="dropdown-links">
+                  <li><a href="#lithuania-sights">Vilnius UNESCO Old Town</a></li>
+                  <li><a href="#lithuania-sights">Republic of Užupis</a></li>
+                  <li><a href="#lithuania-sights">Trakai Island Castle</a></li>
+                  <li><a href="#lithuania-sights">Hill of Crosses Pilgrimage</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#lithuania-activities" class="dropdown-dest-title">🎯 Illusions & Forest Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#lithuania-activities">Vilnius Museum of Illusions</a></li>
+                  <li><a href="#lithuania-activities">Cathedral Christmas Town</a></li>
+                  <li><a href="#lithuania-snacks">Senoji Kibininė Pastries</a></li>
+                  <li><a href="#lithuania-dining">Restoranas Lokys Wild Game</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Latvia -->
+        <div class="nav-dropdown" data-country="latvia">
+          <div class="nav-btn-group">
+            <a href="#latvia" class="nav-country-link" title="Jump to Latvia section">
+              <span>🇱🇻</span> <span>Latvia</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Latvia sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇱🇻 Riga & Sigulda Bobsleigh</span>
+              <a href="#latvia" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#latvia-sights" class="dropdown-dest-title">🏛️ Art Nouveau & Fortress</a>
+                <ul class="dropdown-links">
+                  <li><a href="#latvia-sights">House of the Black Heads</a></li>
+                  <li><a href="#latvia-sights">Art Nouveau Masterpieces</a></li>
+                  <li><a href="#latvia-sights">Turaida Stone Castle</a></li>
+                  <li><a href="#latvia-activities">Sigulda Olympic Bobsleigh</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#latvia-activities" class="dropdown-dest-title">🎯 Motor Museum & Taverns</a>
+                <ul class="dropdown-links">
+                  <li><a href="#latvia-activities">Riga Kremlin Motor Museum</a></li>
+                  <li><a href="#latvia-activities">Dome Square Christmas Market</a></li>
+                  <li><a href="#latvia-snacks">Black Magic Balsam Truffles</a></li>
+                  <li><a href="#latvia-dining">Folkklubs ALA Medieval Cellar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Estonia -->
+        <div class="nav-dropdown align-right" data-country="estonia">
+          <div class="nav-btn-group">
+            <a href="#estonia" class="nav-country-link" title="Jump to Estonia section">
+              <span>🇪🇪</span> <span>Estonia</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Estonia sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇪🇪 Medieval Tallinn & Seaplane Harbour</span>
+              <a href="#estonia" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#estonia-sights" class="dropdown-dest-title">🏛️ Hanseatic Sights</a>
+                <ul class="dropdown-links">
+                  <li><a href="#estonia-sights">Tallinn Walled Old Town</a></li>
+                  <li><a href="#estonia-sights">Toompea Panoramic Viewpoints</a></li>
+                  <li><a href="#estonia-sights">Alexander Nevsky Cathedral</a></li>
+                  <li><a href="#estonia-activities">Lennusadam Seaplane Harbour</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#estonia-activities" class="dropdown-dest-title">🎯 Maritime & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#estonia-activities">Tallinn Fairy-tale Market</a></li>
+                  <li><a href="#estonia-activities">Tallink Silja Cruise Ferry</a></li>
+                  <li><a href="#estonia-snacks">III Draakon Wild Elk Pies</a></li>
+                  <li><a href="#estonia-dining">Rataskaevu 16 & Olde Hansa</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Sweden -->
+        <div class="nav-dropdown align-right" data-country="sweden">
+          <div class="nav-btn-group">
+            <a href="#sweden" class="nav-country-link" title="Jump to Sweden section">
+              <span>🇸🇪</span> <span>Sweden</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Sweden sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🇸🇪 Stockholm Capital & Lake Vättern</span>
+              <a href="#sweden" class="dropdown-header-link">Country Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#sweden-sights" class="dropdown-dest-title">🏛️ Maritime & Palaces</a>
+                <ul class="dropdown-links">
+                  <li><a href="#sweden-sights">Vasa Museum 1628 Warship</a></li>
+                  <li><a href="#sweden-sights">Gamla Stan & Royal Palace</a></li>
+                  <li><a href="#sweden-sights">Brahehus Castle Cliff Ruins</a></li>
+                  <li><a href="#sweden-activities">Skansen Open-Air Museum</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#sweden-activities" class="dropdown-dest-title">🎯 Candy & Meatballs</a>
+                <ul class="dropdown-links">
+                  <li><a href="#sweden-activities">NYE Harbor Fireworks</a></li>
+                  <li><a href="#sweden-snacks">Gränna Polkagris Candy Cane</a></li>
+                  <li><a href="#sweden-snacks">Artisan Cardamom Buns</a></li>
+                  <li><a href="#sweden-dining">Restaurang Tradition Meatballs</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+"""
+
+
+def get_iceland_sticky_nav():
+    """Generates the tailored, clickable 5-region navigation bar for Iceland."""
+    return """
+  <!-- Sticky Dynamic Navigation Bar (Persists on Scroll) -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="container nav-wrapper">
+      
+      <!-- Home Link -->
+      <div class="nav-left">
+        <a href="index.html" class="nav-home-btn" id="navHome">
+          <span>🏠</span> <span>All Trips</span>
+        </a>
+      </div>
+
+      <!-- 5 Region Clickable Navigators & Drill-Downs -->
+      <div class="nav-countries" id="navCountries">
+        
+        <!-- 1. Reykjanes -->
+        <div class="nav-dropdown" data-country="reykjanes">
+          <div class="nav-btn-group">
+            <a href="#reykjanes" class="nav-country-link" title="Jump to Reykjanes section">
+              <span>🌋</span> <span>Reykjanes</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Reykjanes sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🌋 Reykjanes Peninsula & Blue Lagoon</span>
+              <a href="#reykjanes" class="dropdown-header-link">Region Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#reykjanes-sights" class="dropdown-dest-title">🏛️ Tectonics & Geothermal</a>
+                <ul class="dropdown-links">
+                  <li><a href="#reykjanes-sights">Bridge Between Continents</a></li>
+                  <li><a href="#reykjanes-sights">Gunnuhver Mud Geysers</a></li>
+                  <li><a href="#reykjanes-sights">Reykjanesviti Lighthouse</a></li>
+                  <li><a href="#reykjanes-activities">Blue Lagoon Geothermal Spa</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#reykjanes-snacks" class="dropdown-dest-title">🎯 Bakeries & Dining</a>
+                <ul class="dropdown-links">
+                  <li><a href="#reykjanes-activities">Keflavík 4x4 Rental Hub</a></li>
+                  <li><a href="#reykjanes-snacks">Kökulist Cinnamon Swirls</a></li>
+                  <li><a href="#reykjanes-dining">Kaffi Duus Maritime Chowder</a></li>
+                  <li><a href="#reykjanes-dining">Vocal Restaurant Lamb</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Snæfellsnes -->
+        <div class="nav-dropdown" data-country="snaefellsnes">
+          <div class="nav-btn-group">
+            <a href="#snaefellsnes" class="nav-country-link" title="Jump to Snæfellsnes section">
+              <span>🏔️</span> <span>Snæfellsnes</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Snæfellsnes sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🏔️ West Iceland & Kirkjufell</span>
+              <a href="#snaefellsnes" class="dropdown-header-link">Peninsula Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#snaefellsnes-sights" class="dropdown-dest-title">🏛️ Volcanic Landscapes</a>
+                <ul class="dropdown-links">
+                  <li><a href="#snaefellsnes-sights">Búðakirkja Black Church</a></li>
+                  <li><a href="#snaefellsnes-sights">Arnarstapi Basalt Arches</a></li>
+                  <li><a href="#snaefellsnes-sights">Djúpalónssandur Black Beach</a></li>
+                  <li><a href="#snaefellsnes-sights">Kirkjufell Arrowhead Mountain</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#snaefellsnes-activities" class="dropdown-dest-title">🎯 Lava Tubes & Mussels</a>
+                <ul class="dropdown-links">
+                  <li><a href="#snaefellsnes-activities">Vatnshellir 8,000y Lava Cave</a></li>
+                  <li><a href="#snaefellsnes-activities">Krauma Nature Geothermal Baths</a></li>
+                  <li><a href="#snaefellsnes-snacks">Nesbrauð Dark Rye Bakery</a></li>
+                  <li><a href="#snaefellsnes-dining">Bjargarsteinn & Narfeyrarstofa</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Golden Circle -->
+        <div class="nav-dropdown" data-country="golden-circle">
+          <div class="nav-btn-group">
+            <a href="#golden-circle" class="nav-country-link" title="Jump to Golden Circle section">
+              <span>💨</span> <span>Golden Circle</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Golden Circle sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">💨 Geysir, Gullfoss & Tectonics</span>
+              <a href="#golden-circle" class="dropdown-header-link">Route Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#golden-circle-sights" class="dropdown-dest-title">🏛️ Wonders & Waterfalls</a>
+                <ul class="dropdown-links">
+                  <li><a href="#golden-circle-sights">Þingvellir National Park</a></li>
+                  <li><a href="#golden-circle-sights">Strokkur Boiling Geysir</a></li>
+                  <li><a href="#golden-circle-sights">Gullfoss Golden Waterfall</a></li>
+                  <li><a href="#golden-circle-sights">Kerið Red Crater Basin</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#golden-circle-activities" class="dropdown-dest-title">🎯 Geothermal Bread & Soup</a>
+                <ul class="dropdown-links">
+                  <li><a href="#golden-circle-activities">Fontana Geothermal Rye Bread</a></li>
+                  <li><a href="#golden-circle-activities">Secret Lagoon Thermal Springs</a></li>
+                  <li><a href="#golden-circle-snacks">Efstidalur Dairy Cow Gelato</a></li>
+                  <li><a href="#golden-circle-dining">Friðheimar Tomato Greenhouse</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Deep South -->
+        <div class="nav-dropdown align-right" data-country="deep-south">
+          <div class="nav-btn-group">
+            <a href="#deep-south" class="nav-country-link" title="Jump to Deep South section">
+              <span>🧊</span> <span>Deep South</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Deep South sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🧊 Glaciers, Waterfalls & Vík</span>
+              <a href="#deep-south" class="dropdown-header-link">South Coast Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#deep-south-sights" class="dropdown-dest-title">🏛️ Waterfalls & Lagoons</a>
+                <ul class="dropdown-links">
+                  <li><a href="#deep-south-sights">Seljalandsfoss Walk-Behind</a></li>
+                  <li><a href="#deep-south-sights">Skógafoss 60m Spray</a></li>
+                  <li><a href="#deep-south-sights">Reynisfjara Basalt Columns</a></li>
+                  <li><a href="#deep-south-sights">Jökulsárlón Glacier Lagoon</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#deep-south-activities" class="dropdown-dest-title">🎯 Ice Caves & Lava</a>
+                <ul class="dropdown-links">
+                  <li><a href="#deep-south-activities">Live Molten Lava Show Vík</a></li>
+                  <li><a href="#deep-south-activities">Natural Blue Ice Cave Tour</a></li>
+                  <li><a href="#deep-south-snacks">Skool Beans School Bus Cafe</a></li>
+                  <li><a href="#deep-south-dining">The Soup Company Sourdough</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Reykjavík -->
+        <div class="nav-dropdown align-right" data-country="reykjavik">
+          <div class="nav-btn-group">
+            <a href="#reykjavik" class="nav-country-link" title="Jump to Reykjavík section">
+              <span>🌈</span> <span>Reykjavík</span>
+            </a>
+            <button class="nav-caret-btn" type="button" aria-label="Toggle Reykjavík sections">▾</button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">🌈 Capital Architecture & Sky Lagoon</span>
+              <a href="#reykjavik" class="dropdown-header-link">Capital Overview ➔</a>
+            </div>
+            <div class="dropdown-grid cols-2">
+              <div class="dropdown-col">
+                <a href="#reykjavik-sights" class="dropdown-dest-title">🏛️ Skyline & Icons</a>
+                <ul class="dropdown-links">
+                  <li><a href="#reykjavik-sights">Hallgrímskirkja Tower View</a></li>
+                  <li><a href="#reykjavik-sights">Rainbow Street Boutiques</a></li>
+                  <li><a href="#reykjavik-sights">Harpa Glass Concert Hall</a></li>
+                  <li><a href="#reykjavik-sights">The Sun Voyager Sculpture</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <a href="#reykjavik-activities" class="dropdown-dest-title">🎯 7-Step Spa & Seafood</a>
+                <ul class="dropdown-links">
+                  <li><a href="#reykjavik-activities">Sky Lagoon 7-Step Ocean Spa</a></li>
+                  <li><a href="#reykjavik-activities">FlyOver Iceland Simulation</a></li>
+                  <li><a href="#reykjavik-snacks">Bæjarins Beztu Lamb Hot Dog</a></li>
+                  <li><a href="#reykjavik-dining">Messinn Pan-Sautéed Arctic Char</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+"""
+
 def generate_sticky_nav(fname, meta, body_md):
     """
     Determines whether a page should have a sticky nav and dynamically builds it.
@@ -614,6 +1260,15 @@ def generate_sticky_nav(fname, meta, body_md):
 
     if fname == "japan.md" or sticky_nav_setting in ["japan", "japan-winter"]:
         return get_japan_sticky_nav()
+
+    if fname == "bornholm.md" or sticky_nav_setting in ["bornholm", "bornholm-autumn"]:
+        return get_bornholm_sticky_nav()
+
+    if fname == "baltic-route.md" or sticky_nav_setting in ["baltic", "baltic-route", "baltics"]:
+        return get_baltic_sticky_nav()
+
+    if fname == "iceland.md" or sticky_nav_setting in ["iceland", "iceland-ring"]:
+        return get_iceland_sticky_nav()
 
     # Dynamic auto-generation for any future trip guide with sticky_nav enabled
     if sticky_nav_setting in ["true", "yes", "auto", "dynamic"]:
@@ -644,6 +1299,9 @@ def build_all():
 
         meta, body_md = parse_frontmatter(raw_text)
         content_html = md.render(body_md)
+
+        # Statically wrap all tables in responsive scrolling containers
+        content_html = re.sub(r'(<table\b[^>]*>.*?</table>)', r'<div class="table-container">\1</div>', content_html, flags=re.DOTALL)
 
         # Inject semantic IDs for headings (so anchor links jump with precision)
         content_html = inject_heading_ids(content_html)

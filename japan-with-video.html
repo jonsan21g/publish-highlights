@@ -40,6 +40,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     body {
@@ -48,6 +50,8 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     /* Container */
@@ -418,6 +422,8 @@
     /* Main Content Area */
     .content-area {
       padding: 36px 0 80px;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Markdown Typography */
@@ -471,7 +477,11 @@
     /* Responsive Tables */
     .table-container {
       width: 100%;
+      max-width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
       margin: 18px 0 28px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
@@ -716,10 +726,7 @@
 <!-- Hero Header (Scrolls naturally out of view) -->
 <header class="hero">
 <div class="container">
-<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
-  <span class="hero-badge">🌍 Travel Collection • Free &amp; Open Holiday Guides</span>
-  <span class="hero-badge" style="background: rgba(190, 24, 93, 0.25); border: 1px solid rgba(244, 114, 182, 0.5); color: #f472b6;">🎬 110 Embedded Video Showcases</span>
-</div>
+<span class="hero-badge">🌍 Travel Collection • Free &amp; Open Holiday Guides</span>
 <h1>Japan Winter Highlights &amp; Video Showcase</h1>
 <p>A curated, practical guide to iconic cultural sights, world-class theme parks, digital art installations, ancient temples, traditional street treats, and authentic dining across Tokyo, Osaka, Kyoto, Uji, and Nara — complete with 110 verified video previews opening directly in a new tab.</p>
 </div>
@@ -842,7 +849,7 @@
 </div>
 </div>
 <!-- 4. Kyoto, Uji & Nara -->
-<div class="nav-dropdown" data-country="kyoto-nara">
+<div class="nav-dropdown align-right" data-country="kyoto-nara">
 <div class="nav-btn-group">
 <a class="nav-country-link" href="#kyoto-nara" title="Jump to Kyoto, Uji &amp; Nara section">
 <span>⛩️</span> <span>Kyoto &amp; Nara</span>
@@ -877,7 +884,7 @@
 </div>
 </div>
 <!-- 5. Tokyo Historic & Digital -->
-<div class="nav-dropdown" data-country="tokyo-east">
+<div class="nav-dropdown align-right" data-country="tokyo-east">
 <div class="nav-btn-group">
 <a class="nav-country-link" href="#tokyo-east" title="Jump to Tokyo Historic &amp; Digital section">
 <span>🏮</span> <span>Tokyo Historic</span>
@@ -915,17 +922,18 @@
 </div>
 </nav>
 <!-- Main Content Body -->
-<h1>🗾 Japan Winter Highlights &amp; Video Showcase</h1>
+<main class="container content-area">
+<h1>🗾 Japan Winter Highlights &amp; Dining Guide</h1>
 <blockquote>
-<p><strong>Trip Guide</strong>: <a href="index.html">🏠 All Holiday Guides</a> / <strong>Tokyo • Osaka • Kyoto • Uji • Nara (Interactive Video Edition)</strong><br/>
-A curated, practical guide to iconic cultural sights, world-class theme parks, digital art installations, ancient temples, traditional street treats, and authentic dining across Japan — featuring 110 verified, playable video previews opening directly in a new tab.</p>
+<p><strong>Trip Guide</strong>: <a href="index.html">🏠 All Holiday Guides</a> / <strong>Tokyo • Osaka • Kyoto • Uji • Nara</strong><br/>
+A curated, practical guide to iconic cultural sights, world-class theme parks, digital art installations, ancient temples, traditional street treats, and authentic dining across Japan.</p>
 </blockquote>
 <hr/>
 <div class="country-marker" id="region-tokyo-west"></div>
 <h2 id="tokyo-west">🇯🇵 Tokyo — Modern Metropolis, Views &amp; Pop Culture</h2>
 <p>Tokyo's western downtown districts blend futuristic neon skyscrapers, open-air panoramic observatories, post-war alleyways, and the vibrant global epicenter of gaming and youth fashion.</p>
 <h3 id="tokyo-west-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1076,9 +1084,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="tokyo-west-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1169,9 +1177,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="tokyo-west-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1242,9 +1250,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="tokyo-west-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Venue</th>
@@ -1355,13 +1363,13 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <hr/>
 <div class="country-marker" id="region-disneysea"></div>
 <h2 id="disneysea">🇯🇵 Tokyo Disney Resort — Tokyo DisneySea</h2>
 <p>Universally recognized as Disney's most intricately themed maritime adventure park in the world, featuring 7 ports of call built around the volcanic Mount Prometheus.</p>
 <h3 id="disneysea-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1452,9 +1460,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="disneysea-activities">🎯 Activities &amp; Unique Rides</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -1625,9 +1633,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="disneysea-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -1718,9 +1726,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="disneysea-dining">🍽️ Recommended Dining</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Venue</th>
@@ -1791,13 +1799,13 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <hr/>
 <div class="country-marker" id="region-osaka"></div>
 <h2 id="osaka">🇯🇵 Osaka — Castles, Neon Canals &amp; Movie Magic</h2>
 <p>Known as "Tenka no Daidokoro" (<em>the Nation's Kitchen</em>), Osaka delivers hearty soul food, towering historic fortifications, neon-lit canal promenades, and world-class cinematic thrills.</p>
 <h3 id="osaka-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -1908,9 +1916,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="osaka-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -2081,9 +2089,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="osaka-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -2174,9 +2182,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="osaka-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Venue</th>
@@ -2287,13 +2295,13 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <hr/>
 <div class="country-marker" id="region-kyoto-nara"></div>
 <h2 id="kyoto-nara">🇯🇵 Kyoto, Uji &amp; Nara — Ancient Capitals, Zen Temples &amp; Matcha Heartlands</h2>
 <p>The cultural soul of Japan; home to thousands of classical Buddhist temples, Shinto shrines, sacred roaming deer, preserved geisha alleys, and the world's most revered green tea plantations.</p>
 <h3 id="kyoto-nara-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -2464,9 +2472,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="kyoto-nara-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -2597,9 +2605,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="kyoto-nara-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -2710,9 +2718,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="kyoto-nara-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Venue</th>
@@ -2803,13 +2811,13 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <hr/>
 <div class="country-marker" id="region-tokyo-east"></div>
 <h2 id="tokyo-east">🇯🇵 Tokyo — Historic Asakusa, Digital Art &amp; Ginza Glamour</h2>
 <p>A grand finale spanning Tokyo's oldest 7th-century temple grounds, cutting-edge interactive digital art museums, the world's tallest broadcast tower, and premier global shopping avenues.</p>
 <h3 id="tokyo-east-sights">🏛️ Top Attractions &amp; Sights</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Attraction / Landmark</th>
@@ -2960,9 +2968,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="tokyo-east-activities">🎯 Activities &amp; Unique Experiences</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Activity / Experience</th>
@@ -3153,9 +3161,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="tokyo-east-snacks">☕ Trending Snacks &amp; Street Food</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Treat / Specialty</th>
@@ -3266,9 +3274,9 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="tokyo-east-dining">🍽️ Recommended Dining &amp; Taverns</h3>
-<table>
+<div class="table-container"><table>
 <thead>
 <tr>
 <th style="text-align:left">Restaurant / Venue</th>
@@ -3399,7 +3407,7 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </td></tr>
 </tbody>
-</table>
+</table></div>
 <hr/>
 <p><em>Curated as a practical travel and dining resource for independent travelers.</em></p>
 </main>
@@ -3413,14 +3421,16 @@ A curated, practical guide to iconic cultural sights, world-class theme parks, d
 </div>
 </footer>
 <script>
-    // Automatically wrap all Markdown tables in responsive scrolling containers
+    // Automatically wrap all Markdown tables in responsive scrolling containers if not already wrapped
     document.addEventListener("DOMContentLoaded", function () {
-      const tables = document.querySelectorAll(".content-area table");
+      const tables = document.querySelectorAll("table");
       tables.forEach(table => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "table-container";
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
+        if (!table.parentElement.classList.contains("table-container")) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "table-container";
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        }
       });
 
       // Sticky Navigation Interactions (Only on pages with a stickyNav element)
